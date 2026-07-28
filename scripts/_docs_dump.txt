@@ -1,0 +1,702 @@
+================================================================================
+C:\Users\rahim\OneDrive\Desktop\UNBC\Personal Website\Assets\Links\Links.docx
+================================================================================
+000: Jobtrackr: JobTrackr | ZohaibRahim/CPSC300_GroupProject | ZohaibRahim/Jobtrackr-main: A full-stack application with Angular frontend and Node.js/Express backend.
+001: ZohaibRahim/PowerShell-Script-Basic
+002: ZohaibRahim/Python-Security-Log-Analyzer
+003: Jailbreak Prompt Detection with BERT: ZohaibRahim/CPSC461_Team_Project: This is a team project for the Applied Machine Learning course at UNBC. The members of this group are: Josh Holuboch, Yamin Xu, Zohaib Rahim
+004: ZohaibRahim/Computer-Programming---Java: Computer Programming - Java
+Computer Programming - Java
+005: Topics:
+006: Counting a Character
+007: Number to String Converter
+008: Murder Case Simulation - Person Class
+009: TimeClass - Java Time Management Library
+010: Card Game Utility - Counting Fifteens
+011: Playing Card Utility - Enhanced Cribbage Deck
+012: Java Swing - Name in Rectangle
+013: Java Swing - Overlapping Squares
+014: Java Swing - Simple Face Drawing
+015: Java Swing - Home Drawing
+016: Java Swing - Home Drawing Component
+017: Java Swing - Olympic Rings Drawing
+018: Java Swing - Calculator
+019: Java Crossword Puzzle Generator
+020: ZohaibRahim/Algorithm-Analysis-and-Development: Algorithm Analysis and Development
+BigInteger Arithmetic Operations Benchmarking
+021: This Java project evaluates the performance of arithmetic operations, specifically addition and multiplication, using the BigInteger class. The goal is to analyze the execution time of these operations as the size of the operands (in bits) increases. The project includes a detailed examination of the StopWatch class used for accurate time measurement.
+022: COMPONENT: StopWatch Class:
+023: The StopWatch class provides accurate timing measurements for the benchmarking process.
+024: It ensures precise measurement using System.nanoTime() for capturing short durations.
+025: Methods include start(), stop(), reset(), and elapsed().
+026: Addition Benchmark (TestAddition):
+027: Measures the execution time of BigInteger addition with varying operand sizes.
+028: Outputs include execution time for different bit lengths and an analysis of the observed trends.
+029: Multiplication Benchmark (TestMultiplication):
+030: Evaluates the execution time of BigInteger multiplication for different operand sizes.
+031: Provides insights into the relationship between operand size and execution time.
+032: Observations and Analysis:
+033: Detailed observations on the relationship between operand size and execution time for addition and multiplication.
+034: Scalability trends, including factors affecting performance for different operand sizes.
+035: Accuracy Assurance:
+036: Discussion on the accuracy of the StopWatch class and the reliability of the benchmarking methodology.
+037: Usage:
+038: Run TestAddition to benchmark addition operations.
+039: Run TestMultiplication to benchmark multiplication operations.
+040: Key Findings:
+041: Both addition and multiplication operations exhibit varying execution times with increasing operand sizes.
+042: Analysis of scalability trends and factors influencing performance.
+043: Considerations for understanding the underlying complexities of BigInteger arithmetic operations.
+044: Note:
+045: The project provides insights into the performance characteristics of BigInteger operations under different scenarios.
+046: The StopWatch class ensures accurate timing measurements, contributing to reliable benchmarking results.
+047: ZohaibRahim/Concurrent-and-Distributed-Programming
+Concurrent and Distributed Programming
+048: Content
+049: Concurrent/Parallel Merge Sort
+050: Custom Lock Implementation
+051: Thread Management
+052: Semaphore Based File Access
+053: Hospital Simulation
+054: Leader Election
+055: Hirschberg-Sinclair (HS) algorithm
+056: Leader Competing with Right (LCR) algorithm
+057: NP Peterson Algorithm
+058: Bakery Algorithm
+059: ZohaibRahim/Data-Structures: Data Structures
+Data Structures
+060: Topics
+061: Removing Duplicates
+062: Execution Time Testing
+063: Row-Wise mapping
+064: Column-Wise mapping
+065: Josephus Problem - Circular Linked List
+066: Cuckoo Hashmap
+067: Postfix Expression Evaluation & Infix-to-Postfix Conversion
+068: Merging Singly Linked Lists into a Doubly Linked List
+069: Deque Implementation
+070: Array
+071: Doubly Linked List
+072: Arithmetic Expression Processing
+073: Infix to Binary
+074: Tree Traversal
+075: Huffman Coding
+076: ZohaibRahim/Credit-Card-Fraud-Detection
+077: ZohaibRahim/CPSC473_A2
+078: JDC West Executive Team: https://www.linkedin.com/posts/unbc-jdcw_jdcwest-unbcjdcw-executives-activity-7416293078858256384-7kqF?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACNJDlQBSdEd0Ch1Nlpl9vRNZEycZjYUKXQ
+079: JDC West 1st Position UNBC JDC West Post: https://www.linkedin.com/posts/unbc-jdcw_2026-competition-placements-as-a-activity-7421590264609177600-2Zyu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACNJDlQBSdEd0Ch1Nlpl9vRNZEycZjYUKXQ
+080: JDC West 1st Position on UNBC page: https://www.linkedin.com/posts/unbc_congratulations-to-unbcs-jdc-west-team-activity-7420605776316166144-R9xs?utm_source=share&utm_medium=member_desktop&rcm=ACoAACNJDlQBSdEd0Ch1Nlpl9vRNZEycZjYUKXQ
+081: JDC West 1st Position my post: Post | LinkedIn
+082: https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/QL46A76E?sharingId=DA55C0C93A7AC0CF
+083: https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/XEDC9PBY?sharingId=DA55C0C93A7AC0CF
+084: https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/82P5SUBW?sharingId=DA55C0C93A7AC0CF
+085: https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/7B5H8D5Z?sharingId=DA55C0C93A7AC0CF
+086: Roshtay: https://www.roshtay.com
+087: Portfolio: https://zohaibrahim.vercel.app
+
+================================================================================
+C:\Users\rahim\OneDrive\Desktop\UNBC\Personal Website\Assets\Experience_Projects_Volunteering\Experience_Volunteering_Projects.docx
+================================================================================
+000: Experience
+001: UNBC JDCW
+002: 2 yrs 5 mos
+003: Business Strategy Delegate 26/27
+004: Jan 2026 - Present · 7 mos
+005: Enhance with AI
+006: Director of CHAD
+007: Sep 2025 - Jan 2026 · 5 mos
+008: Prince George, British Columbia, Canada · On-site
+009: Business Technology Delegate 25/26
+010: Mar 2025 - Jan 2026 · 11 mos
+011: Prince George, British Columbia, Canada · On-site
+012: - Placed 1st — UNBC's first BTM podium finish in 19 years
+- Contributed to case analysis, technology strategy, implementation planning, and executive-style presentation under a 3-hour competition constraint
+- Case theme: "The Power of Change" — focused on AI integration and enterprise cybersecurity risk
+013: BTM Team - UNBC JDC West '26
+014: 1st Place Trophy - UNBC BTM Team
+015: UNBC JDC West Team '26
+016: Show all 4 media
+017: Athletics Team 24/25
+018: Mar 2024 - Mar 2025 · 1 yr 1 mo
+019: Prince George, British Columbia, Canada · On-site
+020: • Member of the athletics team
+• Volunteering in multiple academics and challenge teams
+• Building connections with well-established businesses across Canada
+• Participating in a Canada-wide JDC West competition
+021: The Home Depot
+022: Permanent Part-time · 2 yrs 4 mos
+023: Prince George, British Columbia, Canada · On-site
+024: Special Service Associate
+025: Apr 2025 - Present · 1 yr 4 mos
+026: Serve as liaison between customers and Home Depot's fulfillment and services teams for large orders, deliveries, and installations. Exceeded sales targets by 7%; recipient of the Homer Award for performance and professionalism. Maintained a 94% "Likely to Shop Again" customer satisfaction score.
+027: Skills: Customer Relationship Management (CRM), Order Processing, +4 skills
+028: Retail Sales Associate
+029: Apr 2024 - Apr 2025 · 1 yr 1 mo
+030: Help customers find the products and solutions they need to complete their home improvement projects, providing fast, friendly service while maintaining knowledge of in-store promotions, product features, and store layout.
+031: Skills: Leadership, Customer Service, +4 skills
+032: Founder
+033: Roshtay – Web & AI Solutions
+034: 2025 - Present · 1 yr 7 mos
+035: Delivered 3 production client applications in a fast-paced startup environment, by managing the full project lifecycle from requirements through Git-based CI/CD deployment.
+036: ECD Programme Innovation & Digital Solutions Intern
+037: AKU Global Engagement Office · Internship
+038: Nov 2025 - Mar 2026 · 5 mos
+039: Geneva, Switzerland · Remote
+040: • Leading the redesign of the ECD Leadership Hub SharePoint site to enhance user engagement and accessibility.
+• Developing a structured and user-friendly digital database for ECD classroom assessment data.
+• Collaborating across teams to integrate technology solutions that support early childhood education programs.
+041: Certificate of Internship
+042:  SharePoint Designer, Database Design and +6 skills
+043: Program Specialist
+044: Aga Khan Development Network (AKDN), Aga Khan Schools
+045: Nov 2025 - Mar 2026 · 5 mos
+046: Eliminated 100% of paper-based data collection across 20+ international schools in 10 countries, by deploying Microsoft Forms and Power Automate workflows to automate classroom data intake and multi-level approval processes. Improved platform usability for a global network of 20+ schools, by leading end-to-end SharePoint solution design across navigation, information hierarchy, and cross-functional stakeholder workflows in a fully remote setting.
+047: University of Northern British Columbia (UNBC)
+048: 3 yrs 3 mos
+049: Intramural Official
+050: Seasonal
+051: Oct 2022 - Dec 2025 · 3 yrs 3 mos
+052: On-site
+053: Student Assistant
+054: Contract Part-time
+055: Sep 2023 - Apr 2025 · 1 yr 8 mos
+056: Prince George, British Columbia, Canada · Remote
+057: •MS Excel, MS Access, Sage Accounting, Pivot Tables
+•Achieved a 97% accuracy rate in grading
+•Provided feedback to over 200 students on assignments and projects. 
+•Conducted tests of the new MS Access and Sage Accounting system images, ensuring compatibility, functionality, and seamless integration with existing workflows. 
+•Identified and documented issues, collaborating with IT teams to resolve bugs and facilitate a smooth transition.
+058: Skills: Microsoft Access, Microsoft Excel, +4 skills
+059: Provincial Health Services Authority
+060: 8 mos
+061: Project Manager 1 Co-Op
+062: Co-op
+063: Sep 2024 - Apr 2025 · 8 mos
+064: Prince George, British Columbia, Canada · Hybrid
+065: •Standardized, optimized, and automated various Excel files across Northern BC, including store schedules, employee call logs, supervisor checklists, stock statuses, and work assignments, improving clarity, usability, and time efficiency by 30%.
+•Designed and implemented custom Excel formulas, including an alert system for supervisors to manage staffing needs due to absences and holidays, streamlining processes by 25%.
+•Cleaned and organized data by removing outdated information, enhancing key details, and ensuring ease of use for staff.
+•Reduced scheduling errors by 40% by improving operational efficiency by creating templates and workflows for weekday, weekend, night, statutory holiday, and float porter tasks, incorporating dynamic elements that adjust to staff availability.
+•Revised and enhanced 26 Standard Operating Procedures (SOPs) to align with PHSA standards, conducting hands-on testing to validate functionality and accuracy.
+•Developed and implemented Power BI dashboards to track project KPIs, budgets, and timelines, improving decision-making time by 25% and reducing reporting time by 30%.
+066: Skills: Analytical Skills, Project Management, +4 skills
+067: Project Management Intern
+068: Sep 2024 - Apr 2025 · 8 mos
+069: Reduced manual reporting cycles by 30% and accelerated decision-making by 25%, by engineering a production Power BI dashboard tracking inventory across 8 Northern BC cities (2016–2025) with DAX-driven KPIs, YoY comparison analysis, and a 5-year forecast model. Standardized and validated 6 categories of operational data files and reduced time-on-task by 30% across UHNBC departments, by implementing data cleaning, validation, and formula automation aligned to 26 SOPs. Cut scheduling errors by 40% and improved operational efficiency by 30%, by designing a fully automated Excel system with dynamic date logic and alert automation for 20+ staff across 8 position types.
+070: IT Specialist
+071: Pinar's Honey and Dry Fruit · Permanent Part-time
+072: Jul 2020 - Sep 2024 · 4 yrs 3 mos
+073: Karāchi, Sindh, Pakistan · Hybrid
+074: •Designed visually appealing social media content through Adobe Photoshop and Wondershare Filmora.
+•Managed multiple social media accounts.
+•Design database with the help of MS Access.
+•Managed inventory, tracked sales and revenue, analyzed customer data, and generated reports and charts using MS Excel.
+•Designed presentations using MS PowerPoint. 
+•Operated and Supported Web-Based Applications.
+075: Freelance Graphic Designer
+076: Freelance · Freelance
+077: Jul 2019 - Sep 2024 · 5 yrs 3 mos
+078: Remote
+079: •Designed graphical images & videos for different purposes as per the client through Adobe Photoshop and Wondershare Filmora.
+•Design webpages through Hypertext Markup Language and Adobe Dreamweaver.
+•Created websites through Weebly and WordPress.
+080: Web Developer & Graphic Designer
+081: Popatiya Enterprises · Part-time
+082: Nov 2020 - Aug 2022 · 1 yr 10 mos
+083: Karāchi, Sindh, Pakistan · Hybrid
+084: •Design webpages through Hypertext Markup Language to be used on e-commerce platforms.
+•Designed visually appealing social media content through Adobe Photoshop.
+085: Founder
+086: Mind Art · Self-employed
+087: Nov 2020 - Aug 2022 · 1 yr 10 mos
+088: Karāchi, Sindh, Pakistan
+089: Enhance with AI
+090: Soccer Coach
+091: Jahangir Memorial Football Academy · Permanent Part-time
+092: Jan 2021 - Jul 2022 · 1 yr 7 mos
+093: Karāchi, Sindh, Pakistan
+094: Train soccer to U-13 boys category
+095:  Sports Management
+096: 
+
+Projects
+097: Projects
+098: Python Security Log Analyzer
+099: Jun 2026 – Jun 2026
+100: Built a Python-based log analysis tool that classifies source IP failure patterns and flags suspicious activity. The core design decision was to reject a single-threshold detection model after evaluating its false-positive cost, and instead implement a two-tier WARNING/CONFIRMED severity model that reduces noise while maintaining detection sensitivity. The same trade-off underpins production SIEM systems. Built independently to explore how anomaly detection logic translates from theory into working code.
+101: Skills: Python (Programming Language), Log Analysis, +1 skill
+102: GitHub - ZohaibRahim/Python-Security-Log-Analyzer
+103: Security Log Alert Script
+104: Jun 2026 – Jun 2026
+105: Built a PowerShell script that automatically parses production log files and flags failure-pattern entries using alert-escalation logic. The script identifies anomalous entries and triggers tiered alerts based on pattern frequency, designed to mirror the kind of operational monitoring logic I built during my co-op at the Provincial Health Services Authority. Built as a practical bridge between system administration and security operations.
+
+106: Skills: Powershell, Log Analysis, +1 skill
+107: GitHub - ZohaibRahim/PowerShell-Script-Basic
+108: Gradified - AI-Powered Verified Hiring Platform (Founder & CEO)
+109: Feb 2026 – Apr 2026
+110: Associated with University of Northern British Columbia (UNBC)
+111: Founded and led Gradified as CEO - an original tech startup concept developed in CPSC 499 (Tech Entrepreneurship) at UNBC, focused on solving a structural problem in how employers evaluate and hire 
+early-career candidates.
+
+Role: CEO - responsible for vision, strategy, product direction, partnership development, financial modelling, and pitch delivery.
+
+The Problem:
+A significant percentage of early hires fail within the first 90 days — not because of talent shortages, but because the tools employers use to evaluate candidates are fundamentally broken. The hiring signal is unreliable.
+
+What We Built:
+A platform that shifts hiring from claims to evidence - combining verified work records with a psychometric culture-fit engine to give employers a data-driven basis for hiring decisions.
+
+My Contributions:
+- Defined the product vision and go-to-market strategy
+- Designed the business model and revenue architecture
+- Built the financial model across pessimistic, realistic, and optimistic scenarios
+- Identified and structured strategic partnership opportunities
+- Led competitive analysis and positioning
+- Delivered the full investor-style pitch presentation
+
+The full concept - including product architecture, matching engine design, pricing strategy, partnership roadmap, and financial projections - is available upon request.
+112: Skills: Analytical Skills, Problem Solving, +5 skills
+113: Gradified
+114: AKDN ECD Data Digitalization & Automation Platform
+115: Nov 2025 – Mar 2026
+116: Associated with AKU Global Engagement Office
+117: Led the design and development of a digital data infrastructure for the Early Childhood Development (ECD) programme at Aga Khan Schools, supporting operations across 20+ schools internationally.
+
+Deliverables:
+
+SharePoint Platform Redesign
+Redesigned the ECD Leadership Hub SharePoint site — restructured navigation, content architecture, and permissions to improve accessibility and usability for multi-regional stakeholders with varying technical backgrounds.
+
+Structured Assessment Database
+Designed a structured digital database for ECD classroom assessment data, standardizing data collection formats and improving data consistency and readiness for analysis across regional teams.
+
+Power Automate Workflows
+Built Microsoft Forms and Power Automate approval workflows to digitalize previously manual data collection and submission processes.
+
+Documentation & SOPs
+Produced Standard Operating Procedures to enable non-technical moderators to independently operate and maintain the platform following handover.
+
+Tools: SharePoint, Microsoft Power Automate, Microsoft Forms, Database Design
+118: Skills: SharePoint Designer, Database Design, +4 skills
+119: Certificate of Internship
+120: Interactive Power BI Resume Dashboard
+121: Jan 2026 – Jan 2026
+122: Designed and built a multi-page interactive Power BI dashboard using my own resume as the dataset — created to practice advanced Power BI features and demonstrate data storytelling in a self-directed context.
+
+Pages and features:
+
+📅 Career Timeline
+Interactive Gantt-style chart mapping every role, education entry, and leadership position from 2017 to present. Each bar includes a drill-down tooltip showing organization, dates, description, and key outcomes.
+
+📊 Projects Table
+Filterable table of all projects, organized by organization (PHSA, AKDN, UNBC, Roshtay) and tool. Includes a Tool Usage bar chart showing which tools appear most frequently across projects.
+
+📜 Certifications Tracker
+Status-based view of all Microsoft certifications — completed and in progress — with provider and issue date.
+
+📚 Course Breakdown
+All UNBC courses categorized by discipline: Data & Analytics, Systems & Networking, Business & MIS, Computer Science Core, Ethics & Professional.
+
+Tools: Microsoft Power BI, DAX, Microsoft Excel
+123: Skills: Microsoft Power BI, DAX, +5 skills
+124: Home Page
+125: Projects Page
+126: Certifications & Courses Section
+127: JobTrackr - AI-Assisted Job Application Management Platform (Enterprise-Ready Architecture)
+128: Sep 2025 – Dec 2025
+129: Associated with University of Northern British Columbia (UNBC)
+130: Designed and co-developed JobTrackr, an AI-assisted job application management platform focused on process automation, data organization, and decision support within complex job search workflows.
+
+The project emphasizes enterprise-ready system design, combining a modular front-end, secure back-end APIs, structured data storage, and an AI processing pipeline. The system supports end-to-end application tracking, AI-based resume and content analysis, and centralized status management, while maintaining clear separation of concerns and scalability.
+
+I led system integration, architecture planning, AI pipeline design, testing strategy, and project coordination across an Agile, sprint-based development cycle. The solution was developed with production-level practices, including CI pipelines, environment isolation, unit and integration testing, and documented API contracts.
+
+The platform is intentionally designed as a foundation that could later support institutional, university career services, or enterprise HR-adjacent use cases without exposing proprietary logic or business strategy.
+
+Key Contributions
+• Defined and implemented the overall system architecture, ensuring clean separation between UI, API, database, and AI services
+• Built and coordinated front-end ↔ back-end integration, including secure API contracts and data flow validation
+• Designed the AI processing pipeline, including mock-driven development to decouple testing from live AI services
+• Led end-to-end testing strategy, covering unit tests, integration tests, and CI validation
+• Established CI/CD pipelines using GitHub Actions to automate builds and test execution
+• Coordinated Agile sprints, cross-team dependencies, and integration milestones
+• Ensured the system design remained scalable, maintainable, and enterprise-compatible
+131: Skills: CI/CD & Automated Testing, PostgreSQL, +8 skills
+132: JobTrackr - Live
+133: System Architecture / Planning
+134: Early system architecture and integration planning for JobTrackr
+135: Dashboard
+136: Centralized application tracking dashboard designed for scalability
+137: Show all 5 media
+138: Other contributors
+139: Stock Market Portfolio Dashboard - Power BI Learning Project
+140: Sep 2025 – Oct 2025
+141: Associated with University of Northern British Columbia (UNBC)
+142: Designed a conceptual Power BI dashboard to replicate institutional stock portfolio reporting for senior management. The project focused on performance attribution, benchmarking, risk awareness, and market event impact, with drill-down views from portfolio to sector and security level. Emphasis was placed on executive storytelling, clarity of insights, and decision support, using industry-standard metrics such as active return, alpha, tracking error, and drawdown.
+143: Skills: Dashboard Design, Data Visualization , +8 skills
+144: Portfolio Performance Overview (Executive View)
+145: Executive-level overview of portfolio performance versus benchmark, highlighting active return, alpha, tracking error, drawdown, and key market movers. Designed to provide a quick snapshot of portfolio health and market context for decision-makers.
+146: Portfolio-Level Performance Attribution
+147: Portfolio-level attribution view using a sector treemap to visualize capital allocation and contribution to active return. Enables quick identification of overweight and underperforming sectors relative to the benchmark.
+148: Sector-Level Contribution Analysis
+149: Sector-level breakdown showing contribution to return across industries, with clear identification of top and bottom-performing sectors. Built to support relative performance analysis and portfolio rebalancing discussions.
+150: Show all 4 media
+151: Other contributors
+152: Canadian Crime Statistics Dashboard - Power BI
+153: Mar 2025 – Apr 2025
+154: Associated with University of Northern British Columbia (UNBC)
+155: This project involved designing a comprehensive and interactive Power BI dashboard to analyze Canadian crime data from 2022 and 2023. The dashboard allows users to explore trends in criminal activity across provinces, regions, and municipalities, and provides powerful insights through custom KPIs and forecasting tools.
+
+MY RESPONSIBILITIES:
+Data Transformation: Cleaned, structured, and modelled raw StatsCan data to ensure accuracy and consistency across reports.
+
+DAX Measures: Created custom DAX functions to calculate critical metrics such as:
+Charge Rate per Violent Crime
+Clearance Rate
+Crime and Violent Crime Per Capita
+
+Dashboard Design: Developed the visual layout of the reports, implemented slicers, dynamic titles, drill-down layers, and background imagery for contextual storytelling.
+
+Interactivity: Integrated slicers, filters, and cross-report interactions for a seamless user experience.
+
+Data Relationships: Built and managed relationships between multiple tables to enable a 4-level drill-down (Country → Province → Region → Municipality).
+
+KEY FEATURES:
+4-Level Drill Down: Explore crime data down to the municipality level.
+
+Forecasting: Utilized historical data to project nationwide crime trends over the next 10 years.
+
+KPIs: Real-time metrics that reflect law enforcement performance and population-adjusted crime rates.
+
+Category Drill-Throughs: From major categories (e.g., Property, Violent) to specific offences with comparative analysis across years.
+
+Demographics: Visual breakdown of in-custody offenders by gender, age, and sentence length.
+
+TOOLS & TECHNOLOGIES:
+Microsoft Power BI
+Microsoft Excel
+Adobe Photoshop
+DAX
+StatsCan Public Crime Data
+Data Modeling
+
+OUTCOME:
+The dashboard offered valuable insights for crime trend analysis, public safety planning, and policy-making considerations. It demonstrates how thoughtful design and data modelling can turn raw statistics into meaningful, interactive narratives.
+156: Skills: Dashboard Design, Business Intelligence (BI), +5 skills
+157: Dashboard Overview
+158: KPIs
+159: Crime per Capita:
+Compares total crime to population size.
+
+Violent Crime per Capita:
+Reflects violent incidents relative to the population.
+
+Total Incidents:
+Displays the overall number of reported crime incidents across Canada in 2023.
+
+Charge Rate:
+Measures the percentage of reported violent crimes that result in formal charges.
+
+Clearance Rate:
+Indicates the proportion of violent crimes resolved or cleared.
+160: 4-level Drill Down Incidents (Country → Province → Region → Municipality)
+161: This graph shows the total number of incidents by country on its initial page. By drilling down one layer, we can see the total number of incidents per province. By drilling down one more level, you can see the breakdown by region. By drilling down one more level, you can see the breakdown by city/municipality. The report has the ability to be sorted with the splicers above as well, if you want to only see a specific province, region, municipality, or category.
+162: Show all 10 media
+163: Other contributors
+164: Network Security: Threats, Challenges, and Modern Defenses
+165: Feb 2025 – Apr 2025
+166: Associated with University of Northern British Columbia (UNBC)
+167: Co-authored a research paper on network security as part of CPSC 344 — Data Communications and Networking at UNBC, in a 3-person team.
+
+Paper covered:
+- Cyber threat landscape — malware, ransomware, phishing, DoS/DDoS, insider threats
+- Real-world case studies — WannaCry (2017), SolarWinds (2020), Equifax breach (2017), Kaseya (2021)
+- Modern defense strategies — AI/ML in cybersecurity, zero-trust architecture, encryption, MFA
+- Global regulatory frameworks — GDPR, CCPA, NIST, ISO 27001, HIPAA, PCI DSS
+- Future directions — AI-powered cyberattacks, adversarial machine learning, quantum-resistant cryptography
+
+My specific contributions:
+- Wrote the Executive Summary
+- Outlined the research methodology and approach
+- Designed and delivered the final PowerPoint presentation — including all visual design, transitions, and formatting
+- Formatted the final term paper document for submission
+
+Tools: Microsoft PowerPoint, Research & Technical Writing
+168: Skills: Team Collaboration, Analytical Skills, +1 skill
+169: Network Security: Threats, Challenges, and Modern Defenses
+170: PHSA Operational Stock Inventory Dashboard
+171: Feb 2025 – Apr 2025
+172: Associated with Provincial Health Services Authority
+173: Built a production Power BI dashboard during my Project Manager Co-op at PHSA, tracking stock inventory levels across 8 Northern BC cities spanning 9 years of historical data (2016–2025).
+
+Key features:
+- City-level trend lines comparing inventory movement across Dawson Creek, Fort St John, Kitimat, Prince Rupert, Quesnel, Smithers, Terrace, and surrounding areas
+- Year-over-year bar comparisons (2016–2025)
+- City-to-city benchmarking with adjustable range sliders
+- 5-year quantity forecast model using historical trend data
+- KPI summary cards: current stock status, average stock per city, total stock across selected cities, and overall total
+- Interactive city and date filters for leadership-level reporting
+
+Outcome: Reduced manual reporting time by 30% and improved operational decision-making speed by 25% for leadership across Northern BC.
+
+Tools: Microsoft Power BI, DAX, Microsoft Excel
+174: Skills: Microsoft Power BI, DAX, +6 skills
+175: PHSA Staff Scheduling Automation System
+176: Sep 2024 – Nov 2024
+177: Associated with Provincial Health Services Authority
+178: Designed and deployed a fully automated weekly staff scheduling system in Microsoft Excel for UHNBC store operations at PHSA, used by supervisors to manage 20+ employees across 8 position types.
+
+Technical features:
+• Dynamic date header: single-cell update (cell D4) automatically updates the entire schedule header — built in response to supervisor request
+• Formula-based daily staffing gap counter: automatically calculates how many casual staff are needed per day based on absences, vacation, and statutory holidays
+• Automated CASUAL coverage alert system: flags each day as "YES" (covered) or "FILL THE SPOT!" (gap uncovered) using conditional formula logic
+• Iterative calculation formulas enabling circular reference resolution for complex staffing logic
+• Base Schedule template feeding into individual weekly sheets for consistency
+• Status code system: OFF, VAC, SICK, STAT, NA, IN LIEU — all integrated into formula logic
+• Visual coverage mapping: casual employees assigned to cover specific absent permanent staff within cell entries
+
+Outcome: Eliminated the need for manual daily gap-checking by supervisors. Part of a broader automation initiative that reduced scheduling errors by 40% and improved overall time efficiency by 30%.
+
+Tools: Microsoft Excel (Advanced), Formula Design, Conditional Logic
+179: Skills: Microsoft Excel, Analytical Skills, +4 skills
+180: Schedule Template - Fake Data
+181: Airline Database Implementation
+182: Feb 2024 – Apr 2024
+183: Associated with University of Northern British Columbia (UNBC)
+184: Collaborated with a team of five to design and implement a comprehensive relational database for an airline enterprise. Completed within a 45-day timeframe, the project involved interpreting a detailed Business Requirements Document to ensure practical database design and efficient data management. This initiative honed our skills in database architecture and team collaboration, ultimately delivering a robust solution for the client's data needs.
+185: Skills: Team Coordination, Database Management System (DBMS), +3 skills
+186: Parallelized Sorting Algorithm Implementation
+187: Mar 2024 – Apr 2024
+188: Associated with University of Northern British Columbia (UNBC)
+189: In this project, I've delved deep into the world of concurrent and distributed programming to create a sorting algorithm that operates in parallel. Leveraging the power of merge sort methodology and Java's Fork/Join framework, I've designed an algorithm capable of efficiently sorting large datasets by harnessing the computational prowess of multi-core processors and distributed systems.
+
+🔍 Project Objectives:
+1. Design and implement a parallelized sorting algorithm.
+2. Explore concurrency in sorting while gracefully handling errors and termination.
+3. Optimize performance for enhanced efficiency.
+4. Validate functionality through comprehensive testing and validation efforts.
+
+📚 Key Concepts & Technologies:
+- Merge sort methodology for parallelization.
+- Utilization of parallelism to scale with hardware resources.
+- Thorough testing and validation to ensure robustness.
+
+📈 Performance Insights:
+- Scalability and efficiency demonstrated with large datasets.
+- Concurrency approach significantly improves sorting time.
+- Graphical representations highlight the superiority of concurrent merge sort over sequential approach as data size increases.
+
+🌐 Real-World Applications:
+- Big Data Processing
+- Database Systems
+- Scientific Computing
+- Financial Trading
+- Multimedia Processing
+- E-commerce and Recommendation Systems
+
+🔍 Conclusion:
+This project not only showcases the design and implementation of a robust parallel sorting algorithm but also provides valuable insights into the challenges and benefits of concurrency in real-world applications. Through testing and validation, I've ensured the reliability and efficiency of the algorithm, paving the way for its adoption in various domains.
+
+This project allowed me to deepen my understanding of concurrency principles, synchronization mechanisms, and parallel algorithms. It was an exhilarating journey filled with challenges and learning opportunities.
+190: Skills: Parallel Programming, Java, +3 skills
+191: Comparision Graph
+192: Step-by-Step process
+193: Testing
+194: Volunteering
+195: Volunteering
+196: Founder & President
+197: UNBC Northern Ismaili Student Association
+198: Jan 2024 - Apr 2024 · 4 mos
+199: Social Services
+200: President & Co-Founder
+201: UNBC Aga Khan School Club
+202: Mar 2023 - Dec 2023 · 10 mos
+203: Social Services
+204: As President and Co-Founder of the UNBC Aga Khan School Club (AKS Club), I spearheaded initiatives aimed at providing a supportive network for students transitioning from various Aga Khan Development Network (AKDN) institutes worldwide to UNBC. Our club served as a hub for cultural exchange, friendship, and personal growth, extending a warm embrace to all students seeking connection and community on campus.
+
+Key Responsibilities & Achievements:
+
+🤝 Community Building: Lead efforts to create a vibrant and inclusive community where students from diverse backgrounds feel valued and supported. Organized social gatherings, and cultural celebrations to foster meaningful connections and friendships.
+
+🌟 Student Advocacy: Served as a voice for international students within the Northern Undergraduate Student Society (NUGSS) and UNBC administration, advocating for resources and support tailored to their unique needs and challenges.
+
+🎓 Educational Programming: Collaborate with club members to develop engaging workshops, seminars, and informational sessions to enhance academic success, cultural competency, and professional development among students.
+
+🌐 Global Engagement: Cultivate partnerships with other student organizations, and community stakeholders to promote cross-cultural understanding and global citizenship. Organize collaborative projects and initiatives that leverage the diverse perspectives and talents of our members.
+
+💡 Innovation & Growth: Drive strategic planning and innovation to expand the reach and impact of the AKS Club. Implement feedback mechanisms and assessment tools to continuously improve our programs and services in response to evolving student needs and interests.
+205: Head Of Training Department
+206: Ismaili Nizari Scouts Group
+207: Oct 2008 - Dec 2023 · 15 yrs 3 mos
+208: Education
+209: -Training the youth as per the curriculum.
+-Participated in activities related to Sustainable Development Goals, Scouts for SDGs, Covid-19 Awareness Program, Cleanliness Drive in Chitral - Ismaili Civic Day, Jamboree on the Air, Jamboree on the Internet (JOTA-JOTI), National Hikes, and Scout camps.
+210: Presiding Officer
+211: UNBC Northern Ismaili Student Association
+212: Apr 2024 · 1 mo
+213: Social Services
+214: Event Coordinator
+215: Initiative For Global Empathy
+216: 2019 - Present · 7 yrs 7 mos
+217: Social Services
+218: Covid-19 Awareness Program, Mindfulness and mental health Sessions for community youth and women, Series of webinars on gender & sexuality equality and inclusion, Plantation and Cleanliness Drive
+219: Facilitator
+220: Global Encounters Programme
+221: Jul 2021 · 1 mo
+222: Civil Rights and Social Action
+223: Global Encounters is an international programme for Ismaili Muslim adolescent youth focused on service, leadership development, culture, and global citizenship.
+I was part of the Global Encounters Camp Connect 2021.
+224: Community Volunteer
+225: Family Educational Services Foundation
+226: 2017 - 2017 · Less than a year
+227: Social Services
+228: 89 Hours of Community Services in the Motivated Volunteer Empowerment Program
+Exceptional Contributions To the MOVE Program's Citizenship Award Ceremony 2017
+229: Board Member
+230: Aga Khan Youth and Sports Board for Area Committee Nizari
+231: Jul 2017 - Jun 2019 · 2 yrs
+232: Health
+233: Teacher
+234: Community Education Center
+235: 2021 - 2022
+236: Notetaker
+237: University of Northern British Columbia (UNBC)
+238: Sep 2023 - Dec 2023 · 4 mos
+239: Education
+
+================================================================================
+C:\Users\rahim\OneDrive\Desktop\UNBC\Personal Website\Assets\Resume\ZOHAIB_RAHIM_Master_Resume (2).docx
+================================================================================
+000: ZOHAIB RAHIM
+001: Computer Science Student  |  Data Analytics & Automation  |  Project Management
+002: (778) 847-2562  |  zrahim@unbc.ca  |  linkedin.com/in/zohaibrahim  |  github.com/zohaibrahim
+003: PROFESSIONAL SUMMARY
+004: Final-year Computer Science co-op student (UNBC, April 2027) with a co-op track record of measurable operational impact – 40% scheduling error reduction at the Provincial Health Services Authority and 100% paper-based collection eliminated across 20+ global schools at the Aga Khan University. Combines production-level Power BI dashboards, Excel automation, and process engineering with hands-on security scripting; 1st place, Business Technology Management, JDC West 2026.
+005: CORE COMPETENCIES
+006: Analytics & BI: Power BI (DAX, KPI dashboards, 5-yr forecasting, trend analysis), Excel (Advanced – automation, pivot tables, complex formulas, alerts), SQL, MS Access (Advanced)
+007: Engineering & Automation: Python (log parsing, classification), PowerShell (log alerting, AD/GPO scripting), Java, C++, TypeScript, Node.js, Angular, PostgreSQL, Express.js, HTML, Power Automate, GitHub Actions CI/CD
+008: Security: Active Directory basics (TryHackMe certified, June 2026), Security Procedure & Playbook Documentation, Log Analysis & Alert Triage, Regulatory Frameworks (GDPR, PIPEDA)
+009: Cloud & DevOps: Microsoft Azure, Vercel, SharePoint, Microsoft Fabric (in progress), Microsoft 365, Microsoft Forms
+010: AI & Dev Tools: Claude Code, Stitch, Perplexity, GitHub, Postman, pgAdmin
+011: Design & Media: Adobe Photoshop (Advanced), Adobe Premiere Pro, Wondershare Filmora, WordPress, Weebly, UX/UI Design
+012: Professional: Project Management, Business Analysis, SOP Development, Stakeholder Reporting, Process Automation, Knowledge Management, Cross-functional Collaboration
+013: Languages: English, Urdu, Khowar (native)  |  Hindi, Punjabi, Gujarati (proficient)  |  Spanish, French (elementary)
+014: PROFESSIONAL EXPERIENCE
+015: Aga Khan University  –  Remote – Geneva	Nov 2025 – Mar 2026
+016: ECD Programme Innovation & Digital Solutions Intern
+017: Improved platform accessibility and content discoverability for 20+ international schools in 10 countries, by leading end-to-end redesign of the ECD Leadership Hub SharePoint site – restructuring navigation architecture, information hierarchy, and stakeholder workflows.
+018: Eliminated paper-based data collection across 20+ schools in 10 countries, by designing a structured digital assessment database and deploying Microsoft Forms and Power Automate workflows to automate ECD classroom data intake and multi-level approval processes.
+019: Delivered zero-dependency platform continuity post-handover, by producing comprehensive SOPs enabling non-technical moderators to independently operate and maintain all platform functions.
+020: Provincial Health Services Authority (PHSA)  –  Northern BC – Hybrid	Sep 2024 – Apr 2025
+021: Project Manager 1  |  Co-op
+022: Reduced manual reporting cycles by 30% and accelerated decision-making by 25%, by engineering a production Power BI dashboard tracking stock inventory across 8 Northern BC cities (2016–2025) – DAX-driven KPI cards, YoY comparisons, city-level benchmarking, and a 5-year quantity forecast model.
+023: Cut scheduling errors by 40% and improved operational efficiency by 30%, by designing a fully automated weekly Excel scheduling system – dynamic date headers (single-cell update), formula-based daily gap counters, and an automated alert trigger for 20+ employees across 8 position types.
+024: Standardized 6 categories of operational Excel files (schedules, call logs, checklists, stock statuses, assignments), eliminating manual rework and reducing time-on-task by 30% across UHNBC departments.
+025: Achieved 100% documentation compliance across all operational roles, by reviewing and validating 26 SOPs against PHSA standards through hands-on testing and cross-team coordination.
+026: Roshtay – Web & AI Solutions  –  roshtay.com  |  Remote	Apr 2026 – Present
+027: Founder
+028: Launched and scaled a production web & AI solutions studio with 3 live client applications, by executing a structured multi-tool workflow: Perplexity (research) → Claude (design) → Stitch (UI) → Claude Code (dev) → GitHub/Vercel (CI/CD deployment).
+029: University of Northern British Columbia  –  Prince George, BC	Sep 2023 – Apr 2025
+030: Student Assistant & Course Marker  |  MS Excel, MS Access, Sage Accounting, Pivot Tables
+031: Maintained 97% grading accuracy across 200+ students; validated MS Access and Sage Accounting system images before deployment and coordinated IT resolution for flagged issues.
+032: Home Depot Canada  –  Prince George, BC	Apr 2024 – Present
+033: Special Service Associate  |  Retail Sales Associate
+034: Exceeded individual sales targets by 7% and sustained a 94% ‘Likely to Shop Again’ customer satisfaction score; received the Homer Award for professionalism and outstanding performance.
+035: Maintained an 81% GET score while serving as liaison between customers and fulfillment/services teams for large orders, deliveries, and vendor-coordinated installations.
+036: Pinar’s Honey and Dry Fruits  –  Pakistan – Hybrid	Jul 2020 – Apr 2024
+037: IT Specialist
+038: Reduced data retrieval time by ~60% by redesigning relational database architecture in MS Access; managed inventory tracking, sales reporting, and customer analytics using Excel – contributing to a ~30% increase in sales performance.
+039: Grew social media engagement by 90% through content creation, account management, and marketing materials designed using Adobe Photoshop and Wondershare Filmora.
+040: Independent Freelancer  –  Remote	Jul 2019 – Dec 2023
+041: Web Developer & Graphic Designer
+042: Achieved 94% client satisfaction rate across all engagements, generating 15 repeat clients; increased social media engagement by 70% on designed content.
+043: Boosted e-commerce conversion rates by 70% through improved website design and UX optimization for client Popatiya Enterprises (Nov 2020 – Aug 2022).
+044: Grew social media engagement by 45% through visually compelling content produced for Kaamnoosh (Sep 2020 – Jan 2021).
+045: Walmart Canada  –  Pakistan	Dec 2022 – Apr 2023
+046: Front-End Associate
+047: Maintained 94% transaction accuracy and 86% customer satisfaction score in a high-volume front-end environment.
+048: Mind Art  –  Pakistan – Remote	Nov 2020 – Present
+049: Founder
+050: Founded and led Mind Art, a creative design initiative producing digital content, graphic design, and community engagement materials – managing end-to-end creative production and client relations since 2020.
+051: Jahangir Memorial Football Academy  –  Pakistan	Jul 2021 – 2023
+052: Coach – Under-10 Division  |  Captain – Under-19 & Senior Club
+053: Developed and delivered structured training programs as head coach of the Under-10 division, while serving as team captain for Under-19 and Senior Club teams across district-level competitive tournaments.
+054: PROJECTS – FULL PORTFOLIO
+055: Analytics & Business Intelligence
+056: PHSA Stock Inventory Dashboard (Power BI, DAX, Excel) – Production dashboard tracking inventory across 8 Northern BC cities (2016–2025); city-level trends, YoY comparisons, 5-year quantity forecast, and KPI cards – reduced reporting cycle by 30%.
+057: Canadian Crime Statistics Dashboard (Power BI, DAX, Excel) – Interactive 4-level geographic drill-down (Country → Province → Region → Municipality); custom DAX measures: crime per capita, clearance rate, charge rate; 10-year forecast and demographic breakdowns.
+058: Stock Market Portfolio Dashboard (Power BI, DAX) – Executive-style portfolio dashboard with portfolio → sector → security drill-downs; visualized active return, alpha, tracking error, and drawdown with emphasis on decision-support storytelling.
+059: Power BI Resume Dashboard (Power BI, DAX) – Multi-page self-directed dashboard of own resume: career timeline with drill-down tooltips, filterable project table, tool usage charts, certifications tracker, and course breakdown by category.
+060: PHSA Operational Reporting Dashboard (Power BI, Excel) – Dashboards and structured reports visualizing staffing, schedules, and operational metrics supporting healthcare decision-making at UHNBC.
+061: Full-Stack & Software Engineering
+062: JobTrackr – Application Tracking Platform (PostgreSQL, Node.js, Express.js, Angular (TypeScript), GitHub Actions, Postman, pgAdmin) – Co-developed a full-stack enterprise-ready application tracking platform with AI pipeline, CI/CD, and production-level architecture; led system integration, architecture planning, and testing strategy.
+063: Gradified – Verified Hiring Platform (CPSC 499 – Tech Entrepreneurship (CEO)) – Founded and pitched an original B2B SaaS startup replacing resumes with verified capability records and psychometric culture-fit matching; built full business model, financial projections, and investor pitch.
+064: Parallelized Sorting Algorithm (Java – Fork/Join Framework) – Implemented parallel merge sort using Java’s Fork/Join concurrency framework; demonstrated significant runtime reduction on large datasets versus sequential approach.
+065: Machine Learning & Data Science
+066: Credit Card Fraud Detection (Python, Scikit-learn, TensorFlow, SMOTE – CPSC 473) – Co-developed Logistic Regression and MLP classifiers with a project partner on an imbalanced real-world Kaggle dataset (284,807 transactions); led precision-recall trade-off analysis identifying MLP as best-performing model with fewest false positives.
+067: Operations & Management Science Case Study (Excel, Quantitative Methods) – Applied quantitative and analytical methods to real-world operational decision scenarios, producing data-driven recommendations.
+068: Database & Information Systems
+069: Airline Database System (SQL, MS Access) – Designed ER diagrams, relational schemas, normalization, and SQL queries for an airline management system in a 5-person team within a 45-day academic timeline.
+070: PHSA Excel Automation & SOP Templates (Excel, Advanced Formulas) – Built automation templates with data validation, alert systems, and documentation standards; aligned files with 26 SOPs to ensure consistent usage across UHNBC departments.
+071: Digital Transformation & Platforms
+072: AKDN ECD Data Digitalization Platform (SharePoint, Power Automate, Microsoft Forms) – Translated requirements from 20+ international schools into a structured digital assessment system: SharePoint platform, automated data collection workflows, approval automation, and assessment database.
+073: AKDN ECD Leadership Hub Redesign (SharePoint) – Redesigned AKDN’s enterprise SharePoint site for 20+ schools globally, restructuring navigation, information hierarchy, and stakeholder workflows for improved accessibility.
+074: Roshtay.com – Web & AI Solutions Studio (Claude Code, Stitch, Perplexity, Vercel, GitHub) – Built and launched a live client-facing web and AI solutions studio using a structured multi-tool workflow; 3 production client demo applications deployed.
+075: Networking & Security
+076: Network Security Analysis Report (Research, Literature Review) – Co-authored a comprehensive report on cybersecurity threats, defence strategies, regulatory frameworks (GDPR, PIPEDA), and future trends in enterprise network protection.
+077: Security Log Alert Script (PowerShell) – Built an automated log-parsing script to flag failure-pattern entries from production log data, applying alert-escalation logic consistent with a production scheduling system built at the Provincial Health Services Authority.
+078: Security Log Analyzer (Python) – Built a log-analysis tool classifying source IP failure patterns using a self-designed two-tier WARNING/CONFIRMED severity model, after evaluating the false-positive trade-off of single-threshold detection.
+079: EDUCATION
+080: Bachelor of Science, Computer Science	Expected April 2027
+081: University of Northern British Columbia  |  Prince George, BC  |  Co-op Program
+082: Minors: Management Information Systems  |  Philosophy
+083: Relevant Coursework: Computer Programming I & II, Data Structures, Operating Systems, Algorithm Analysis and Development, Introduction to Concurrent and Distributed Programming, Data Communications and Networking, Computer Organization and Architecture, Introduction to Database Systems, Introduction to Business Intelligence, Intro to Data Mining, Applied Machine Learning, Software Engineering I, Introduction to Statistics, Ethics in Computing Science, Business and Professional Ethics, Introduction to Management Science, Production and Operations Management, Tech Entrepreneurship, Intro to Marketing, Applied Business Computing, Introduction to Psychology I, Calculus I, Linear Algebra
+084: Higher Secondary Certificate (HSC)	2021
+085: Aga Khan Higher Secondary School  |  Karachi, Pakistan  |  GPA: 89.5%  |  General Science (Computer, Math, Physics)
+086: O Level (Cambridge)	2019
+087: The Academy School  |  Karachi, Pakistan  |  GPA: 75%  |  Computer Science & Mathematics
+088: CERTIFICATIONS
+089: TryHackMe: Active Directory Basics  [Completed, June 2026]
+090: Microsoft – Explore Core Data Concepts  [Completed]
+091: Microsoft – Explore Data Roles & Services  [Completed]
+092: Microsoft – Introduction to Azure Data Core Concepts  [Completed]
+093: Microsoft – Explore Fundamental Relational Data Concepts  [Completed]
+094: Microsoft – PL300  [In Progress]
+095: ISC2 Certified in Cybersecurity (CC)  [Planned]
+096: IELTS Academic: 7.5  (Expired Jan 2024)
+097: International Kangaroo Mathematics Contest – Cadet Level  |  High Achiever & T-Shirt Winner (2016)
+098: HRE (Community Studies)  [Passed, 2021]
+099: LEADERSHIP, RECOGNITION & COMPETITIONS
+100: JDC West – UNBC
+101: 1st Place, Business Technology Management, JDC West 2026 – UNBC’s first BTM podium in 19 years; case theme: post-acquisition IT modernization – designed a hybrid system upgrade within budget constraints and a structured change management plan for employee adoption.
+102: Director of CHAD (2025–26)  |  Business Technology Delegate (2026–27)  |  Athletics Team (2024–25).
+103: Achieved 75% win rate in internal mock competitions (3 of 4), consistently delivering top-ranked strategic recommendations and technical architectures under 3-hour constraints.
+104: Fundraised $56,000+ (2025–26) and $93,000+ (2024–25) for Spirit of the North Healthcare Foundation; completed 10 community volunteer hours per cycle.
+105: University of Northern British Columbia
+106: President & Founder – Northern Ismaili Student Association (2023–24).
+107: President & Co-Founder – Aga Khan School Students’ Club (2023).
+108: Note Taker – UNBC Academic Resource Center (2023).
+109: Intramural Official (2022–2025).
+110: Scouting – Ismaili Nizari Scouts (2008–2023)
+111: Head of Training Team & Assistant Scout Leader (2016–2023); organized Ignite Overnight Camps, National Hikes, and district competitions.
+112: Scout of the Year ×2  |  Best Camper  |  Flag of Honour  |  Token of Appreciation  |  89 hrs Community Service (MOVE Program).
+113: Rank Badges: Membership, Hamdam, Istaqlal (Rovers); Yakeen (Boy Scouts).
+114: National & International Participation: JOTA-JOTI, National Desert Hike, Scouts for SDGs, Scout Go Solar, Tide Turner Plastic Challenge, World Scout Environment Program Badge.
+115: GLOBAL VOLUNTEERING & COMMUNITY
+116: Event Coordinator & Organizer – Initiative for Global Empathy (2019–Present): Led COVID-19 awareness programs, mindfulness/mental health sessions for community youth and women, gender & sexuality equality webinar series, plantation drives, and cleanliness campaigns.
+117: Facilitator – Global Encounters: Connect Camp, AKDN (2021).
+118: Teacher & HRE Assistant Coordinator – Nizari Community Education Center (2021–Present).
+119: Board Member – Aga Khan Youth & Sports Area Committee (2017–2019)  |  Audio & Visual Department, Nizari Community Education Center (2017–2019).
+120: 1st Place – Thirst of Knowledge Inter-Institutional Charts & Model Competition (Community Level).
+121: Exceptional Contributions Award – MOVE Program’s Citizenship Award Ceremony 2017, Family Education Services Foundation.
+122: Academic & Curricular Competitions
+123: Model United Nations – Iqra University MUN: Honourable Mention (2017), Delegate (2016); Destiny MUN V, Whales College: Delegate (2017).
+124: 1st IT Webinar & Quiz Competition – 5th place, Aga Khan Higher Secondary School (2020).
+125: Represented Sindh in Pentathlon Olympics – 5th place nationally, National Federation of Pakistan.
+126: Sports & Athletics
+127: Football Captain – AKHS College Team (2019–21); Jahangir Memorial Football Academy U-19 & Senior Club; School Football Team, The Academy (2017–19).
+128: Baitussalam Olympiad 2020 – 2nd in Football, 2nd in Volleyball, Participated in Athletics.
+129: College Sports Society Coordinator – AKHS (2019–20)  |  Class Representative (2019–20).
+130: Inter-House Football Tournament – 1st Place, The Academy School (2015–16)  |  Annual Sports Day 1st Place (2019).
+131: MASTER RESUME – Complete information bank. Trim to 1–2 pages per JD by selecting the most relevant sections. Verified items only – do not add unverified claims.
+

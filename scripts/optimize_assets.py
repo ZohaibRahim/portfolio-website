@@ -155,7 +155,7 @@ def make_og_card():
         px_start += w + pad_x * 2 + 12
 
     # URL/handle bottom right
-    d.text((W - 340, H - 60), "zohaibrahim.com", fill=(140, 160, 190), font=_f(22))
+    d.text((W - 380, H - 60), "zohaibrahim.vercel.app", fill=(140, 160, 190), font=_f(22))
 
     im.save(dst, "PNG", optimize=True)
     print(f"og-card.png written ({os.path.getsize(dst)//1024} KB @ {W}x{H})")
