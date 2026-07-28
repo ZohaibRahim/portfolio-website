@@ -17,7 +17,8 @@
       "Bash(python -m pip install Pillow)",
       "Bash(python *)",
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:5502/__TRACKED_VAR__)",
-      "Bash(curl -s http://localhost:5503/index.html)"
+      "Bash(curl -s http://localhost:5503/index.html)",
+      "Bash(curl -s http://localhost:5505/index.html)"
     ]
   }
 }
