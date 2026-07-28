@@ -3,8 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Zohaib Rahim | Portfolio</title>
+<title>Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio</title>
 <meta name="description" content="Final-year Computer Science co-op student building practical technology for data analytics, digital transformation, business systems, and full-stack engineering.">
+<meta name="author" content="Zohaib Rahim">
+<meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://zohaibrahim.com/">
+
+<!-- Favicon: inline SVG ZR monogram -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232563EB'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Manrope,Inter,sans-serif' font-size='30' font-weight='800' fill='white'>ZR</text></svg>">
+<link rel="apple-touch-icon" href="Assets/Icons/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zohaibrahim.com/">
+<meta property="og:title" content="Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio">
+<meta property="og:description" content="Practical technology for real operational needs. Data analytics, digital transformation, business systems, full-stack engineering.">
+<meta property="og:image" content="Assets/Images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zohaib Rahim — Final-year Computer Science co-op portfolio">
+<meta property="og:locale" content="en_CA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio">
+<meta name="twitter:description" content="Practical technology for real operational needs. Data + digital + delivery.">
+<meta name="twitter:image" content="Assets/Images/og-card.png">
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zohaib Rahim",
+  "jobTitle": "Computer Science Co-op Student",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Northern British Columbia"
+  },
+  "address": { "@type": "PostalAddress", "addressRegion": "British Columbia", "addressCountry": "Canada" },
+  "email": "mailto:zrahim@unbc.ca",
+  "url": "https://zohaibrahim.com/",
+  "sameAs": [
+    "https://linkedin.com/in/zohaibrahim",
+    "https://github.com/zohaibrahim"
+  ],
+  "knowsAbout": ["Power BI", "DAX", "Python", "Angular", "Node.js", "SharePoint", "Power Automate", "PostgreSQL", "Data Analytics", "Digital Transformation", "Business Systems", "Full-Stack Engineering"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -191,7 +240,37 @@
   .modal-open { overflow: hidden; }
 
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-  .cursor-blink { animation: blink 0.9s infinite; display: inline-block; margin-left: 2px; }
+  .cursor-blink {
+    animation: blink 0.9s infinite;
+    display: inline-block;
+    margin-left: 3px;
+    width: 3px;
+    height: 0.9em;
+    vertical-align: middle;
+    background-color: currentColor;
+    border-radius: 1px;
+  }
+
+  /* Skip link — visible only on focus */
+  .skip-link {
+    position: absolute; top: -100px; left: 8px; z-index: 200;
+    background: #2563EB; color: #fff; padding: 10px 16px;
+    border-radius: 8px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus { top: 12px; outline: 2px solid #fff; outline-offset: 2px; }
+
+  /* Nav scroll-spy active-link state (JS-toggled). Overrides the default underline color for the currently-visible section. */
+  .nav-link.is-active {
+    color: #2563EB;
+    border-bottom: 2px solid #2563EB;
+  }
+  .dark .nav-link.is-active {
+    color: #60A5FA;
+    border-bottom-color: #60A5FA;
+  }
+  .nav-link { transition: color 0.2s ease; border-bottom: 2px solid transparent; padding-bottom: 4px; }
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -205,6 +284,19 @@
     font-family: 'Inter', sans-serif;
   }
   .skill-tag-list { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+  /* Coursework tags can hold long, multi-word course names and must wrap
+     inside their category card instead of being clipped. */
+  .skill-tag-course {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    padding: 8px 12px;
+    min-height: 32px;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 
   .skill-tag-data     { border-color: #B8CDFB; background-color: #EEF4FF; color: #1D4ED8; }
   .skill-tag-digital  { border-color: #A7DDD4; background-color: #ECF9F6; color: #0F766E; }
@@ -272,16 +364,18 @@
 </head>
 <body class="bg-page-bg-light dark:bg-page-bg-dark text-on-surface dark:text-text-primary-dark antialiased transition-colors duration-300">
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-page-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
   <div class="flex justify-between items-center h-20 px-gutter-mobile md:px-gutter-desktop max-w-container-max mx-auto">
     <a class="flex items-center gap-3" href="#hero" aria-label="Zohaib Rahim — Home">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold text-sm shadow-lg shadow-primary/20">ZR</div>
     </a>
     <div class="hidden md:flex items-center gap-8" role="navigation">
-      <a class="text-primary dark:text-primary-dark font-semibold border-b-2 border-primary dark:border-primary-dark pb-1 transition-all text-[15px]" href="#hero">Home</a>
-      <a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-colors font-medium text-[15px]" href="#projects">Work</a>
-      <a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-colors font-medium text-[15px]" href="#experience">Experience</a>
-      <a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-colors font-medium text-[15px]" href="#about">About</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#hero" data-nav-for="hero">Home</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#projects" data-nav-for="projects">Work</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#experience" data-nav-for="experience">Experience</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#about" data-nav-for="about">About</a>
     </div>
     <div class="flex items-center gap-4">
       <button aria-label="Toggle theme" class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-colors text-2xl" id="theme-toggle" title="Theme">dark_mode</button>
@@ -293,7 +387,7 @@
   </div>
 </nav>
 
-<main class="mt-20">
+<main class="mt-20" id="main">
 
 <!-- HERO -->
 <section class="relative grid-bg overflow-x-hidden min-h-[calc(100vh-80px)] flex items-center" id="hero">
@@ -308,22 +402,26 @@
       <h1 class="font-hero-lg text-4xl md:text-6xl lg:text-7xl leading-[1.1] font-[800] tracking-tight">Zohaib Rahim</h1>
       <div class="h-10 md:h-12" aria-live="polite" aria-atomic="true">
         <p class="text-xl md:text-3xl font-bold text-[#2563eb] dark:text-[#60a5fa] font-headline-card">
-          <span id="typewriter-text">Building Better Systems.</span><span class="cursor-blink" aria-hidden="true">|</span>
+          <span id="typewriter-text">Building Better Systems.</span><span class="cursor-blink" aria-hidden="true"></span>
         </p>
       </div>
       <p class="font-body-lg text-[16px] md:text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-xl leading-relaxed">
         Final-year Computer Science co-op student creating practical technology for real operational needs.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a class="bg-primary text-on-primary px-8 py-3.5 rounded-xl font-bold hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95 flex items-center gap-2 text-[15px]" href="#projects">
+        <a class="bg-primary text-on-primary px-8 py-3.5 rounded-xl font-bold hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95 flex items-center gap-2 text-[15px]" href="Assets/Resume/Zohaib%20Rahim%20Resume%20Portfolio.pdf" target="_blank" rel="noopener noreferrer" id="hero-resume">
+          <span class="material-symbols-outlined text-[18px]">description</span> View Resume
+        </a>
+        <a class="border border-border-light dark:border-border-dark text-on-surface dark:text-text-primary-dark px-8 py-3.5 rounded-xl font-bold hover:bg-surface-container dark:hover:bg-white/5 transition-all active:scale-95 flex items-center gap-2 text-[15px]" href="#projects">
           Explore My Work <span class="material-symbols-outlined text-[18px]">north_east</span>
         </a>
-        <a class="border border-border-light dark:border-border-dark text-on-surface dark:text-text-primary-dark px-8 py-3.5 rounded-xl font-bold hover:bg-surface-container dark:hover:bg-white/5 transition-all active:scale-95 flex items-center gap-2 text-[15px]" href="Assets/Resume/Zohaib%20Rahim%20Resume%20Portfolio.pdf" target="_blank" rel="noopener noreferrer" id="hero-resume">
-          View Resume <span class="material-symbols-outlined text-[18px]">description</span>
-        </a>
       </div>
-      <div class="flex items-center gap-4 text-text-muted-light dark:text-text-secondary-dark font-body-base text-[14px] italic border-l-2 border-primary/30 pl-4 py-1">
-        BC, Canada <span style="font-style: normal;">•</span> Open to co-op, internship, and early-career opportunities
+      <div class="space-y-2 text-text-muted-light dark:text-text-secondary-dark font-body-base text-[14px] border-l-2 border-primary/30 pl-4 py-1">
+        <div class="italic">BC, Canada <span style="font-style: normal;">•</span> Open to co-op, internship, and early-career opportunities</div>
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+          <span class="font-label-technical uppercase tracking-widest text-[11px] font-bold text-primary dark:text-primary-dark">Looking for</span>
+          <span>analytics engineering, business systems, and product-focused SWE roles</span>
+        </div>
       </div>
     </div>
 
@@ -338,7 +436,7 @@
           <div class="p-8 space-y-6">
             <div class="flex flex-col items-center text-center space-y-4">
               <div class="w-[240px] rounded-xl bg-slate-100 dark:bg-slate-800 border border-border-light dark:border-border-dark shadow-inner overflow-hidden" style="aspect-ratio: 4/5;">
-                <img src="Assets/Images/Zohaib_Rahim_Headshot.jpg" alt="Zohaib Rahim professional headshot" class="w-full h-full" style="object-fit: cover; object-position: center top;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center text-center p-4 h-full\'><span class=\'material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600\'>account_circle</span><span class=\'text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-wider\'>Professional Headshot — 4:5</span></div>';">
+                <img src="Assets/Images/Zohaib_Rahim_Headshot.jpg" alt="Zohaib Rahim professional headshot" class="w-full h-full" style="object-fit: cover; object-position: center 25%;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center text-center p-4 h-full\'><span class=\'material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600\'>account_circle</span><span class=\'text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-wider\'>Professional Headshot — 4:5</span></div>';">
               </div>
               <div class="grid grid-cols-2 gap-4 w-full">
                 <div class="p-4 rounded-2xl bg-surface-container-lowest dark:bg-slate-900/40 border border-border-light dark:border-border-dark space-y-2">
@@ -353,10 +451,10 @@
             </div>
           </div>
         </div>
-        <div class="absolute -right-4 z-20 top-0">
+        <div class="absolute -right-4 z-20 top-4">
           <div class="enterprise-card px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 border-l-4 border-l-primary cursor-default dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)]">
             <div class="text-on-surface dark:text-text-primary-dark font-[800] text-xl">20+</div>
-            <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-widest leading-none">International<br>schools supported</div>
+            <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-widest leading-none">Intl. schools<br>supported</div>
           </div>
         </div>
         <div class="absolute bottom-4 z-20 -left-10">
@@ -415,13 +513,18 @@
       <p class="text-text-secondary-light dark:text-text-secondary-dark mt-4 text-[16px]">Explore practical work across analytics, business systems, automation, and software engineering.</p>
     </div>
     <div class="mb-16">
-      <div class="flex flex-col md:flex-row justify-center gap-2 p-1.5 bg-surface-container-low dark:bg-slate-900/40 rounded-2xl max-w-4xl mx-auto border border-border-light dark:border-border-dark" role="tablist" aria-label="Project categories">
-        <button aria-controls="tab-data" aria-selected="true" tabindex="0" class="project-tab-btn flex-1 px-4 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 tab-btn-active" id="btn-data" data-tab="data" role="tab">Data, BI &amp; Analytics</button>
-        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-4 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab">Digital Transformation &amp; Business Systems</button>
-        <button aria-controls="tab-software" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-4 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-software" data-tab="software" role="tab">Software &amp; Full-Stack Engineering</button>
+      <div class="flex flex-col md:flex-row justify-center gap-2 p-1.5 bg-surface-container-low dark:bg-slate-900/40 rounded-2xl max-w-2xl mx-auto border border-border-light dark:border-border-dark" role="tablist" aria-label="Project categories">
+        <button aria-controls="tab-data" aria-selected="true" tabindex="0" class="project-tab-btn flex-1 px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 tab-btn-active" id="btn-data" data-tab="data" role="tab">Data</button>
+        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab">Digital</button>
+        <button aria-controls="tab-software" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-software" data-tab="software" role="tab">Software</button>
       </div>
       <div class="mt-8 flex flex-col items-center max-w-4xl mx-auto gap-6">
-        <div class="text-center w-full">
+        <div class="text-center w-full space-y-1">
+          <div class="font-label-technical text-[11px] font-bold uppercase tracking-[0.25em] text-primary dark:text-primary-dark">
+            <span id="tab-heading-data">Data, BI &amp; Analytics</span>
+            <span id="tab-heading-digital" class="hidden">Digital Transformation &amp; Business Systems</span>
+            <span id="tab-heading-software" class="hidden">Software &amp; Full-Stack Engineering</span>
+          </div>
           <p class="text-[14px] text-text-muted-light dark:text-text-secondary-dark" id="tab-desc-data">Dashboards, data modelling, machine learning, forecasting, and decision-support systems.</p>
           <p class="text-[14px] text-text-muted-light dark:text-text-secondary-dark hidden" id="tab-desc-digital">Workflow automation, SharePoint platforms, operational systems, documentation, and process redesign.</p>
           <p class="text-[14px] text-text-muted-light dark:text-text-secondary-dark hidden" id="tab-desc-software">Full-stack applications, databases, scripting, concurrency, testing, integration, and CI/CD.</p>
@@ -440,7 +543,7 @@
         <!-- Flagship: PHSA Stock Inventory Dashboard -->
         <div aria-label="View case study for PHSA Stock Inventory Dashboard" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden group flex flex-col lg:flex-row" data-project-id="phsa-dashboard" role="button" tabindex="0">
           <div class="lg:w-1/2 aspect-video bg-slate-100 dark:bg-slate-900/60 overflow-hidden border-b lg:border-b-0 lg:border-r border-border-light dark:border-border-dark">
-            <img alt="PHSA Stock Inventory Dashboard screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Assets/Images/PHSA_Stock_Dashboard.png">
+            <img alt="PHSA Stock Inventory Dashboard screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Assets/Images/PHSA_Stock_Dashboard.jpg" loading="lazy">
           </div>
           <div class="lg:w-1/2 p-10 flex flex-col justify-between">
             <div class="space-y-4">
@@ -494,6 +597,19 @@
                 <span class="skill-tag skill-tag-data">Power BI</span>
                 <span class="skill-tag skill-tag-data">Dashboard Design</span>
                 <span class="skill-tag skill-tag-data">Performance Analytics</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for LLM Jailbreak Detection" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="jailbreak-detection" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Independent Research</span>
+              <h4 class="font-bold font-headline-card text-lg">LLM Jailbreak Detection</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Layer-wise probe classifiers and representation analysis.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-data">Python</span>
+                <span class="skill-tag skill-tag-data">Representation Engineering</span>
+                <span class="skill-tag skill-tag-data">Probe Classifiers</span>
               </div>
             </div>
             <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
@@ -573,7 +689,7 @@
         <!-- Flagship: JobTrackr -->
         <div aria-label="View case study for JobTrackr" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden group flex flex-col lg:flex-row" data-project-id="jobtrackr" role="button" tabindex="0">
           <div class="lg:w-1/2 aspect-video bg-slate-100 dark:bg-slate-900/60 overflow-hidden border-b lg:border-b-0 lg:border-r border-border-light dark:border-border-dark">
-            <img alt="JobTrackr application dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Assets/Images/Jobtrackr/Jobtrackr.png">
+            <img alt="JobTrackr application dashboard" class="w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700" src="Assets/Images/Jobtrackr/Dashboard.jpg" loading="lazy">
           </div>
           <div class="lg:w-1/2 p-10 flex flex-col justify-between">
             <div class="space-y-4">
@@ -590,6 +706,27 @@
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div aria-label="View case study for Roshtay" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden flex flex-col group" data-project-id="roshtay" role="button" tabindex="0">
+            <div class="aspect-video bg-slate-900 overflow-hidden border-b border-border-light dark:border-border-dark">
+              <img alt="Roshtay AI Operations platform website" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" src="Assets/Images/Roshtay_Website.jpg" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2">
+                  <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Founded • Live Product</span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400"></span>Live</span>
+                </div>
+                <h4 class="font-bold font-headline-card text-lg">Roshtay — AI Operations Platform</h4>
+                <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">AI systems for accounting, consulting, and service firms.</p>
+                <div class="pt-2 skill-tag-list">
+                  <span class="skill-tag skill-tag-software">Product Development</span>
+                  <span class="skill-tag skill-tag-software">Vercel</span>
+                  <span class="skill-tag skill-tag-software">Client Delivery</span>
+                </div>
+              </div>
+              <div class="mt-6"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+            </div>
+          </div>
           <div aria-label="View case study for Airline Database System" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="airline-database" role="button" tabindex="0">
             <div class="space-y-4">
               <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic Team Project</span>
@@ -789,8 +926,11 @@
             <div class="space-y-3 text-center md:text-left">
               <h4 class="text-2xl font-bold text-on-surface dark:text-white">Bachelor of Science in Computer Science</h4>
               <p class="text-primary dark:text-primary-dark font-bold text-lg">University of Northern British Columbia</p>
-              <div class="flex flex-wrap justify-center md:justify-start gap-4 text-[13px] font-medium text-text-secondary-light dark:text-text-secondary-dark">
-                <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> Minors: Management Information Systems and Philosophy</span>
+              <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-3 gap-y-2 text-[13px] font-medium text-text-secondary-light dark:text-text-secondary-dark">
+                <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> Minor: Management Information Systems</span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/25 dark:border-primary/40 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">
+                  <span class="material-symbols-outlined text-[13px]" style="font-variation-settings:'FILL' 1;">work</span> Co-op
+                </span>
               </div>
               <p class="text-[11px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-secondary-dark mt-4">Expected April 2027</p>
             </div>
@@ -804,15 +944,15 @@
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
                   <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">workspace_premium</span></div>
-                  <div><h5 class="text-[13px] font-bold leading-tight">International Student Scholarship</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">University of Northern British Columbia</p></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">International Student Scholarship</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC</p></div>
                 </div>
                 <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
                   <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">military_tech</span></div>
-                  <div><h5 class="text-[13px] font-bold leading-tight">Computer Science Entrance Award</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">University of Northern British Columbia</p></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">Computer Science Entrance Award</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC</p></div>
                 </div>
                 <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
                   <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">stars</span></div>
-                  <div><h5 class="text-[13px] font-bold leading-tight">Alumni of UNBC Computer Science Award</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">University of Northern British Columbia</p></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">Alumni of UNBC Computer Science Award</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC</p></div>
                 </div>
               </div>
             </div>
@@ -862,8 +1002,8 @@
             </div>
             <div class="p-5 enterprise-card rounded-2xl flex items-center justify-between">
               <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 flex items-center justify-center overflow-hidden border border-border-light dark:border-border-dark">
-                  <img src="Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png" alt="Azure Data Core Concepts badge" class="w-full h-full object-contain p-1">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden shrink-0">
+                  <img src="Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png" alt="Azure Data Core Concepts badge" class="w-6 h-6 object-contain">
                 </div>
                 <div><h5 class="text-[13px] font-bold leading-tight">Introduction to Azure Data Core Concepts</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
               </div>
@@ -964,25 +1104,26 @@
 
 <!-- JDC WEST CARD -->
 <section class="py-section-v-desktop max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop">
-  <div class="bg-primary dark:bg-elevated-dark rounded-[2.5rem] p-12 md:p-16 text-on-primary dark:text-text-primary-dark flex flex-col md:flex-row items-center gap-12 overflow-hidden relative shadow-2xl border border-primary/20 dark:border-border-dark group">
+  <div class="bg-primary dark:bg-elevated-dark rounded-[2rem] p-8 md:p-10 text-on-primary dark:text-text-primary-dark flex flex-col md:flex-row items-stretch gap-8 overflow-hidden relative shadow-2xl border border-primary/20 dark:border-border-dark group">
     <div class="absolute -top-10 -right-10 opacity-10 pointer-events-none transform group-hover:scale-110 transition-transform duration-1000">
-      <span class="material-symbols-outlined text-[400px]" style="font-variation-settings: 'wght' 700;">award_star</span>
+      <span class="material-symbols-outlined text-[260px]" style="font-variation-settings: 'wght' 700;">award_star</span>
     </div>
-    <div class="md:w-2/3 relative z-10 space-y-8">
-      <div class="flex items-center gap-4">
-        <div class="px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-          <h2 class="font-label-technical text-[11px] font-extrabold uppercase tracking-[0.3em] text-white">LEADERSHIP &amp; STRATEGY</h2>
+    <div class="md:w-3/5 relative z-10 space-y-5 flex flex-col justify-center">
+      <div class="flex items-center gap-3 flex-wrap">
+        <div class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+          <span class="font-label-technical text-[11px] font-extrabold uppercase tracking-[0.3em] text-white">LEADERSHIP &amp; STRATEGY</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-300/20 border border-yellow-300/30">
+          <span class="material-symbols-outlined text-[14px] text-yellow-200">emoji_events</span>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-yellow-100">1st Place</span>
         </div>
       </div>
-      <h3 class="text-4xl font-extrabold leading-tight tracking-tight text-white">1st Place &ndash; Business Technology Management, JDC West 2026</h3>
-      <p class="text-lg text-white/90 leading-relaxed max-w-xl">Developed and presented a post-acquisition IT modernization strategy combining system architecture, budget constraints, implementation planning, and employee change management.</p>
+      <h3 class="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-white">Business Technology Management &ndash; JDC West 2026</h3>
+      <p class="text-[15px] md:text-base text-white/90 leading-relaxed max-w-xl">Developed and presented a post-acquisition IT modernization strategy combining system architecture, budget constraints, implementation planning, and employee change management.</p>
     </div>
-    <div class="md:w-1/3 flex justify-center relative z-10">
-      <div class="relative">
-        <div class="absolute inset-0 bg-white/20 blur-3xl rounded-full"></div>
-        <div class="w-64 h-64 bg-white/10 rounded-full flex items-center justify-center overflow-hidden border border-white/30 relative z-10">
-          <img src="Assets/Images/JDC_West_1st_Team_Photo.png" alt="JDC West 2026 first-place team photo" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'material-symbols-outlined text-[120px] text-white\'>emoji_events</span>';">
-        </div>
+    <div class="md:w-2/5 relative z-10 flex items-center">
+      <div class="relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl" style="aspect-ratio: 4/5; max-height: 320px;">
+        <img src="Assets/Images/JDC_West_1st_Team_Photo.jpg" alt="JDC West 2026 first-place team photo" class="w-full h-full object-cover" style="object-position: center 30%;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-white/10\'><span class=\'material-symbols-outlined text-[120px] text-white\'>emoji_events</span></div>';">
       </div>
     </div>
   </div>
@@ -1084,7 +1225,17 @@
       </div>
     </div>
     <div class="pt-10 border-t border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="text-text-muted-light dark:text-text-secondary-dark font-medium text-[13px]">&copy; 2026 Zohaib Rahim.</div>
+      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-text-muted-light dark:text-text-secondary-dark font-medium text-[13px]">
+        <div>&copy; 2026 Zohaib Rahim.</div>
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400 animate-pulse"></span>
+          Open to co-op / summer 2027
+        </div>
+      </div>
+      <div class="text-text-muted-light dark:text-text-secondary-dark text-[12px] font-medium text-center md:text-right">
+        Built with static HTML, Tailwind, and IBM Plex Mono.
+        <br class="hidden md:block"><span class="text-[11px]">Deployed on Vercel. <a href="https://github.com/zohaibrahim/portfolio-website" target="_blank" rel="noopener noreferrer" class="underline decoration-dotted hover:text-primary dark:hover:text-primary-dark">Source</a>.</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -1149,9 +1300,9 @@
   };
 
   const projectOrder = {
-    data: ['phsa-dashboard', 'crime-dashboard', 'credit-card-fraud', 'stock-market-dashboard'],
+    data: ['phsa-dashboard', 'crime-dashboard', 'credit-card-fraud', 'stock-market-dashboard', 'jailbreak-detection'],
     digital: ['akdn-ecd', 'akdn-leadership-hub', 'phsa-excel-automation', 'gradified'],
-    software: ['jobtrackr', 'airline-database', 'security-log-analyzer', 'parallel-sorting', 'phsa-excel-automation']
+    software: ['jobtrackr', 'roshtay', 'airline-database', 'security-log-analyzer', 'parallel-sorting', 'phsa-excel-automation']
   };
 
   const projectDetails = {
@@ -1181,7 +1332,7 @@
       process: 'Data Preparation → Data Modelling → DAX Measures → Dashboard Design → Validation',
       technologies: ['Power BI', 'DAX', 'Excel', 'Data Modelling', 'Forecasting'],
       role: 'Designed and built the production dashboard during my PHSA co-op.',
-      image: 'Assets/Images/PHSA_Stock_Dashboard.png',
+      image: 'Assets/Images/PHSA_Stock_Dashboard.jpg',
       imageAlt: 'PHSA Stock Inventory Dashboard preview'
     },
     'crime-dashboard': {
@@ -1205,7 +1356,7 @@
       process: 'Data Preparation → Data Modelling → DAX Development → Interaction Design → Visualization',
       technologies: ['Power BI', 'DAX', 'Excel', 'Adobe Photoshop', 'Data Modelling', 'Data Visualization'],
       role: 'Designed and built the interactive Power BI dashboard.',
-      image: 'Assets/Images/Canadian_Crime_Dashboard.png',
+      image: 'Assets/Images/Canadian_Crime_Dashboard.jpg',
       imageAlt: 'Canadian Crime Statistics Dashboard preview'
     },
     'credit-card-fraud': {
@@ -1219,7 +1370,10 @@
       processLabel: 'APPROACH',
       contribution: 'My contribution focused on precision–recall trade-off analysis and model comparison, with particular attention to false-positive risk.',
       technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'SMOTE', 'Machine Learning', 'Model Evaluation'],
-      placeholder: 'MODEL EVALUATION VISUALS'
+      placeholder: 'MODEL EVALUATION VISUALS',
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/Credit-Card-Fraud-Detection', icon: 'code' }
+      ]
     },
     'stock-market-dashboard': {
       title: 'Stock Market Portfolio Dashboard',
@@ -1240,8 +1394,8 @@
       builtLabel: 'KEY FEATURES',
       technologies: ['Power BI', 'DAX', 'Dashboard Design', 'Data Visualization', 'Performance Analytics'],
       role: 'Designed the dashboard concept and executive reporting structure.',
-      image: 'Assets/Images/Stock_dashboard/12.jpg',
-      imageAlt: 'Stock Market Portfolio Dashboard preview'
+      image: 'Assets/Images/Stock_dashboard/5.jpg',
+      imageAlt: 'Stock Market Portfolio Dashboard — Overview slide with Active Return, Alpha, Tracking Error, Max Drawdown KPIs, sector allocation, and news feed'
     },
     'akdn-ecd': {
       title: 'AKDN ECD Digitalization Platform',
@@ -1315,7 +1469,7 @@
       process: 'Workflow Review → Formula Design → Alert Logic → Standardization → Documentation and Testing',
       technologies: ['Excel', 'Advanced Formulas', 'Formula Design', 'Conditional Logic', 'Process Automation', 'SOP Development', 'Testing'],
       role: 'Designed, implemented, tested, and documented the Excel scheduling and operational automation system.',
-      image: 'Assets/Images/PHSA_Staff_Scheduling_Automation_System.png',
+      image: 'Assets/Images/PHSA_Staff_Scheduling_Automation_System.jpg',
       imageAlt: 'PHSA Excel scheduling automation preview'
     },
     'gradified': {
@@ -1360,8 +1514,11 @@
       technologies: ['Angular', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'Gemini AI', 'GitHub Actions', 'Postman', 'pgAdmin'],
       role: 'Co-developed as part of a project team. My responsibilities focused on system architecture planning, frontend–backend integration, testing strategy, GitHub Actions CI/CD, and project coordination.',
       roleLabel: 'MY ROLE',
-      image: 'Assets/Images/Jobtrackr/Jobtrackr.png',
-      imageAlt: 'JobTrackr application preview'
+      image: 'Assets/Images/Jobtrackr/Dashboard.jpg',
+      imageAlt: 'JobTrackr application dashboard',
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/Jobtrackr-main', icon: 'code' }
+      ]
     },
     'airline-database': {
       title: 'Airline Database System',
@@ -1413,7 +1570,11 @@
       process: 'Pattern Review → Threshold Evaluation → Severity Design → Script Implementation → Testing',
       technologies: ['Python', 'PowerShell', 'Log Analysis', 'Alert Logic', 'Pattern Detection', 'Security Automation'],
       role: 'Designed and built both security-automation scripts independently.',
-      placeholder: 'SECURITY AUTOMATION OUTPUT'
+      placeholder: 'SECURITY AUTOMATION OUTPUT',
+      links: [
+        { label: 'Python Analyzer', url: 'https://github.com/zohaibrahim/Python-Security-Log-Analyzer', icon: 'code' },
+        { label: 'PowerShell Script', url: 'https://github.com/zohaibrahim/PowerShell-Script-Basic', icon: 'terminal' }
+      ]
     },
     'parallel-sorting': {
       title: 'Parallelized Sorting Algorithm',
@@ -1434,17 +1595,72 @@
       process: 'Algorithm Selection → Task Decomposition → Parallel Execution → Merge Phase → Testing and Comparison',
       technologies: ['Java', 'Fork/Join Framework', 'Parallel Programming', 'Merge Sort', 'Concurrency', 'Testing'],
       role: 'Designed, implemented, tested, and evaluated the parallel sorting solution.',
-      image: 'Assets/Images/Parallel_Sorting_Algorithm/Step_by_Stey_Process.png',
-      imageAlt: 'Parallelized Sorting Algorithm step-by-step process'
+      image: 'Assets/Images/Parallel_Sorting_Algorithm/Comparision_Graph.jpg',
+      imageAlt: 'Parallel vs Sequential merge sort — execution time across 1M, 10M, 100M array sizes',
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/Concurrent-and-Distributed-Programming', icon: 'code' }
+      ]
+    },
+    'jailbreak-detection': {
+      title: 'LLM Jailbreak Detection',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Independent Research',
+      overview: 'Machine-learning investigation into LLM safety through layer-wise probe classifiers and representation-engineering techniques. Extracted per-layer activations from a 7-layer transformer, trained lightweight linear probes on 1,000 samples, and analysed centroid distances between benign and jailbreak-intent representations across layers.',
+      builtList: [
+        'Per-layer activation extraction (7 layers × 1,000 samples)',
+        'Layer-wise linear probe classifiers',
+        'Centroid distance and geometry analysis',
+        'Concept-direction computation via top principal components',
+        'Best-model checkpointing and evaluation pipeline'
+      ],
+      builtLabel: 'TECHNICAL FOCUS',
+      results: [
+        { label: 'Best Layer Accuracy', value: '89%', sub: 'Layer 6 probe' },
+        { label: 'Best F1', value: '0.87', sub: 'Precision + recall' },
+        { label: 'Layers Probed', value: '7', sub: 'End-to-end sweep' }
+      ],
+      process: 'Data Preparation → Activation Extraction → Probe Training → Geometry Analysis → Concept Direction',
+      technologies: ['Python', 'PyTorch', 'Representation Engineering', 'Probe Classifiers', 'Machine Learning', 'Model Evaluation'],
+      role: 'Designed, implemented, and analysed the probe pipeline and interpretability metrics independently.',
+      image: 'Assets/Images/Jailbreak/Jailbreak_Layer_Accuracy.jpg',
+      imageAlt: 'Per-layer probe accuracy and centroid geometry output',
+      placeholder: 'LAYER-WISE PROBE ACCURACY LOG'
+    },
+    'roshtay': {
+      title: 'Roshtay — AI Operations Platform',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Founded • Live Product',
+      organization: 'Roshtay',
+      overview: 'AI operations partner for professional-services firms. Roshtay designs, builds, and deploys custom AI systems for accounting, consulting, and service businesses through a structured 6–8 week engagement model — research, interface design, development, testing, GitHub, and Vercel deployment.',
+      builtList: [
+        'Marketing site with services, demo, and audit flows',
+        'Sample client-dashboard reference implementation',
+        'Client intake and audit workflow',
+        'Delivery model of 6–8 week custom builds',
+        'Three live client applications shipped to date'
+      ],
+      builtLabel: 'WHAT I BUILT',
+      results: [
+        { label: 'Deployment', value: '6–8 wk', sub: 'Custom builds' },
+        { label: 'Live Apps', value: '3', sub: 'Client projects' },
+        { label: 'Role', value: 'Founder', sub: 'End-to-end delivery' }
+      ],
+      process: 'Research → Interface Design → Development → Testing → GitHub → Vercel Deployment',
+      technologies: ['Product Development', 'Interface Design', 'Vercel', 'GitHub', 'Client Delivery', 'AI Systems'],
+      role: 'Founder. Owns product strategy, design, development, delivery, and client management.',
+      image: 'Assets/Images/Roshtay_Website.jpg',
+      imageAlt: 'Roshtay AI Operations Platform website hero'
     }
   };
 
   // ============ TYPEWRITER ============
   const phrases = [
     "Building Better Systems.",
-    "Turning Data into Decisions.",
-    "Improving Digital Workflows.",
-    "Engineering Practical Software."
+    "30% faster reporting.",
+    "Data + Digital + Delivery.",
+    "Systems that ship."
   ];
   const typewriterElement = document.getElementById('typewriter-text');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1503,6 +1719,7 @@
     ['data', 'digital', 'software'].forEach(t => {
       const panel = document.getElementById(`tab-${t}`);
       const desc = document.getElementById(`tab-desc-${t}`);
+      const heading = document.getElementById(`tab-heading-${t}`);
       const btn = document.getElementById(`btn-${t}`);
       const isActive = t === tabId;
       if (panel) {
@@ -1510,6 +1727,7 @@
         panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
       }
       if (desc) desc.classList.toggle('hidden', !isActive);
+      if (heading) heading.classList.toggle('hidden', !isActive);
       if (btn) {
         btn.classList.toggle('tab-btn-active', isActive);
         btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
@@ -1710,6 +1928,15 @@
             </div>
           </div>
         </div>` : ''}
+        ${data.links && data.links.length ? `<div>
+          <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-3 font-label-technical">Evidence</h5>
+          <div class="flex flex-col gap-2">
+            ${data.links.map(l => `<a href="${escapeHTML(l.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-lg border border-primary/20 dark:border-primary/40 bg-soft-blue-fill/40 dark:bg-primary/10 text-primary dark:text-primary-dark font-bold text-[13px] hover:bg-soft-blue-fill dark:hover:bg-primary/20 transition-all group">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">${escapeHTML(l.icon || 'link')}</span>${escapeHTML(l.label)}</span>
+              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+            </a>`).join('')}
+          </div>
+        </div>` : ''}
       </div>`;
 
     modalContent.innerHTML = `
@@ -1831,7 +2058,7 @@
             <h4 class="font-bold text-[14px] tracking-tight">${escapeHTML(cat.title)}</h4>
           </div>
           <div class="skill-tag-list">
-            ${cat.courses.map(c => `<div class="skill-tag ${escapeHTML(cat.tagClass)}">${escapeHTML(c)}</div>`).join('')}
+            ${cat.courses.map(c => `<div class="skill-tag skill-tag-course ${escapeHTML(cat.tagClass)}">${escapeHTML(c)}</div>`).join('')}
           </div>
         </div>`;
       });
@@ -1849,7 +2076,7 @@
           <h4 class="text-2xl font-bold tracking-tight">${escapeHTML(cat.title)}</h4>
         </div>
         <div class="skill-tag-list justify-center">
-          ${cat.courses.map(c => `<div class="skill-tag ${escapeHTML(cat.tagClass)}">${escapeHTML(c)}</div>`).join('')}
+          ${cat.courses.map(c => `<div class="skill-tag skill-tag-course ${escapeHTML(cat.tagClass)}">${escapeHTML(c)}</div>`).join('')}
         </div>
       </div>`;
     }
@@ -1909,6 +2136,33 @@
 
   document.getElementById('btn-related-courses').addEventListener('click', (e) => openCourseModal(currentTab, e.currentTarget));
   document.getElementById('btn-view-all-courses').addEventListener('click', (e) => openCourseModal('all', e.currentTarget));
+
+  // ============ SCROLL SPY — active nav link ============
+  const navLinks = Array.from(document.querySelectorAll('.nav-link[data-nav-for]'));
+  const sectionIds = navLinks.map(l => l.dataset.navFor);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  if (sections.length && 'IntersectionObserver' in window) {
+    let visibleMap = new Map();
+    const setActive = (id) => {
+      navLinks.forEach(l => l.classList.toggle('is-active', l.dataset.navFor === id));
+    };
+    // Prime with Home
+    setActive('hero');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => visibleMap.set(e.target.id, e.intersectionRatio));
+      // Pick the section with the largest visible ratio
+      let bestId = null, bestRatio = 0;
+      visibleMap.forEach((ratio, id) => {
+        if (ratio > bestRatio) { bestRatio = ratio; bestId = id; }
+      });
+      if (bestId) setActive(bestId);
+    }, {
+      // Trigger switches when a section crosses the middle of the viewport
+      rootMargin: '-40% 0px -50% 0px',
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    });
+    sections.forEach(s => io.observe(s));
+  }
 
 })();
 </script>

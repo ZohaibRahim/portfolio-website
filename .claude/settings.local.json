@@ -8,7 +8,15 @@
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} \\(PHSA image\\)\\\\n\" http://localhost:5500/Assets/Images/PHSA_Stock_Dashboard.png)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} \\(headshot\\)\\\\n\" http://localhost:5500/Assets/Images/Zohaib_Rahim_Headshot.jpg)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} \\(azure icon\\)\\\\n\" http://localhost:5500/Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png)",
-      "Bash(curl -s http://localhost:5500/index.html)"
+      "Bash(curl -s http://localhost:5500/index.html)",
+      "Bash(python -m http.server 5501)",
+      "Bash(curl -s http://localhost:5501/index.html)",
+      "WebFetch(domain:github.com)",
+      "Bash(python -c \"from PIL import Image; print\\('PIL_OK'\\)\")",
+      "Bash(python -m pip install --user Pillow)",
+      "Bash(python -m pip install Pillow)",
+      "Bash(python *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:5502/__TRACKED_VAR__)"
     ]
   }
 }
