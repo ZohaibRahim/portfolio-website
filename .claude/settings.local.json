@@ -22,7 +22,13 @@
       "Bash(where chrome *)",
       "Read(//c/Program Files/Google/Chrome/Application/**)",
       "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
-      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/hero_1440x900.png\" http://localhost:5508/index.html)"
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,900 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/hero_1440x900.png\" http://localhost:5508/index.html)",
+      "Bash(curl *)",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --window-size=800,1600 --virtual-time-budget=3000 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/overflow_check.png\" \"file:///C:/Users/rahim/OneDrive/Desktop/UNBC/Personal%20Website/scripts/check_overflow.html\")",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=3000 --window-size=1300,950 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/mobile_grid.png\" \"file:///C:/Users/rahim/OneDrive/Desktop/UNBC/Personal%20Website/scripts/full_page_mobile.html\")",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=8000 --window-size=1300,950 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/mobile_grid.png\" \"file:///C:/Users/rahim/OneDrive/Desktop/UNBC/Personal%20Website/scripts/full_page_mobile.html\")",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=4000 --window-size=410,864 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/drawer_open.png\" \"file:///C:/Users/rahim/OneDrive/Desktop/UNBC/Personal%20Website/scripts/drawer_test.html\")",
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=5000 --window-size=410,864 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/drawer_open.png\" \"http://localhost:5509/scripts/drawer_test.html\")"
     ]
   }
 }
