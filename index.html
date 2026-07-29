@@ -133,12 +133,25 @@
 </script>
 <style>
   :root {
+    /* Single source of truth for nav height. Change this and every dependent
+       layout token (nav bar, main padding, hero fit, anchor scroll) follows. */
+    --nav-h: 5rem;
+
     --phsa-primary: #176B3A; --phsa-secondary: #2E3192;
     --aku-primary: #00843D; --aku-secondary: #2B2B2B;
     --unbc-primary: #035642; --unbc-secondary: #7A5A00;
     --roshtay-primary: #246F91; --roshtay-secondary: #087D67;
     --jdc-primary: #263F7D; --jdc-secondary: #2F6FA8;
   }
+
+  /* Nav-height coupled utilities. Use these instead of hardcoding h-20 / mt-20. */
+  .h-nav { height: var(--nav-h); }
+  .pt-nav { padding-top: var(--nav-h); }
+  .min-h-below-nav { min-height: calc(100vh - var(--nav-h)); }
+
+  /* Anchor navigation must clear the fixed nav. Uses the same token so it stays
+     in sync automatically. */
+  section[id] { scroll-margin-top: var(--nav-h); }
   .dark {
     --phsa-primary: #66C58A; --phsa-secondary: #8FA8FF;
     --aku-primary: #4ADE80; --aku-secondary: #F3F4F6;
@@ -311,9 +324,11 @@
 
   .skill-category-panel {
     background: #FFFFFF; border: 1px solid #D8E1EF; border-radius: 14px;
-    padding: 24px; min-height: 180px;
+    padding: 24px;
     display: flex; flex-direction: column; align-items: center; text-align: center;
   }
+  /* Panels in the same grid row stay equal-height because CSS grid stretches
+     items by default — no hardcoded min-height needed. */
   .dark .skill-category-panel { background: #111722; border-color: #364155; }
 
   .skill-category-title {
@@ -367,7 +382,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-page-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
-  <div class="flex justify-between items-center h-20 px-gutter-mobile md:px-gutter-desktop max-w-container-max mx-auto">
+  <div class="flex justify-between items-center h-nav px-gutter-mobile md:px-gutter-desktop max-w-container-max mx-auto">
     <a class="flex items-center gap-3" href="#hero" aria-label="Zohaib Rahim — Home">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold text-sm shadow-lg shadow-primary/20">ZR</div>
     </a>
@@ -387,11 +402,16 @@
   </div>
 </nav>
 
-<main class="mt-20" id="main">
+<main class="pt-nav" id="main">
 
 <!-- HERO -->
-<section class="relative grid-bg overflow-x-hidden min-h-[calc(100vh-80px)]" id="hero">
-  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-8 md:py-12 lg:py-14 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!--
+  Sizes itself to its content — no forced viewport-fill. The section is as tall
+  as it needs to be, so on typical desktop heights the credibility strip below
+  starts peeking above the fold, inviting scroll instead of leaving dead space.
+-->
+<section class="relative grid-bg overflow-x-hidden" id="hero">
+  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-8 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
     <div class="space-y-7 lg:col-span-7">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark border border-primary/20 rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase">
         <span class="relative flex h-2 w-2">
@@ -536,7 +556,7 @@
       </div>
     </div>
 
-    <div class="relative min-h-[600px]">
+    <div class="relative">
 
       <!-- DATA TAB -->
       <div aria-labelledby="btn-data" aria-hidden="false" class="space-y-8" id="tab-data" role="tabpanel">
@@ -892,7 +912,7 @@
         <button aria-controls="about-certs" aria-selected="false" tabindex="-1" class="about-tab-btn flex-1 px-6 py-3 rounded-2xl font-bold text-[13px] transition-all text-text-secondary-light dark:text-text-secondary-dark" id="btn-about-certs" data-tab="about-certs" role="tab">Certificates</button>
         <button aria-controls="about-lead" aria-selected="false" tabindex="-1" class="about-tab-btn flex-1 px-6 py-3 rounded-2xl font-bold text-[13px] transition-all text-text-secondary-light dark:text-text-secondary-dark" id="btn-about-lead" data-tab="about-lead" role="tab">Leadership &amp; Volunteering</button>
       </div>
-      <div class="enterprise-card rounded-b-3xl p-10 min-h-[400px]">
+      <div class="enterprise-card rounded-b-3xl p-10">
 
         <!-- SKILLS -->
         <div aria-labelledby="btn-about-skills" aria-hidden="false" class="about-tab-content space-y-12" id="about-skills" role="tabpanel">
