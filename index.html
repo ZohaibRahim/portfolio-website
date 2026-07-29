@@ -161,6 +161,10 @@
   }
 
   html, body { font-family: 'Inter', sans-serif; }
+  /* Prevent mobile browsers from getting confused between horizontal-swipe and
+     vertical-scroll gestures inside sections that use overflow-x-hidden. */
+  html { touch-action: manipulation; }
+  body { touch-action: pan-y; overscroll-behavior-y: contain; }
   .font-hero-lg, .font-headline-page, .font-headline-section, .font-headline-card { font-family: 'Manrope', sans-serif; }
   .font-label-technical { font-family: 'IBM Plex Mono', monospace; }
   .font-body-base, .font-body-lg { font-family: 'Inter', sans-serif; }
@@ -216,6 +220,13 @@
   .card-hover-lift {
     cursor: pointer;
   }
+
+  /* Center the interior copy of every project card (flagship + grid, desktop + mobile).
+     Applies text alignment, skill-tag row alignment, and CTA row alignment. */
+  #projects .card-hover-lift { text-align: center; }
+  #projects .card-hover-lift .skill-tag-list { justify-content: center; }
+  #projects .card-hover-lift .mt-auto,
+  #projects .card-hover-lift .mt-8 { justify-content: center; }
   .card-hover-lift:focus-within {
     box-shadow: 0 0 0 2px rgba(37,99,235,0.4);
   }
@@ -439,13 +450,13 @@
 
 <!-- HERO -->
 <!--
-  Sizes itself to its content — no forced viewport-fill. The section is as tall
-  as it needs to be, so on typical desktop heights the credibility strip below
-  starts peeking above the fold, inviting scroll instead of leaving dead space.
+  Sizes itself to its content — no forced viewport-fill. Padding is tight so the
+  section starts right below the nav and the credibility strip below peeks
+  above the fold on standard desktop and mobile heights.
 -->
-<section class="relative grid-bg overflow-x-hidden" id="hero">
-  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-8 md:py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-    <div class="space-y-5 md:space-y-6 lg:space-y-7 lg:col-span-7">
+<section class="relative grid-bg overflow-x-hidden" id="hero" style="touch-action: pan-y;">
+  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-3 md:py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+    <div class="space-y-4 md:space-y-5 lg:col-span-7">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark border border-primary/20 rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase">
         <span class="relative flex h-2 w-2">
           <span class="relative inline-flex rounded-full h-2 w-2 bg-primary dark:bg-primary-dark"></span>
@@ -479,16 +490,16 @@
     </div>
 
     <div class="relative lg:col-span-5 flex justify-center lg:justify-end w-full">
-      <div class="relative w-full max-w-[420px] sm:max-w-[440px] lg:max-w-[480px] pt-8 pb-8 md:pt-12 md:pb-12">
+      <div class="relative w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[460px] pt-4 pb-4 md:pt-8 md:pb-8">
         <div class="enterprise-card rounded-[18px] overflow-hidden shadow-2xl relative z-10 cursor-default">
           <div class="h-10 bg-slate-50 dark:bg-slate-900/80 border-b border-border-light dark:border-border-dark flex items-center px-5 gap-1.5">
             <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
             <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
             <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
           </div>
-          <div class="p-8 space-y-6">
-            <div class="flex flex-col items-center text-center space-y-4">
-              <div class="w-[240px] rounded-xl bg-slate-100 dark:bg-slate-800 border border-border-light dark:border-border-dark shadow-inner overflow-hidden" style="aspect-ratio: 4/5;">
+          <div class="p-5 sm:p-8 space-y-4 sm:space-y-6">
+            <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+              <div class="w-[180px] sm:w-[220px] md:w-[240px] rounded-xl bg-slate-100 dark:bg-slate-800 border border-border-light dark:border-border-dark shadow-inner overflow-hidden" style="aspect-ratio: 4/5;">
                 <img src="Assets/Images/Zohaib_Rahim_Headshot.jpg" alt="Zohaib Rahim professional headshot" class="w-full h-full" style="object-fit: cover; object-position: center 25%;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center text-center p-4 h-full\'><span class=\'material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600\'>account_circle</span><span class=\'text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-wider\'>Professional Headshot — 4:5</span></div>';">
               </div>
               <div class="grid grid-cols-2 gap-4 w-full">
@@ -521,7 +532,7 @@
             </div>
           </div>
         </div>
-        <div class="absolute -inset-10 bg-gradient-to-tr from-primary/10 to-secondary-dark/10 blur-3xl rounded-full -z-0 opacity-60"></div>
+        <div class="absolute -inset-10 bg-gradient-to-tr from-primary/10 to-secondary-dark/10 blur-3xl rounded-full -z-0 opacity-60 pointer-events-none"></div>
       </div>
     </div>
   </div>
