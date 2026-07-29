@@ -547,23 +547,23 @@
     <div class="flex flex-wrap justify-center items-center gap-10 md:gap-24">
       <div class="flex flex-col items-center group relative">
         <span class="org-tag org-phsa font-headline-card font-extrabold tracking-tighter text-2xl">PHSA</span>
-        <span class="absolute top-full text-[11px] font-bold uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 text-phsa-primary whitespace-nowrap" style="color: var(--phsa-primary);">Provincial Health Services Authority</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap text-phsa-primary" style="color: var(--phsa-primary);">Provincial Health Services Authority</span>
       </div>
       <div class="flex flex-col items-center group relative">
         <span class="org-tag org-aku font-headline-card font-extrabold tracking-tighter uppercase text-2xl">AKU</span>
-        <span class="absolute top-full text-[11px] font-bold uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 whitespace-nowrap" style="color: var(--aku-primary);">Aga Khan University</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--aku-primary);">Aga Khan University</span>
       </div>
       <div class="flex flex-col items-center group relative">
         <span class="org-tag org-unbc font-headline-card font-extrabold tracking-tighter text-2xl">UNBC</span>
-        <span class="absolute top-full text-[11px] font-bold uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 whitespace-nowrap text-center" style="color: var(--unbc-primary);">University of Northern British Columbia</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--unbc-primary);">University of Northern British Columbia</span>
       </div>
       <div class="flex flex-col items-center group relative">
         <span class="org-tag org-roshtay font-headline-card font-extrabold tracking-tighter text-2xl">Roshtay</span>
-        <span class="absolute top-full text-[11px] font-bold uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 whitespace-nowrap" style="color: var(--roshtay-primary);">Web &amp; AI Solutions</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--roshtay-primary);">Web &amp; AI Solutions</span>
       </div>
       <div class="flex flex-col items-center group relative">
         <span class="org-tag org-jdc font-headline-card font-extrabold tracking-tighter uppercase text-2xl">JDC WEST</span>
-        <span class="absolute top-full text-[11px] font-bold uppercase tracking-widest mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0 whitespace-nowrap" style="color: var(--jdc-primary);">Business Technology Management Competition</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--jdc-primary);">Business Technology Management Competition</span>
       </div>
     </div>
   </div>
@@ -1826,7 +1826,12 @@
 
   if (typewriterElement) {
     if (reducedMotion) {
-      typewriterElement.textContent = "Building Better Systems.";
+      let i = 0;
+      typewriterElement.textContent = phrases[0];
+      setInterval(() => {
+        i = (i + 1) % phrases.length;
+        typewriterElement.textContent = phrases[i];
+      }, 3500);
     } else {
       let wordIndex = 0, charIndex = 0, isDeleting = false;
       function type() {
