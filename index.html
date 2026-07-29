@@ -278,7 +278,7 @@
   /* iOS Safari drops the pan-y gesture when a touch starts on an element that
      is either mutating every frame (typewriter text, blinking cursor) or that
      triggers a native long-press callout (images). Make those touch-transparent
-     so touches fall through to #hero's pan-y handler. */
+     so touches fall through to the body's pan-y scroller. */
   #typewriter-text, .cursor-blink { pointer-events: none; }
   #hero img { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
   .hero-decor { pointer-events: none; }
@@ -462,7 +462,7 @@
   section starts right below the nav and the credibility strip below peeks
   above the fold on standard desktop and mobile heights.
 -->
-<section class="relative grid-bg overflow-x-hidden" id="hero" style="touch-action: pan-y;">
+<section class="relative grid-bg overflow-x-hidden" id="hero">
   <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-3 md:py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
     <div class="space-y-4 md:space-y-5 lg:col-span-7">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark border border-primary/20 rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase">
