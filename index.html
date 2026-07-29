@@ -578,8 +578,8 @@
     </div>
     <div class="mb-16">
       <div class="flex flex-row justify-center gap-2 p-1.5 bg-surface-container-low dark:bg-slate-900/40 rounded-2xl max-w-2xl mx-auto border border-border-light dark:border-border-dark" role="tablist" aria-label="Project categories">
-        <button aria-controls="tab-data" aria-selected="true" tabindex="0" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 tab-btn-active" id="btn-data" data-tab="data" role="tab">Data</button>
-        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab">Digital</button>
+        <button aria-controls="tab-data" aria-selected="true" tabindex="0" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 tab-btn-active" id="btn-data" data-tab="data" role="tab">Data &amp; BI</button>
+        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab">Business Systems</button>
         <button aria-controls="tab-software" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-software" data-tab="software" role="tab">Software</button>
       </div>
       <div class="mt-8 flex flex-col items-center max-w-4xl mx-auto gap-6">
@@ -1974,7 +1974,7 @@
   function buildResultsHTML(results) {
     if (!results || !results.length) return '';
     return `<div class="grid grid-cols-2 md:grid-cols-3 gap-4">${results.map(r => `
-      <div class="p-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/40 dark:bg-slate-900/20">
+      <div class="p-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/40 dark:bg-slate-900/20 text-center">
         <div class="text-2xl font-bold text-on-surface dark:text-white tracking-tight">${escapeHTML(r.value)}</div>
         <div class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-wider mt-1">${escapeHTML(r.label)}</div>
         <div class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark italic mt-0.5">${escapeHTML(r.sub)}</div>
