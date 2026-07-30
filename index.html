@@ -93,14 +93,19 @@
      in sync automatically. */
   section[id] { scroll-margin-top: var(--nav-h); }
   .dark {
-    /* Dark-mode org colors: lightened enough to read on dark bg while
-       each staying distinguishable in hue (green-forest, green-emerald,
-       lime, cyan, azure) so PHSA/AKU/UNBC don't blur into one green blob. */
-    --phsa-primary: #4ADE80; --phsa-secondary: #8FA8FF;
-    --aku-primary: #34D399; --aku-secondary: #F3F4F6;
-    --unbc-primary: #A3E635; --unbc-secondary: #E0BA55;
-    --roshtay-primary: #22D3EE; --roshtay-secondary: #35D6A3;
-    --jdc-primary: #60A5FA; --jdc-secondary: #69A9D6;
+    /* Dark-mode org colors — lightened brand primaries so each org reads as
+       itself in dark mode:
+         PHSA   → their emerald #00966C   → light emerald #2ED498
+         AKU    → their brand green #009B45 → bright forest #3FDA7A
+         UNBC   → gold accent #EFCE21 (their signature green would blur with
+                                       PHSA/AKU in dark; gold differentiates)
+         Roshtay→ their teal-blue        → bright cyan-blue #5AC8E8
+         JDC    → their navy #263F7D     → periwinkle #7DA5F7 */
+    --phsa-primary: #2ED498; --phsa-secondary: #F0C620;
+    --aku-primary:  #3FDA7A; --aku-secondary:  #C89B4A;
+    --unbc-primary: #F5D64C; --unbc-secondary: #5DA13F;
+    --roshtay-primary: #5AC8E8; --roshtay-secondary: #5FD3B8;
+    --jdc-primary:  #7DA5F7; --jdc-secondary:  #FF8C5E;
   }
 
   html, body { font-family: 'Inter', sans-serif; }
@@ -456,7 +461,7 @@
   section starts right below the nav and the credibility strip below peeks
   above the fold on standard desktop and mobile heights.
 -->
-<section class="relative grid-bg overflow-x-hidden" id="hero">
+<section class="relative grid-bg overflow-x-clip" id="hero">
   <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-3 md:py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
     <div class="space-y-4 md:space-y-5 lg:col-span-7">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark border border-primary/20 rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase">
@@ -785,26 +790,21 @@
           </div>
         </div>
         <div class="project-grid">
-          <div aria-label="View case study for Roshtay" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden flex flex-col group" data-project-id="roshtay" role="button" tabindex="0">
-            <div class="aspect-video bg-slate-900 overflow-hidden border-b border-border-light dark:border-border-dark">
-              <img alt="Roshtay AI Operations platform website" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" src="Assets/Images/Roshtay_Website.jpg" loading="lazy">
-            </div>
-            <div class="p-6 flex flex-col justify-between flex-1">
-              <div class="space-y-3">
-                <div class="flex items-center gap-2">
-                  <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Founded • Live Product</span>
-                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400"></span>Live</span>
-                </div>
-                <h4 class="font-bold font-headline-card text-lg">Roshtay — AI Operations Platform</h4>
-                <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">AI systems for accounting, consulting, and service firms.</p>
-                <div class="pt-2 skill-tag-list">
-                  <span class="skill-tag skill-tag-software">Product Development</span>
-                  <span class="skill-tag skill-tag-software">Vercel</span>
-                  <span class="skill-tag skill-tag-software">Client Delivery</span>
-                </div>
+          <div aria-label="View case study for Roshtay" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="roshtay" role="button" tabindex="0">
+            <div class="space-y-4">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Founded • Live Product</span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400"></span>Live</span>
               </div>
-              <div class="mt-6"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+              <h4 class="font-bold font-headline-card text-lg">Roshtay — AI Operations Platform</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">AI systems for accounting, consulting, and service firms.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Product Development</span>
+                <span class="skill-tag skill-tag-software">Vercel</span>
+                <span class="skill-tag skill-tag-software">Client Delivery</span>
+              </div>
             </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
           </div>
           <div aria-label="View case study for Airline Database System" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="airline-database" role="button" tabindex="0">
             <div class="space-y-4">
@@ -1386,6 +1386,9 @@
   'use strict';
 
   // ============ DATA ============
+  // Each tab shows every course that is relevant to that discipline — including
+  // cross-cutting courses (DB, programming, algorithms, ethics, math) — so a
+  // recruiter viewing any single tab sees the full applicable coursework.
   const coursework = {
     data: {
       title: "Data, BI & Analytics",
@@ -1398,7 +1401,15 @@
         "Applied Machine Learning",
         "Introduction to Management Science",
         "Calculus I",
-        "Linear Algebra"
+        "Linear Algebra",
+        "Discrete Computational Math I",
+        "Math Topics for Computer Science",
+        "Introduction to Database Systems",
+        "Data Structures I",
+        "Algorithm Analysis & Development",
+        "Computer Programming I",
+        "Computer Programming II",
+        "Management Information Systems"
       ]
     },
     digital: {
@@ -1409,12 +1420,17 @@
         "Management Information Systems",
         "Applied Business Computing",
         "e-business",
-        "Business & Professional Ethics",
-        "Ethics in Computing Science",
         "Tech Entrepreneurship",
         "Introduction to Canadian Business",
         "Introduction to Marketing",
-        "Writing & Communication Skills"
+        "Writing & Communication Skills",
+        "Business & Professional Ethics",
+        "Ethics in Computing Science",
+        "Introduction to Business Intelligence",
+        "Introduction to Database Systems",
+        "Software Engineering",
+        "Data Communications & Networking",
+        "Introduction to Management Science"
       ]
     },
     software: {
@@ -1424,10 +1440,9 @@
       courses: [
         "Computer Programming I",
         "Computer Programming II",
-        "Discrete Computational Math I",
-        "Introduction to Logic Design",
         "Data Structures I",
         "Algorithm Analysis & Development",
+        "Introduction to Logic Design",
         "Introduction to Concurrent and Distributed Programming",
         "Introduction to Database Systems",
         "Data Communications & Networking",
@@ -1435,7 +1450,14 @@
         "Operating Systems",
         "Organization & Architecture",
         "Programming Languages",
-        "Math Topics for Computer Science"
+        "Discrete Computational Math I",
+        "Math Topics for Computer Science",
+        "Applied Machine Learning",
+        "Introduction to Data Mining",
+        "Basic Statistics",
+        "Calculus I",
+        "Linear Algebra",
+        "Ethics in Computing Science"
       ]
     }
   };
@@ -1474,8 +1496,10 @@
       technologies: ['Power BI', 'DAX', 'Excel', 'Data Modelling', 'Forecasting'],
       role: 'Designed and built the production dashboard during my PHSA co-op.',
       designDecision: 'Used interactive DAX measures and filter-driven reporting so supervisors could explore changing city and time contexts without maintaining separate static reports.',
-      image: 'Assets/Images/PHSA_Stock_Dashboard.jpg',
-      imageAlt: 'PHSA Stock Inventory Dashboard preview'
+      images: [
+        { src: 'Assets/Images/PHSA_Stock_Dashboard.jpg', alt: 'PHSA Stock Inventory Dashboard — overview view' }
+      ],
+      dataNote: 'City names and stock figures shown are illustrative — the production dataset is confidential to PHSA.'
     },
     'crime-dashboard': {
       title: 'Canadian Crime Statistics Dashboard',
@@ -1499,8 +1523,9 @@
       technologies: ['Power BI', 'DAX', 'Excel', 'Adobe Photoshop', 'Data Modelling', 'Data Visualization'],
       role: 'Designed and built the interactive Power BI dashboard.',
       designDecision: 'Structured the dashboard around geographic drill-down because national averages alone would hide meaningful differences between provinces, regions, and municipalities.',
-      image: 'Assets/Images/Canadian_Crime_Dashboard.jpg',
-      imageAlt: 'Canadian Crime Statistics Dashboard preview'
+      images: [
+        { src: 'Assets/Images/Canadian_Crime_Dashboard.jpg', alt: 'Canadian Crime Statistics Dashboard — overview' }
+      ]
     },
     'credit-card-fraud': {
       title: 'Credit Card Fraud Detection',
@@ -1539,8 +1564,13 @@
       technologies: ['Power BI', 'DAX', 'Dashboard Design', 'Data Visualization', 'Performance Analytics'],
       role: 'Designed the dashboard concept and executive reporting structure.',
       designDecision: 'Focused the executive view on benchmark-relative performance and drawdown rather than displaying large volumes of raw market data.',
-      image: 'Assets/Images/Stock_dashboard/5.jpg',
-      imageAlt: 'Stock Market Portfolio Dashboard — Overview slide with Active Return, Alpha, Tracking Error, Max Drawdown KPIs, sector allocation, and news feed'
+      images: [
+        { src: 'Assets/Images/Stock_dashboard/5.jpg',  alt: 'Overview — KPI cards, sector allocation, news feed, day gainers/losers' },
+        { src: 'Assets/Images/Stock_dashboard/13.jpg', alt: 'Event Impact — Affected Tickers with P/L change and movers table' },
+        { src: 'Assets/Images/Stock_dashboard/17.jpg', alt: 'Top / Bottom contributors — 1-year and 5-year comparisons' },
+        { src: 'Assets/Images/Stock_dashboard/14.jpg', alt: 'Performance Attribution — return decomposition' },
+        { src: 'Assets/Images/Stock_dashboard/16.jpg', alt: 'Risk — volatility and drawdown analysis' }
+      ]
     },
     'power-bi-resume-dashboard': {
       title: 'Power BI Resume Dashboard',
@@ -1558,7 +1588,11 @@
       process: 'Data Modelling → Report Design → Interaction Design → Tooltip &amp; Drill-Down → Publishing',
       technologies: ['Power BI', 'DAX', 'Microsoft Excel', 'Dashboard Design', 'Data Visualization', 'Data Storytelling'],
       role: 'Designed and built the multi-page dashboard end-to-end as a self-directed learning project.',
-      placeholder: 'MULTI-PAGE POWER BI DASHBOARD'
+      images: [
+        { src: 'Assets/Images/PowerBI Resume/PowerBI_Resume_1.jpg', alt: 'Power BI Resume Dashboard — Career Timeline page' },
+        { src: 'Assets/Images/PowerBI Resume/PowerBI_Resume_2.jpg', alt: 'Power BI Resume Dashboard — Projects table with Tool Usage chart' },
+        { src: 'Assets/Images/PowerBI Resume/PowerBI_Resume_3.jpg', alt: 'Power BI Resume Dashboard — Course Breakdown by discipline' }
+      ]
     },
     'akdn-ecd': {
       title: 'AKDN ECD Digitalization Platform',
@@ -1635,8 +1669,10 @@
       technologies: ['Excel', 'Advanced Formulas', 'Formula Design', 'Conditional Logic', 'Process Automation', 'SOP Development', 'Testing'],
       role: 'Designed, implemented, tested, and documented the Excel scheduling and operational automation system.',
       designDecision: 'Used formula-driven logic instead of macros so supervisors could maintain and audit the workbook without depending on VBA permissions or specialist support.',
-      image: 'Assets/Images/PHSA_Staff_Scheduling_Automation_System.jpg',
-      imageAlt: 'PHSA Excel scheduling automation preview'
+      images: [
+        { src: 'Assets/Images/PHSA_Staff_Scheduling_Automation_System.jpg', alt: 'PHSA Excel scheduling automation — template view' }
+      ],
+      dataNote: 'Names, positions, and schedule values shown are illustrative — the production workbook is confidential to PHSA.'
     },
     'gradified': {
       title: 'Gradified',
@@ -1682,8 +1718,12 @@
       role: 'Co-developed as part of a project team. My responsibilities focused on system architecture planning, frontend–backend integration, testing strategy, GitHub Actions CI/CD, and project coordination.',
       roleLabel: 'MY ROLE',
       designDecision: 'Kept the Angular frontend, API, database, and resume-analysis workflow separated so each part could be tested and modified without tightly coupling the whole application.',
-      image: 'Assets/Images/Jobtrackr/Dashboard.jpg',
-      imageAlt: 'JobTrackr application dashboard',
+      images: [
+        { src: 'Assets/Images/Jobtrackr/Dashboard.jpg',    alt: 'JobTrackr — application dashboard with pipeline view' },
+        { src: 'Assets/Images/Jobtrackr/Application.jpg',  alt: 'JobTrackr — application form and details' },
+        { src: 'Assets/Images/Jobtrackr/AI_Analysis.jpg',  alt: 'JobTrackr — AI-driven résumé match analysis' },
+        { src: 'Assets/Images/Jobtrackr/Jobtrackr.jpg',    alt: 'JobTrackr — application overview page' }
+      ],
       links: [
         { label: 'View Repository', url: 'https://github.com/zohaibrahim/Jobtrackr-main', icon: 'code' }
       ]
@@ -1766,8 +1806,10 @@
       technologies: ['Java', 'Fork/Join Framework', 'Parallel Programming', 'Merge Sort', 'Concurrency', 'Testing'],
       role: 'Designed, implemented, tested, and evaluated the parallel sorting solution.',
       designDecision: 'Used a workload threshold before creating parallel tasks because Fork/Join overhead can make parallel execution slower on small inputs.',
-      image: 'Assets/Images/Parallel_Sorting_Algorithm/Comparision_Graph.jpg',
-      imageAlt: 'Parallel vs Sequential merge sort — execution time across 1M, 10M, 100M array sizes',
+      images: [
+        { src: 'Assets/Images/Parallel_Sorting_Algorithm/Comparision_Graph.jpg', alt: 'Parallel vs Sequential merge sort — execution time across 1M, 10M, 100M array sizes' },
+        { src: 'Assets/Images/Parallel_Sorting_Algorithm/Step_by_Step_Process.jpg', alt: 'Parallel sort — step-by-step process diagram' }
+      ],
       links: [
         { label: 'View Repository', url: 'https://github.com/zohaibrahim/Concurrent-and-Distributed-Programming', icon: 'code' }
       ]
@@ -1797,8 +1839,10 @@
       technologies: ['Python', 'PyTorch', 'Transformers', 'Representation Engineering', 'Probe Classifiers', 'Machine Learning', 'Model Evaluation'],
       role: 'Designed, implemented, and analysed the layer-wise probe pipeline and representation-interpretability evaluation.',
       designDecision: 'Used lightweight probes on frozen hidden-state representations so layer-wise separability could be studied without retraining the underlying transformer.',
-      image: 'Assets/Images/Jailbreak/Jailbreak_Layer_Accuracy.jpg',
-      imageAlt: 'Per-layer probe accuracy and centroid geometry output',
+      images: [
+        { src: 'Assets/Images/Jailbreak/Jailbreak_Layer_Accuracy.jpg', alt: 'Per-layer probe accuracy and centroid geometry output' },
+        { src: 'Assets/Images/Jailbreak/Jailbreak_Training_Results.jpg', alt: 'Training results — loss curves and best-F1 layer summary' }
+      ],
       placeholder: 'LAYER-WISE PROBE ACCURACY LOG',
       links: [
         { label: 'View Repository', url: 'https://github.com/zohaibrahim/CPSC461_Team_Project', icon: 'code' }
@@ -1827,8 +1871,9 @@
       process: 'Research → Interface Design → Development → Testing → GitHub → Vercel Deployment',
       technologies: ['Product Development', 'Interface Design', 'Vercel', 'GitHub', 'Client Delivery', 'AI Systems'],
       role: 'Founder. Owns product strategy, design, development, delivery, and client management.',
-      image: 'Assets/Images/Roshtay_Website.jpg',
-      imageAlt: 'Roshtay AI Operations Platform website hero',
+      images: [
+        { src: 'Assets/Images/Roshtay_Website.jpg', alt: 'Roshtay AI Operations Platform website hero' }
+      ],
       designDecision: 'Structured Roshtay around a repeatable 6–8 week custom-build model — research, interface design, development, testing, GitHub, and Vercel — so each client engagement follows the same production workflow instead of ad-hoc delivery.',
       links: [
         { label: 'Visit Roshtay', url: 'https://www.roshtay.com', icon: 'open_in_new' }
@@ -2055,11 +2100,29 @@
     document.getElementById('modal-category').textContent = data.category;
     document.getElementById('modal-status-pill').textContent = data.status;
 
-    const visualContent = data.image
-      ? `<img src="${escapeHTML(data.image)}" class="w-full h-auto aspect-video object-cover" alt="${escapeHTML(data.imageAlt || data.title)}" onerror="this.parentElement.innerHTML='<div class=\\'aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-6 text-center\\'><span class=\\'font-label-technical text-[11px] font-bold text-slate-400 uppercase tracking-widest\\'>Screenshot Unavailable</span></div>';">`
-      : `<div class="aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-6 text-center">
+    // Normalize legacy `image` field into `images[]` array for gallery.
+    const galleryImages = (data.images && data.images.length)
+      ? data.images
+      : (data.image ? [{ src: data.image, alt: data.imageAlt || data.title }] : []);
+
+    let visualContent;
+    if (galleryImages.length === 0) {
+      visualContent = `<div class="aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center p-6 text-center">
            <span class="font-label-technical text-[11px] font-bold text-slate-400 uppercase tracking-widest leading-relaxed">${escapeHTML(data.placeholder || 'PROJECT VISUAL')}</span>
          </div>`;
+    } else {
+      const first = galleryImages[0];
+      const mainImg = `<img id="gallery-main-img" src="${escapeHTML(first.src)}" class="w-full h-full object-cover transition-opacity duration-150" alt="${escapeHTML(first.alt || data.title)}" onerror="this.parentElement.innerHTML='<div class=\\'w-full h-full flex items-center justify-center bg-slate-100 dark:bg-slate-800\\'><span class=\\'font-label-technical text-[11px] font-bold text-slate-400 uppercase tracking-widest\\'>Screenshot Unavailable</span></div>';">`;
+      const thumbs = galleryImages.length > 1
+        ? `<div class="flex gap-2 overflow-x-auto p-2 bg-slate-50 dark:bg-slate-900/40 border-t border-border-light dark:border-border-dark no-scrollbar" role="tablist" aria-label="Project screenshots">
+             ${galleryImages.map((img, i) => `<button type="button" class="gallery-thumb shrink-0 w-16 h-11 rounded-md overflow-hidden border-2 ${i === 0 ? 'border-primary dark:border-primary-dark' : 'border-transparent'} hover:border-primary/60 dark:hover:border-primary-dark/60 focus:outline-none focus-visible:border-primary dark:focus-visible:border-primary-dark transition-colors" data-src="${escapeHTML(img.src)}" data-alt="${escapeHTML(img.alt || '')}" data-idx="${i}" aria-label="View screenshot ${i + 1} of ${galleryImages.length}" aria-selected="${i === 0}"><img src="${escapeHTML(img.src)}" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></button>`).join('')}
+           </div>`
+        : '';
+      const dataNote = data.dataNote
+        ? `<div class="p-3 bg-amber-50/60 dark:bg-amber-500/5 border-t border-amber-200/50 dark:border-amber-500/20 text-[11px] text-amber-800 dark:text-amber-200 flex items-start gap-2"><span class="material-symbols-outlined text-[14px] mt-0.5">info</span><span>${escapeHTML(data.dataNote)}</span></div>`
+        : '';
+      visualContent = `<div class="aspect-video bg-slate-100 dark:bg-slate-800">${mainImg}</div>${thumbs}${dataNote}`;
+    }
 
     const mainCol = [
       `<div>
@@ -2137,6 +2200,31 @@
     modalContent.innerHTML = `
       <div class="p-5 sm:p-8 md:p-12 space-y-8 md:space-y-10">${mainCol}</div>
       <aside class="bg-slate-50 dark:bg-slate-900/40 border-t lg:border-t-0 lg:border-l border-border-light dark:border-border-dark p-5 sm:p-8 md:p-10 space-y-6 md:space-y-8">${sideCol}</aside>`;
+
+    // Wire thumbnail clicks — swap main image + update aria-selected state.
+    const thumbs = modalContent.querySelectorAll('.gallery-thumb');
+    const mainImg = document.getElementById('gallery-main-img');
+    if (thumbs.length && mainImg) {
+      thumbs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (!src || mainImg.src.endsWith(src)) return;
+          mainImg.style.opacity = '0';
+          setTimeout(() => {
+            mainImg.src = src;
+            mainImg.alt = btn.dataset.alt || '';
+            mainImg.style.opacity = '1';
+          }, 120);
+          thumbs.forEach(t => {
+            const active = t === btn;
+            t.classList.toggle('border-primary', active);
+            t.classList.toggle('dark:border-primary-dark', active);
+            t.classList.toggle('border-transparent', !active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+        });
+      });
+    }
 
     const order = projectOrder[currentTab] || [];
     const index = order.indexOf(projectId);
