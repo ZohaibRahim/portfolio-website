@@ -82,7 +82,9 @@
       "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --virtual-time-budget=6000 --window-size=390,900 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/audit/v7_mobile_hero_scrollbar.png\" \"http://localhost:5538/index.html\")",
       "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --virtual-time-budget=6000 --window-size=1440,900 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/audit/v7_desktop_orgs.png\" \"http://localhost:5538/index.html\")",
       "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=8000 --window-size=500,500 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/audit/v7_scroll_check.png\" \"http://localhost:5538/scripts/scroll_check.html\")",
-      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=8000 --window-size=1440,900 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/audit/v8_software_tab.png\" \"http://localhost:5540/scripts/scroll_cap.html?w=1440&h=900&y=1300&port=5540&tab=btn-software\")"
+      "Bash(\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=8000 --window-size=1440,900 --screenshot=\"C:/Users/rahim/OneDrive/Desktop/UNBC/Personal Website/scripts/screenshots/audit/v8_software_tab.png\" \"http://localhost:5540/scripts/scroll_cap.html?w=1440&h=900&y=1300&port=5540&tab=btn-software\")",
+      "Bash(mkdir -p \"Assets/Images/_source/Gradified\")",
+      "Bash(mv \"Assets/Images/Gradified/Linkedin Post.pdf\" \"Assets/Images/_source/Gradified/Linkedin Post.pdf\")"
     ]
   }
 }
