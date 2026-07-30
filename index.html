@@ -25,7 +25,7 @@
 </script>
 
 <!-- Favicon: inline SVG ZR monogram -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232563EB'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Manrope,Inter,sans-serif' font-size='30' font-weight='800' fill='white'>ZR</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230B1220'/><text x='32' y='45' text-anchor='middle' font-family='Manrope,Inter,sans-serif' font-weight='900'><tspan fill='%2360A5FA' font-size='38'>[</tspan><tspan fill='white' font-size='30' dx='1'>Z</tspan><tspan fill='%2360A5FA' font-size='38' dx='1'>]</tspan></text></svg>">
 <link rel="apple-touch-icon" href="Assets/Icons/apple-touch-icon.png">
 
 <!-- Open Graph -->
@@ -373,8 +373,12 @@
 
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-page-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
   <div class="flex justify-between items-center h-nav px-gutter-mobile md:px-gutter-desktop max-w-container-max mx-auto">
-    <a class="flex items-center gap-2.5" href="#hero" aria-label="Zohaib Rahim — Home">
-      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold text-sm shadow-lg shadow-primary/20">ZR</div>
+    <a class="flex items-center gap-2.5 group" href="#hero" aria-label="Zohaib Rahim — Home">
+      <span class="zr-mark inline-flex items-center gap-[3px] font-headline-card font-extrabold text-[19px] leading-none select-none">
+        <span class="text-primary dark:text-primary-dark text-[22px] font-black">[</span>
+        <span class="text-on-surface dark:text-white tracking-tight">ZR</span>
+        <span class="text-primary dark:text-primary-dark text-[22px] font-black">]</span>
+      </span>
       <span class="md:hidden font-bold text-[15px] text-on-surface dark:text-text-primary-dark tracking-tight">Zohaib Rahim</span>
     </a>
     <div class="hidden md:flex items-center gap-8" role="navigation">
@@ -401,8 +405,12 @@
   <div class="absolute inset-0 bg-[#090D14]/55 dark:bg-black/72 backdrop-blur-sm opacity-0 transition-opacity duration-200" id="mobile-menu-backdrop"></div>
   <div class="absolute top-0 right-0 h-full w-[86%] max-w-sm bg-white dark:bg-elevated-dark border-l border-border-light dark:border-white/10 shadow-2xl flex flex-col translate-x-full transition-transform duration-250 ease-out" id="mobile-menu-panel">
     <div class="flex items-center justify-between px-5 py-4 border-b border-border-light dark:border-border-dark shrink-0">
-      <div class="flex items-center gap-2">
-        <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold text-sm shadow-lg shadow-primary/20">ZR</div>
+      <div class="flex items-center gap-2.5">
+        <span class="zr-mark inline-flex items-center gap-[3px] font-headline-card font-extrabold text-[19px] leading-none select-none">
+          <span class="text-primary dark:text-primary-dark text-[22px] font-black">[</span>
+          <span class="text-on-surface dark:text-white tracking-tight">ZR</span>
+          <span class="text-primary dark:text-primary-dark text-[22px] font-black">]</span>
+        </span>
         <span id="mobile-menu-title" class="font-bold text-[15px] text-on-surface dark:text-text-primary-dark">Menu</span>
       </div>
       <button aria-label="Close menu" class="w-10 h-10 rounded-lg inline-flex items-center justify-center hover:bg-surface-container dark:hover:bg-white/5 transition-colors" id="mobile-menu-close">
@@ -1071,28 +1079,28 @@
         <!-- CERTIFICATES -->
         <div aria-labelledby="btn-about-certs" aria-hidden="true" class="about-tab-content hidden" id="about-certs" role="tabpanel">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="p-5 enterprise-card rounded-2xl flex items-center justify-between">
+            <div class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <div class="flex items-center gap-4">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark"><span class="material-symbols-outlined">shield_person</span></div>
                 <div><h5 class="text-[13px] font-bold leading-tight">Active Directory Basics</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">TryHackMe</p></div>
               </div>
               <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider">Completed</span>
             </div>
-            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/82P5SUBW?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex items-center justify-between hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Core Data Concepts on Microsoft Learn">
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/82P5SUBW?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Core Data Concepts on Microsoft Learn">
               <div class="flex items-center gap-4 min-w-0">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined">database</span></div>
                 <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Explore Core Data Concepts <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
               </div>
               <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
             </a>
-            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/XEDC9PBY?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex items-center justify-between hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Data Roles and Services on Microsoft Learn">
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/XEDC9PBY?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Data Roles and Services on Microsoft Learn">
               <div class="flex items-center gap-4 min-w-0">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined">cloud_done</span></div>
                 <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Explore Data Roles &amp; Services <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
               </div>
               <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
             </a>
-            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/7B5H8D5Z?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex items-center justify-between hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Introduction to Microsoft Azure Data Core Concepts on Microsoft Learn">
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/7B5H8D5Z?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Introduction to Microsoft Azure Data Core Concepts on Microsoft Learn">
               <div class="flex items-center gap-4 min-w-0">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden shrink-0">
                   <img src="Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png" alt="Azure Data Core Concepts badge" class="w-8 h-8 object-contain" loading="lazy" decoding="async">
@@ -1101,21 +1109,21 @@
               </div>
               <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
             </a>
-            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/QL46A76E?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex items-center justify-between hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Fundamental Relational Data Concepts on Microsoft Learn">
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/QL46A76E?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Fundamental Relational Data Concepts on Microsoft Learn">
               <div class="flex items-center gap-4 min-w-0">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined">storage</span></div>
                 <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Explore Fundamental Relational Data Concepts <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
               </div>
               <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
             </a>
-            <div class="p-5 enterprise-card rounded-2xl flex items-center justify-between">
+            <div class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <div class="flex items-center gap-4">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark"><span class="material-symbols-outlined">analytics</span></div>
                 <div><h5 class="text-[13px] font-bold leading-tight">PL-300: Power BI Data Analyst</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
               </div>
               <span class="px-3 py-1 status-inprogress text-[11px] font-bold rounded-lg uppercase tracking-wider">In Progress</span>
             </div>
-            <div class="p-5 enterprise-card rounded-2xl flex items-center justify-between">
+            <div class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <div class="flex items-center gap-4">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark"><span class="material-symbols-outlined">lock_person</span></div>
                 <div><h5 class="text-[13px] font-bold leading-tight">Certified in Cybersecurity (CC)</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">ISC2</p></div>
@@ -1313,10 +1321,15 @@
   <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr] gap-10 md:gap-12 mb-12">
       <div class="space-y-6 sm:col-span-2 md:col-span-1">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold shadow-lg">ZR</div>
+        <div class="flex items-baseline gap-3">
+          <span class="zr-mark inline-flex items-baseline gap-1 font-headline-card font-extrabold text-2xl leading-none select-none">
+            <span class="text-primary dark:text-primary-dark text-[28px] font-black">[</span>
+            <span class="text-on-surface dark:text-white tracking-tight">ZR</span>
+            <span class="text-primary dark:text-primary-dark text-[28px] font-black">]</span>
+          </span>
           <span class="text-2xl font-bold tracking-tight text-on-surface dark:text-text-primary-dark">Zohaib Rahim</span>
         </div>
+        <p class="font-label-technical text-[11px] font-bold uppercase tracking-[0.3em] text-text-muted-light dark:text-text-secondary-dark">Building Better Systems</p>
         <p class="text-text-secondary-light dark:text-text-secondary-dark max-w-sm text-[15px] leading-relaxed">Computer Science student building practical systems at the intersection of technology and operations.</p>
       </div>
       <div class="space-y-6">

@@ -50,36 +50,58 @@ def optimize_azure_icon():
     print(f"Azure icon optimized: now {after//1024} KB @ {im.size}")
 
 
+def _load_font(size: int, bold: bool = True):
+    for cand in [
+        os.path.join(os.environ.get("WINDIR", ""), "Fonts", "arialbd.ttf" if bold else "arial.ttf"),
+        os.path.join(os.environ.get("WINDIR", ""), "Fonts", "segoeuib.ttf" if bold else "segoeui.ttf"),
+    ]:
+        if cand and os.path.exists(cand):
+            try:
+                return ImageFont.truetype(cand, size)
+            except Exception:
+                pass
+    return ImageFont.load_default()
+
+
+def _draw_bracket_mark(d, cx, cy, letter_size, letters="ZR", letter_color=(255, 255, 255), bracket_color=(96, 165, 250)):
+    """Draw the 8d bracketed monogram [ ZR ] centered at (cx, cy).
+       Returns total width for layout callers."""
+    letter_font = _load_font(letter_size, bold=True)
+    bracket_font = _load_font(int(letter_size * 1.32), bold=True)
+    gap = int(letter_size * 0.14)
+    lb = d.textbbox((0, 0), letters, font=letter_font)
+    lb_w = lb[2] - lb[0]
+    lb_h = lb[3] - lb[1]
+    l_bb = d.textbbox((0, 0), "[", font=bracket_font)
+    r_bb = d.textbbox((0, 0), "]", font=bracket_font)
+    lb_bw = l_bb[2] - l_bb[0]
+    rb_bw = r_bb[2] - r_bb[0]
+    total_w = lb_bw + gap + lb_w + gap + rb_bw
+    x = cx - total_w / 2
+    top = cy - lb_h / 2 - lb[1]
+    # Baseline-align brackets with letters
+    br_top = cy - (l_bb[3] - l_bb[1]) / 2 - l_bb[1]
+    d.text((x - l_bb[0], br_top), "[", fill=bracket_color, font=bracket_font)
+    x += lb_bw + gap
+    d.text((x - lb[0], top), letters, fill=letter_color, font=letter_font)
+    x += lb_w + gap
+    d.text((x - r_bb[0], br_top), "]", fill=bracket_color, font=bracket_font)
+    return total_w
+
+
 def make_apple_touch_icon():
     dst = os.path.join(ICON_DIR, "apple-touch-icon.png")
     size = 180
-    im = Image.new("RGBA", (size, size), (37, 99, 235, 255))
-    d = ImageDraw.Draw(im)
-    # Rounded corners
+    # Dark tile so blue brackets pop
+    im = Image.new("RGBA", (size, size), (11, 18, 32, 255))
     mask = Image.new("L", (size, size), 0)
-    dm = ImageDraw.Draw(mask)
-    dm.rounded_rectangle((0, 0, size, size), radius=34, fill=255)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, size, size), radius=34, fill=255)
     out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
     out.paste(im, (0, 0), mask)
-    # Try to load Manrope; fall back to default
-    font = None
-    for candidate in [
-        os.path.join(os.environ.get("WINDIR", ""), "Fonts", "arialbd.ttf"),
-        os.path.join(os.environ.get("WINDIR", ""), "Fonts", "segoeuib.ttf"),
-    ]:
-        if candidate and os.path.exists(candidate):
-            try:
-                font = ImageFont.truetype(candidate, 88)
-                break
-            except Exception:
-                pass
-    if font is None:
-        font = ImageFont.load_default()
-    text = "ZR"
-    dd = ImageDraw.Draw(out)
-    bbox = dd.textbbox((0, 0), text, font=font)
-    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    dd.text(((size - tw) / 2 - bbox[0], (size - th) / 2 - bbox[1] - 4), text, fill=(255, 255, 255, 255), font=font)
+    d = ImageDraw.Draw(out)
+    _draw_bracket_mark(d, size / 2, size / 2, letter_size=72,
+                       letter_color=(255, 255, 255),
+                       bracket_color=(96, 165, 250))
     out.save(dst, "PNG", optimize=True)
     print(f"apple-touch-icon.png written ({os.path.getsize(dst)//1024} KB)")
 
@@ -106,28 +128,12 @@ def make_og_card():
         for x in range(24, W, 32):
             d.ellipse((x - 1, y - 1, x + 1, y + 1), fill=(60, 80, 130))
 
-    # Fonts
-    def _f(size, bold=True):
-        for cand in [
-            os.path.join(os.environ.get("WINDIR", ""), "Fonts", "arialbd.ttf" if bold else "arial.ttf"),
-            os.path.join(os.environ.get("WINDIR", ""), "Fonts", "segoeuib.ttf" if bold else "segoeui.ttf"),
-        ]:
-            if cand and os.path.exists(cand):
-                try:
-                    return ImageFont.truetype(cand, size)
-                except Exception:
-                    pass
-        return ImageFont.load_default()
+    _f = _load_font
 
-    # ZR badge
-    badge_size = 68
-    bx, by = 72, 68
-    d.rounded_rectangle((bx, by, bx + badge_size, by + badge_size), radius=14, fill=(37, 99, 235))
-    zr_font = _f(30)
-    zr_bbox = d.textbbox((0, 0), "ZR", font=zr_font)
-    zr_w = zr_bbox[2] - zr_bbox[0]
-    zr_h = zr_bbox[3] - zr_bbox[1]
-    d.text((bx + (badge_size - zr_w) / 2 - zr_bbox[0], by + (badge_size - zr_h) / 2 - zr_bbox[1] - 3), "ZR", fill="white", font=zr_font)
+    # Bracketed [ ZR ] monogram, left-aligned
+    _draw_bracket_mark(d, cx=72 + 48, cy=100, letter_size=48,
+                       letter_color=(255, 255, 255),
+                       bracket_color=(96, 165, 250))
 
     # Kicker
     kicker = "FINAL-YEAR COMPUTER SCIENCE CO-OP"
