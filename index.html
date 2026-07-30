@@ -2,14 +2,27 @@
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
 <title>Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio</title>
-<meta name="description" content="Final-year Computer Science co-op student building practical technology for data analytics, digital transformation, business systems, and full-stack engineering.">
+<meta name="description" content="Final-year Computer Science co-op student at UNBC. Available for Fall 2026 co-op and Summer 2027 early-career roles in data analytics, business systems, digital transformation, and software engineering.">
 <meta name="author" content="Zohaib Rahim">
 <meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#090D14" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://zohaibrahim.vercel.app/">
+
+<script>
+  /* First-paint theme: apply dark class synchronously before <body> paints
+     so users with OS/localStorage dark preference don't see a light-mode flash. */
+  (function() {
+    try {
+      var stored = localStorage.getItem('theme');
+      var isDark = stored === 'dark'
+        || (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDark) document.documentElement.classList.add('dark');
+    } catch (e) {}
+  })();
+</script>
 
 <!-- Favicon: inline SVG ZR monogram -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232563EB'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Manrope,Inter,sans-serif' font-size='30' font-weight='800' fill='white'>ZR</text></svg>">
@@ -19,7 +32,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zohaibrahim.vercel.app/">
 <meta property="og:title" content="Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio">
-<meta property="og:description" content="Practical technology for real operational needs. Data analytics, digital transformation, business systems, full-stack engineering.">
+<meta property="og:description" content="Practical technology for real operational needs. Available Fall 2026 co-op + Summer 2027 early-career. Data, systems, and software engineering.">
 <meta property="og:image" content="https://zohaibrahim.vercel.app/Assets/Images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -29,7 +42,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio">
-<meta name="twitter:description" content="Practical technology for real operational needs. Data + digital + delivery.">
+<meta name="twitter:description" content="Practical technology for real operational needs. Available Fall 2026 co-op + Summer 2027 early-career.">
 <meta name="twitter:image" content="https://zohaibrahim.vercel.app/Assets/Images/og-card.png">
 
 <!-- Structured data: Person -->
@@ -56,81 +69,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          "surface-container-low": "#f1f3ff",
-          "surface-dark": "#111722",
-          "outline-variant": "#c3c6d7",
-          "on-surface": "#0B1220",
-          "error": "#ba1a1a",
-          "border-dark": "#293243",
-          "surface-container-highest": "#dce2f6",
-          "tertiary": "#00632b",
-          "inverse-surface": "#2a3040",
-          "outline": "#737686",
-          "elevated-light": "#F9FBFD",
-          "surface-container-lowest": "#ffffff",
-          "soft-teal-fill": "#E8F7F4",
-          "page-bg-dark": "#090D14",
-          "text-muted-light": "#7C8798",
-          "surface-container": "#e9edff",
-          "text-primary-dark": "#F3F6FA",
-          "primary-dark": "#60A5FA",
-          "surface-variant": "#dce2f6",
-          "border-light": "#DCE3EC",
-          "page-bg-light": "#F6F8FC",
-          "surface": "#f9f9ff",
-          "on-primary": "#ffffff",
-          "primary-container": "#2563eb",
-          "soft-blue-fill": "#EAF1FF",
-          "secondary": "#0F766E",
-          "elevated-dark": "#171F2C",
-          "secondary-dark": "#2DD4BF",
-          "surface-bright": "#f9f9ff",
-          "text-secondary-light": "#5B6678",
-          "on-surface-variant": "#434655",
-          "surface-light": "#FFFFFF",
-          "primary": "#2563eb",
-          "text-secondary-dark": "#9BA7B8",
-          "on-error": "#ffffff",
-          "surface-container-high": "#e2e8fc",
-          "on-background": "#151b2a"
-        },
-        borderRadius: {
-          DEFAULT: "0.25rem",
-          lg: "0.5rem",
-          xl: "0.75rem",
-          full: "9999px"
-        },
-        spacing: {
-          "section-v-mobile": "64px",
-          "section-v-desktop": "96px",
-          "card-padding-sm": "24px",
-          "baseline": "8px",
-          "container-max": "1240px",
-          "card-padding-lg": "32px",
-          "gutter-desktop": "24px",
-          "gutter-mobile": "18px"
-        },
-        fontFamily: {
-          "headline-card": ["Manrope", "sans-serif"],
-          "headline-section": ["Manrope", "sans-serif"],
-          "label-technical": ["IBM Plex Mono", "monospace"],
-          "body-lg": ["Inter", "sans-serif"],
-          "hero-lg": ["Manrope", "sans-serif"],
-          "headline-page": ["Manrope", "sans-serif"],
-          "body-base": ["Inter", "sans-serif"]
-        }
-      }
-    }
-  };
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@400,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
   :root {
     /* Single source of truth for nav height. Change this and every dependent
@@ -153,11 +93,14 @@
      in sync automatically. */
   section[id] { scroll-margin-top: var(--nav-h); }
   .dark {
-    --phsa-primary: #66C58A; --phsa-secondary: #8FA8FF;
-    --aku-primary: #4ADE80; --aku-secondary: #F3F4F6;
-    --unbc-primary: #5BC99A; --unbc-secondary: #E0BA55;
-    --roshtay-primary: #6FB1E3; --roshtay-secondary: #35D6A3;
-    --jdc-primary: #8EA9E6; --jdc-secondary: #69A9D6;
+    /* Dark-mode org colors: lightened enough to read on dark bg while
+       each staying distinguishable in hue (green-forest, green-emerald,
+       lime, cyan, azure) so PHSA/AKU/UNBC don't blur into one green blob. */
+    --phsa-primary: #4ADE80; --phsa-secondary: #8FA8FF;
+    --aku-primary: #34D399; --aku-secondary: #F3F4F6;
+    --unbc-primary: #A3E635; --unbc-secondary: #E0BA55;
+    --roshtay-primary: #22D3EE; --roshtay-secondary: #35D6A3;
+    --jdc-primary: #60A5FA; --jdc-secondary: #69A9D6;
   }
 
   html, body { font-family: 'Inter', sans-serif; }
@@ -273,6 +216,34 @@
     vertical-align: middle;
     background-color: currentColor;
     border-radius: 1px;
+  }
+
+  /* Project grid: flex-wrap so tabs with 5 cards (odd counts) center the last
+     row instead of leaving an empty third column. 3-col ≥lg, 2-col ≥md, 1-col mobile. */
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .project-grid > * { width: 100%; }
+  @media (min-width: 768px)  { .project-grid > * { width: calc(50% - 1rem); } }
+  @media (min-width: 1024px) { .project-grid > * { width: calc(33.333% - 1.334rem); } }
+
+  /* Org credibility strip: 2-col on mobile (5 items → 2+2+1 centered),
+     then natural wrap flex layout ≥md so hover-reveal descriptions can absolutely
+     position without constraining item width. */
+  .org-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem 1.5rem;
+  }
+  .org-strip > * { flex: 0 0 calc(50% - 0.75rem); }
+  @media (min-width: 768px) {
+    .org-strip { gap: 3rem 6rem; align-items: center; }
+    .org-strip > * { flex: 0 0 auto; }
   }
 
   /* iOS Safari drops the pan-y gesture when a touch starts on an element that
@@ -402,8 +373,9 @@
 
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-page-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
   <div class="flex justify-between items-center h-nav px-gutter-mobile md:px-gutter-desktop max-w-container-max mx-auto">
-    <a class="flex items-center gap-3" href="#hero" aria-label="Zohaib Rahim — Home">
+    <a class="flex items-center gap-2.5" href="#hero" aria-label="Zohaib Rahim — Home">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold text-sm shadow-lg shadow-primary/20">ZR</div>
+      <span class="md:hidden font-bold text-[15px] text-on-surface dark:text-text-primary-dark tracking-tight">Zohaib Rahim</span>
     </a>
     <div class="hidden md:flex items-center gap-8" role="navigation">
       <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#hero" data-nav-for="hero">Home</a>
@@ -489,7 +461,7 @@
         </a>
       </div>
       <div class="space-y-2 text-text-muted-light dark:text-text-secondary-dark font-body-base text-[14px] border-l-2 border-primary/30 pl-4 py-1">
-        <div class="italic">BC, Canada <span style="font-style: normal;">•</span> Open to co-op, internship, and early-career opportunities</div>
+        <div class="italic">BC, Canada <span style="font-style: normal;">•</span> Available for Fall 2026 co-op and Summer 2027 early-career roles</div>
         <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
           <span class="font-label-technical uppercase tracking-widest text-[11px] font-bold text-primary dark:text-primary-dark">Looking for</span>
           <span>analytics engineering, business systems, and product-focused SWE roles</span>
@@ -508,7 +480,7 @@
           <div class="p-5 sm:p-8 space-y-4 sm:space-y-6">
             <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4">
               <div class="w-[180px] sm:w-[220px] md:w-[240px] rounded-xl bg-slate-100 dark:bg-slate-800 border border-border-light dark:border-border-dark shadow-inner overflow-hidden" style="aspect-ratio: 4/5;">
-                <img src="Assets/Images/Zohaib_Rahim_Headshot.jpg" alt="Zohaib Rahim professional headshot" class="w-full h-full" style="object-fit: cover; object-position: center 25%;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center text-center p-4 h-full\'><span class=\'material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600\'>account_circle</span><span class=\'text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-wider\'>Professional Headshot — 4:5</span></div>';">
+                <img src="Assets/Images/Zohaib_Rahim_Headshot.jpg" alt="Zohaib Rahim professional headshot" class="w-full h-full" style="object-fit: cover; object-position: center 25%;" width="240" height="300" fetchpriority="high" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center text-center p-4 h-full\'><span class=\'material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600\'>account_circle</span><span class=\'text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-wider\'>Professional Headshot — 4:5</span></div>';">
               </div>
               <div class="grid grid-cols-2 gap-4 w-full">
                 <div class="p-4 rounded-2xl bg-surface-container-lowest dark:bg-slate-900/40 border border-border-light dark:border-border-dark space-y-2">
@@ -552,7 +524,7 @@
     <div class="text-center mb-10">
       <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] uppercase tracking-[0.3em] font-bold">EXPERIENCE AND WORK ASSOCIATED WITH</span>
     </div>
-    <div class="flex flex-wrap justify-center items-center gap-10 md:gap-24">
+    <div class="org-strip">
       <div class="flex flex-col items-center group relative">
         <span class="org-tag org-phsa font-headline-card font-extrabold tracking-tighter text-2xl">PHSA</span>
         <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap text-phsa-primary" style="color: var(--phsa-primary);">Provincial Health Services Authority</span>
@@ -587,7 +559,7 @@
     <div class="mb-16">
       <div class="flex flex-row justify-center gap-2 p-1.5 bg-surface-container-low dark:bg-slate-900/40 rounded-2xl max-w-2xl mx-auto border border-border-light dark:border-border-dark" role="tablist" aria-label="Project categories">
         <button aria-controls="tab-data" aria-selected="true" tabindex="0" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 tab-btn-active" id="btn-data" data-tab="data" role="tab">Data &amp; BI</button>
-        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab">Business Systems</button>
+        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab"><span class="sm:hidden">Systems</span><span class="hidden sm:inline">Business Systems</span></button>
         <button aria-controls="tab-software" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-software" data-tab="software" role="tab">Software</button>
       </div>
       <div class="mt-8 flex flex-col items-center max-w-4xl mx-auto gap-6">
@@ -633,7 +605,7 @@
             <div class="mt-8 flex items-center gap-2 text-primary dark:text-primary-dark font-bold text-[13px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">View Case Study <span class="material-symbols-outlined text-[16px]">north_east</span></div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="project-grid">
           <div aria-label="View case study for Canadian Crime Statistics Dashboard" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="crime-dashboard" role="button" tabindex="0">
             <div class="space-y-4">
               <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic</span>
@@ -726,7 +698,7 @@
             <div class="mt-8 flex items-center gap-2 text-primary dark:text-primary-dark font-bold text-[13px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">View Case Study <span class="material-symbols-outlined text-[16px]">north_east</span></div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="project-grid">
           <div aria-label="View case study for AKDN Leadership Hub Redesign" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="akdn-leadership-hub" role="button" tabindex="0">
             <div class="space-y-4">
               <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Professional • Confidential</span>
@@ -790,7 +762,7 @@
             <div class="mt-8 flex items-center gap-2 text-primary dark:text-primary-dark font-bold text-[13px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">View Case Study <span class="material-symbols-outlined text-[16px]">north_east</span></div>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="project-grid">
           <div aria-label="View case study for Roshtay" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden flex flex-col group" data-project-id="roshtay" role="button" tabindex="0">
             <div class="aspect-video bg-slate-900 overflow-hidden border-b border-border-light dark:border-border-dark">
               <img alt="Roshtay AI Operations platform website" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" src="Assets/Images/Roshtay_Website.jpg" loading="lazy">
@@ -944,7 +916,7 @@
         I&rsquo;m Zohaib Rahim, a final-year Computer Science co-op student working across data analytics, digital transformation, business systems, and full-stack software engineering. I build practical solutions that improve processes, support decisions, and create measurable results.
       </p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
       <div class="enterprise-card p-6 rounded-[20px] flex flex-col items-center text-center">
         <span class="material-symbols-outlined text-primary dark:text-primary-dark text-3xl mb-3">school</span>
         <p class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-widest mb-1">EDUCATION</p>
@@ -954,7 +926,14 @@
       <div class="enterprise-card p-6 rounded-[20px] flex flex-col items-center text-center">
         <span class="material-symbols-outlined text-secondary dark:text-secondary-dark text-3xl mb-3">location_on</span>
         <p class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-widest mb-1">LOCATION</p>
-        <p class="text-xl font-bold text-on-surface dark:text-white pt-1">Canada</p>
+        <p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">British Columbia</p>
+        <p class="text-xl font-bold text-on-surface dark:text-white">Canada</p>
+      </div>
+      <div class="enterprise-card p-6 rounded-[20px] flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary dark:text-primary-dark text-3xl mb-3">event_available</span>
+        <p class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-widest mb-1">AVAILABILITY</p>
+        <p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Fall 2026 Co-op</p>
+        <p class="text-xl font-bold text-on-surface dark:text-white">Summer 2027</p>
       </div>
     </div>
     <div class="max-w-4xl mx-auto">
@@ -1116,7 +1095,7 @@
             <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/7B5H8D5Z?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex items-center justify-between hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Introduction to Microsoft Azure Data Core Concepts on Microsoft Learn">
               <div class="flex items-center gap-4 min-w-0">
                 <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden shrink-0">
-                  <img src="Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png" alt="Azure Data Core Concepts badge" class="w-6 h-6 object-contain">
+                  <img src="Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png" alt="Azure Data Core Concepts badge" class="w-8 h-8 object-contain" loading="lazy" decoding="async">
                 </div>
                 <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Introduction to Azure Data Core Concepts <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
               </div>
@@ -1250,7 +1229,7 @@
     </div>
     <div class="md:w-2/5 relative z-10 flex items-center">
       <div class="relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl" style="aspect-ratio: 4/5; max-height: 320px;">
-        <img src="Assets/Images/JDC_West_1st_Team_Photo.jpg" alt="JDC West 2026 first-place team photo" class="w-full h-full object-cover" style="object-position: center 30%;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-white/10\'><span class=\'material-symbols-outlined text-[120px] text-white\'>emoji_events</span></div>';">
+        <img src="Assets/Images/JDC_West_1st_Team_Photo.jpg" alt="JDC West 2026 first-place team photo" class="w-full h-full object-cover" style="object-position: center 30%;" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-white/10\'><span class=\'material-symbols-outlined text-[120px] text-white\'>emoji_events</span></div>';">
       </div>
     </div>
   </div>
@@ -1260,7 +1239,17 @@
 <section class="py-section-v-mobile md:py-section-v-desktop max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop text-center" id="contact">
   <div class="max-w-3xl mx-auto space-y-10">
     <h2 class="font-headline-page text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface dark:text-text-primary-dark tracking-tight">Ready to solve the next challenge?</h2>
-    <p class="text-xl text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">I&rsquo;m currently exploring opportunities in data analytics, business systems, digital transformation, software engineering, and technical project delivery.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[12px] font-bold uppercase tracking-widest font-label-technical">
+        <span class="w-2 h-2 rounded-full bg-green-500 dark:bg-green-400 animate-pulse"></span>
+        Fall 2026 · Co-op
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft-blue-fill dark:bg-primary/15 text-primary dark:text-primary-dark text-[12px] font-bold uppercase tracking-widest font-label-technical">
+        <span class="w-2 h-2 rounded-full bg-primary dark:bg-primary-dark"></span>
+        Summer 2027 · Early-Career
+      </span>
+    </div>
+    <p class="text-xl text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">I&rsquo;m actively interviewing for Fall 2026 co-op placements and Summer 2027 early-career roles across data analytics, business systems, digital transformation, and software engineering.</p>
     <div class="flex flex-col md:flex-row items-center justify-center gap-6">
       <a class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95" href="mailto:zrahim@unbc.ca">Send an Email</a>
       <a class="w-full md:w-auto border-2 border-primary text-primary dark:text-primary-dark dark:border-primary-dark px-12 py-5 rounded-xl font-bold text-lg hover:bg-soft-blue-fill dark:hover:bg-primary/10 transition-all active:scale-95" href="https://linkedin.com/in/zohaibrahim" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
@@ -1278,7 +1267,7 @@
       <div class="flex items-center gap-6 overflow-hidden">
         <div class="hidden sm:inline-flex px-3 py-1 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase whitespace-nowrap" id="modal-status-pill">Academic Team Project</div>
         <div class="min-w-0">
-          <h3 class="font-headline-card text-xl md:text-2xl font-bold truncate leading-tight" id="modal-title">Project</h3>
+          <h2 class="font-headline-card text-xl md:text-2xl font-bold truncate leading-tight" id="modal-title">Project</h2>
           <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-text-muted-light dark:text-text-secondary-dark" id="modal-category">Category</p>
         </div>
       </div>
@@ -1308,7 +1297,7 @@
   <div class="relative w-[95vw] max-w-[1100px] h-fit max-h-[90vh] bg-white dark:bg-elevated-dark border border-border-light dark:border-white/20 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 translate-y-4 opacity-0" id="course-container">
     <header class="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 sm:py-6 border-b border-border-light dark:border-border-dark shrink-0">
       <div>
-        <h3 class="font-headline-card text-xl font-bold" id="course-modal-title">Relevant Coursework</h3>
+        <h2 class="font-headline-card text-xl font-bold" id="course-modal-title">Relevant Coursework</h2>
         <p class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark font-medium mt-1" id="course-modal-subtitle">University of Northern British Columbia</p>
       </div>
       <button aria-label="Close modal" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low dark:bg-slate-900/60 hover:bg-error/10 hover:text-error transition-all" id="close-course-modal">
@@ -1322,17 +1311,16 @@
 <!-- FOOTER -->
 <footer class="bg-surface-container-lowest dark:bg-page-bg-dark border-t border-border-light dark:border-border-dark py-16">
   <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
-      <div class="space-y-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr] gap-10 md:gap-12 mb-12">
+      <div class="space-y-6 sm:col-span-2 md:col-span-1">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary font-bold shadow-lg">ZR</div>
           <span class="text-2xl font-bold tracking-tight text-on-surface dark:text-text-primary-dark">Zohaib Rahim</span>
         </div>
         <p class="text-text-secondary-light dark:text-text-secondary-dark max-w-sm text-[15px] leading-relaxed">Computer Science student building practical systems at the intersection of technology and operations.</p>
       </div>
-      <div class="grid grid-cols-2 gap-12 md:justify-items-end">
-        <div class="space-y-6">
-          <h4 class="font-bold uppercase text-[11px] tracking-[0.3em] text-on-surface dark:text-white">Navigation</h4>
+      <div class="space-y-6">
+        <h4 class="font-bold uppercase text-[11px] tracking-[0.3em] text-on-surface dark:text-white">Navigation</h4>
           <ul class="space-y-4 text-[14px]">
             <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#hero">Home</a></li>
             <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#projects">Work</a></li>
@@ -1340,15 +1328,14 @@
             <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#about">About</a></li>
             <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="Assets/Resume/Zohaib_Rahim_Resume_Portfolio.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
           </ul>
-        </div>
-        <div class="space-y-6">
-          <h4 class="font-bold uppercase text-[11px] tracking-[0.3em] text-on-surface dark:text-white">Connect</h4>
-          <ul class="space-y-4 text-[14px]">
-            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="https://linkedin.com/in/zohaibrahim" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="https://github.com/zohaibrahim" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="mailto:zrahim@unbc.ca">Email</a></li>
-          </ul>
-        </div>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold uppercase text-[11px] tracking-[0.3em] text-on-surface dark:text-white">Connect</h4>
+        <ul class="space-y-4 text-[14px]">
+          <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="https://linkedin.com/in/zohaibrahim" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="https://github.com/zohaibrahim" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="mailto:zrahim@unbc.ca">Email</a></li>
+        </ul>
       </div>
     </div>
     <div class="pt-10 border-t border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-center gap-6">
@@ -1356,7 +1343,7 @@
         <div>&copy; 2026 Zohaib Rahim.</div>
         <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider">
           <span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400 animate-pulse"></span>
-          Open to co-op / summer 2027
+          Fall 2026 Co-op · Summer 2027 Early-Career
         </div>
       </div>
       <div class="text-text-muted-light dark:text-text-secondary-dark text-[12px] font-medium text-center md:text-right">
@@ -1870,10 +1857,10 @@
   }
 
   // ============ THEME ============
+  // Head script already applied .dark class before paint. Here we only sync
+  // the toggle icon to match the current state.
   const themeToggle = document.getElementById('theme-toggle');
-  const storedTheme = (function(){ try { return localStorage.getItem('theme'); } catch(e){ return null; } })();
-  if (storedTheme === 'dark') {
-    document.documentElement.classList.add('dark');
+  if (document.documentElement.classList.contains('dark')) {
     themeToggle.textContent = 'light_mode';
   }
   themeToggle.addEventListener('click', () => {
