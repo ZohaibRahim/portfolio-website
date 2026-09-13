@@ -2,7 +2,7 @@
 
 Personal portfolio for **Zohaib Rahim** — final-year Computer Science co-op at UNBC. Live at **[zohaibrahim.vercel.app](https://zohaibrahim.vercel.app)**.
 
-Available for **Fall 2026 Co-op** and **Summer 2027 Early-career** roles in data analytics, business systems, digital transformation, and software engineering.
+Available for **Winter 2027 Co-op** and **Summer 2027 Early-career** roles in data analytics, business systems, digital transformation, and software engineering.
 
 ---
 
@@ -145,7 +145,7 @@ Because everything lives in one HTML file, here's the map:
 - **Nav badge lockup** — `index.html:406` (`[ ZR ]` bracket mark)
 - **Hero name / tagline / description / CTAs** — `~460–495`
 - **Rotating typewriter phrases** — `~1830` in the JS block, `phrases = [...]`
-- **Availability line** — `~493` ("BC, Canada • Available for Fall 2026 co-op…")
+- **Availability line** — `~493` ("BC, Canada • Available for Winter 2027 co-op…")
 
 ### Projects
 - **Project card markup** — `~605–870` — three `<div id="tab-data|tab-digital|tab-software">` panels, each with a flagship + `.project-grid` of smaller cards.
@@ -187,7 +187,7 @@ Because everything lives in one HTML file, here's the map:
 ### Contact + footer
 - **Contact CTA** — `~1314` (headline, availability pills, buttons)
 - **Footer brand + tagline** — `~1358–1400`
-- **Availability pill in footer** — `~1389` ("Fall 2026 Co-op · Summer 2027 Early-Career")
+- **Availability pill in footer** — `~1389` ("Winter 2027 Co-op · Summer 2027 Early-Career")
 
 ### Meta / SEO
 - **`<title>`, meta description, OG, Twitter, JSON-LD Person schema** — `~6–70`
