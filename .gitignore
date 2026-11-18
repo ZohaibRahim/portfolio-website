@@ -1,0 +1,18 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+.env
+*.log
+
+# Private / generated — never commit
+_private/
+Assets/Resume/Zohaib_Rahim_Master_Resume.pdf
+scripts/_docs_dump.txt
+__pycache__/
+
+# Local tooling and original design source (kept on disk, not in git)
+.claude/
+stitch_zohaib_rahim_portfolio_homepage Final/
+*.docx

@@ -1,0 +1,15 @@
+{
+  "name": "zohaibrahim-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site for Zohaib Rahim.",
+  "scripts": {
+    "build": "tailwindcss -i ./styles.input.css -o ./styles.css --minify",
+    "watch": "tailwindcss -i ./styles.input.css -o ./styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>Page not found · Zohaib Rahim</title>
+<meta name="description" content="This page doesn't exist. Head back to Zohaib Rahim's portfolio.">
+<meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090D14" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%232563EB'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Manrope,Inter,sans-serif' font-size='30' font-weight='800' fill='white'>ZR</text></svg>">
+<meta name="robots" content="noindex">
+<script>
+  (function() {
+    try {
+      var stored = localStorage.getItem('theme');
+      var isDark = stored === 'dark'
+        || (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDark) document.documentElement.classList.add('dark');
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: light dark; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #F9FBFD;
+    color: #0B1220;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .dark body { background: #090D14; color: #F3F6FA; }
+  .card {
+    max-width: 520px;
+    width: 100%;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563EB;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .dark .badge { background: rgba(96, 165, 250, 0.15); color: #60A5FA; }
+  h1 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 1rem;
+  }
+  p {
+    color: #4B5563;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+    max-width: 42ch;
+    margin-inline: auto;
+  }
+  .dark p { color: #9BA3AF; }
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a:active { transform: scale(0.97); }
+  .primary {
+    background: #2563EB;
+    color: white;
+    box-shadow: 0 8px 20px -8px rgba(37, 99, 235, 0.5);
+  }
+  .primary:hover { box-shadow: 0 12px 28px -8px rgba(37, 99, 235, 0.6); }
+  .secondary {
+    background: transparent;
+    color: #2563EB;
+    border: 1.5px solid rgba(37, 99, 235, 0.3);
+  }
+  .dark .secondary { color: #60A5FA; border-color: rgba(96, 165, 250, 0.4); }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="badge">404 · Not Found</div>
+    <h1>Wrong turn.</h1>
+    <p>The page you're looking for doesn't exist on this portfolio &mdash; it may have moved, or the link may be broken. Let's get you back to something useful.</p>
+    <div class="actions">
+      <a class="primary" href="/">Back to Home</a>
+      <a class="secondary" href="/#projects">See Projects</a>
+    </div>
+  </main>
+</body>
+</html>

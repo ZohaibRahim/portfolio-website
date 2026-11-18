@@ -1,0 +1,2633 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio</title>
+<meta name="description" content="Final-year Computer Science co-op student at UNBC, graduating April 2027. Winter 2027 co-op · Full-time from May 2027 — data analytics, business systems, digital transformation, and software engineering.">
+<meta name="author" content="Zohaib Rahim">
+<meta name="theme-color" content="#2563EB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#090D14" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://zohaibrahim.vercel.app/">
+
+<script>
+  /* First-paint theme: apply dark class synchronously before <body> paints
+     so users with OS/localStorage dark preference don't see a light-mode flash. */
+  (function() {
+    try {
+      var stored = localStorage.getItem('theme');
+      var isDark = stored === 'dark'
+        || (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (isDark) document.documentElement.classList.add('dark');
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Favicon: inline SVG ZR monogram -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230B1220'/><text x='32' y='45' text-anchor='middle' font-family='Manrope,Inter,sans-serif' font-weight='900'><tspan fill='%2360A5FA' font-size='38'>[</tspan><tspan fill='white' font-size='30' dx='1'>Z</tspan><tspan fill='%2360A5FA' font-size='38' dx='1'>]</tspan></text></svg>">
+<link rel="apple-touch-icon" href="Assets/Icons/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zohaibrahim.vercel.app/">
+<meta property="og:title" content="Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio">
+<meta property="og:description" content="Practical technology for real operational needs. Winter 2027 co-op · Full-time from May 2027. Data, systems, and software engineering.">
+<meta property="og:image" content="https://zohaibrahim.vercel.app/Assets/Images/og-card.png?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zohaib Rahim — Final-year Computer Science co-op portfolio">
+<meta property="og:locale" content="en_CA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zohaib Rahim — Data, Digital Transformation &amp; Software Portfolio">
+<meta name="twitter:description" content="Practical technology for real operational needs. Winter 2027 co-op · Full-time from May 2027.">
+<meta name="twitter:image" content="https://zohaibrahim.vercel.app/Assets/Images/og-card.png?v=2">
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zohaib Rahim",
+  "jobTitle": "Final-year Computer Science Co-op Student",
+  "description": "Final-year BSc Computer Science (Co-op) student at UNBC, graduating April 2027. Winter 2027 co-op · Full-time from May 2027.",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Northern British Columbia"
+  },
+  "address": { "@type": "PostalAddress", "addressRegion": "British Columbia", "addressCountry": "Canada" },
+  "email": "mailto:zrahim@unbc.ca",
+  "url": "https://zohaibrahim.vercel.app/",
+  "sameAs": [
+    "https://linkedin.com/in/zohaibrahim",
+    "https://github.com/zohaibrahim"
+  ],
+  "knowsAbout": ["Power BI", "DAX", "SQL", "Python", "TypeScript", "Angular", "Node.js", "SharePoint", "Power Automate", "PostgreSQL", "Azure AI Search", "Retrieval-Augmented Generation", "Data Analytics", "Digital Transformation", "Business Systems", "Full-Stack Engineering"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@400,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root {
+    /* Single source of truth for nav height. Change this and every dependent
+       layout token (nav bar, main padding, hero fit, anchor scroll) follows. */
+    --nav-h: 5rem;
+
+    --phsa-primary: #176B3A; --phsa-secondary: #2E3192;
+    --aku-primary: #00843D; --aku-secondary: #2B2B2B;
+    --unbc-primary: #035642; --unbc-secondary: #7A5A00;
+    --roshtay-primary: #246F91; --roshtay-secondary: #087D67;
+    --jdc-primary: #263F7D; --jdc-secondary: #2F6FA8;
+  }
+
+  /* Nav-height coupled utilities. Use these instead of hardcoding h-20 / mt-20. */
+  .h-nav { height: var(--nav-h); }
+  .pt-nav { padding-top: var(--nav-h); }
+  .min-h-below-nav { min-height: calc(100vh - var(--nav-h)); }
+
+  /* Anchor navigation must clear the fixed nav. Uses the same token so it stays
+     in sync automatically. */
+  section[id] { scroll-margin-top: var(--nav-h); }
+  .dark {
+    /* Dark-mode org colors — lightened brand primaries so each org reads as
+       itself in dark mode:
+         PHSA   → their emerald #00966C   → light emerald #2ED498
+         AKU    → their brand green #009B45 → bright forest #3FDA7A
+         UNBC   → gold accent #EFCE21 (their signature green would blur with
+                                       PHSA/AKU in dark; gold differentiates)
+         Roshtay→ their teal-blue        → bright cyan-blue #5AC8E8
+         JDC    → their navy #263F7D     → periwinkle #7DA5F7 */
+    --phsa-primary: #2ED498; --phsa-secondary: #F0C620;
+    --aku-primary:  #3FDA7A; --aku-secondary:  #C89B4A;
+    --unbc-primary: #F5D64C; --unbc-secondary: #5DA13F;
+    --roshtay-primary: #5AC8E8; --roshtay-secondary: #5FD3B8;
+    --jdc-primary:  #7DA5F7; --jdc-secondary:  #FF8C5E;
+  }
+
+  html, body { font-family: 'Inter', sans-serif; }
+  /* Prevent mobile browsers from getting confused between horizontal-swipe and
+     vertical-scroll gestures inside sections that use overflow-x-hidden. */
+  html { touch-action: manipulation; }
+  body { touch-action: pan-y; overscroll-behavior-y: contain; }
+  .font-hero-lg, .font-headline-page, .font-headline-section, .font-headline-card { font-family: 'Manrope', sans-serif; }
+  .font-label-technical { font-family: 'IBM Plex Mono', monospace; }
+  .font-body-base, .font-body-lg { font-family: 'Inter', sans-serif; }
+
+  .grid-bg {
+    background-image: radial-gradient(circle, #DCE3EC 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .dark .grid-bg {
+    background-image: radial-gradient(circle, #2D384D 1.2px, transparent 1.2px);
+  }
+
+  .org-tag {
+    position: relative;
+    cursor: default;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .org-tag::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 2px; transition: width 0.4s ease;
+  }
+  .org-tag:hover::after { width: 100%; }
+  .org-phsa { color: var(--phsa-primary); } .org-phsa::after { background-color: var(--phsa-secondary); }
+  .org-aku { color: var(--aku-primary); } .org-aku::after { background-color: var(--aku-secondary); }
+  .org-unbc { color: var(--unbc-primary); } .org-unbc::after { background-color: var(--unbc-secondary); }
+  .org-roshtay { color: var(--roshtay-primary); } .org-roshtay::after { background-color: var(--roshtay-secondary); }
+  .org-jdc { color: var(--jdc-primary); } .org-jdc::after { background-color: var(--jdc-secondary); }
+
+  .tab-btn-active {
+    background-color: #EAF1FF;
+    color: #2563eb;
+    border-color: #2563eb;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .dark .tab-btn-active {
+    background-color: rgba(96,165,250,0.15);
+    color: #F3F6FA;
+    border-color: rgba(96,165,250,0.4);
+  }
+
+  .enterprise-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DCE3EC;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+  .dark .enterprise-card {
+    background-color: #111722;
+    border-color: #293243;
+  }
+
+  .card-hover-lift {
+    cursor: pointer;
+  }
+
+  /* Center the interior copy of every project card (flagship + grid, desktop + mobile).
+     Applies text alignment, skill-tag row alignment, and CTA row alignment. */
+  #projects .card-hover-lift { text-align: center; }
+  #projects .card-hover-lift .skill-tag-list { justify-content: center; }
+  #projects .card-hover-lift .mt-auto,
+  #projects .card-hover-lift .mt-8 { justify-content: center; }
+  .card-hover-lift:focus-within {
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.4);
+  }
+  .card-hover-lift:hover {
+    border-color: rgba(37,99,235,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.06);
+  }
+  .dark .card-hover-lift:hover {
+    border-color: rgba(96,165,250,0.5);
+  }
+
+  .sparkline {
+    height: 20px; width: 60px; display: inline-block;
+    background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,35 Q15,30 30,25 T60,15 T90,5' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+    -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,35 Q15,30 30,25 T60,15 T90,5' fill='none' stroke='black' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+    mask-size: contain; mask-repeat: no-repeat;
+    -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat;
+  }
+
+  #modal-content-container::-webkit-scrollbar,
+  #course-modal-content::-webkit-scrollbar { width: 6px; }
+  #modal-content-container::-webkit-scrollbar-track,
+  #course-modal-content::-webkit-scrollbar-track { background: transparent; }
+  #modal-content-container::-webkit-scrollbar-thumb,
+  #course-modal-content::-webkit-scrollbar-thumb {
+    background-color: #DCE3EC; border-radius: 9999px;
+  }
+  .dark #modal-content-container::-webkit-scrollbar-thumb,
+  .dark #course-modal-content::-webkit-scrollbar-thumb {
+    background-color: #293243;
+  }
+
+  .modal-open { overflow: hidden; }
+
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  /* Hero tagline: the full text is always in the DOM; CSS only wipes it in once. */
+  @keyframes tagline-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  .tagline-reveal { display: inline-block; animation: tagline-reveal 1.2s steps(24, end) 0.2s both; }
+  .cursor-blink {
+    animation: blink 0.9s infinite;
+    display: inline-block;
+    margin-left: 3px;
+    width: 3px;
+    height: 0.9em;
+    vertical-align: middle;
+    background-color: currentColor;
+    border-radius: 1px;
+  }
+
+  /* Azure Data Core Concepts certificate icon: use the PNG as a CSS mask so
+     the glyph inherits our primary blue in both themes (matching Material
+     Symbols icons on the neighboring cert cards). Size matches ~24px material
+     symbols weight. */
+  .certificate-icon-azure {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-color: #2563EB;
+    -webkit-mask: url('Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png') center / contain no-repeat;
+            mask: url('Assets/Icons/Introduction_to_Azure_Data_Core_Icon.png') center / contain no-repeat;
+  }
+  .dark .certificate-icon-azure { background-color: #60A5FA; }
+
+  /* Project grid: flex-wrap so tabs with 5 cards (odd counts) center the last
+     row instead of leaving an empty third column. 3-col ≥lg, 2-col ≥md, 1-col mobile. */
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .project-grid > * { width: 100%; }
+  /* "More work" disclosure: native <details>, custom marker. */
+  .more-work > summary { list-style: none; }
+  .more-work > summary::-webkit-details-marker { display: none; }
+  .more-work[open] .more-work-icon { transform: rotate(180deg); }
+  @media (min-width: 768px)  { .project-grid > * { width: calc(50% - 1rem); } }
+  @media (min-width: 1024px) { .project-grid > * { width: calc(33.333% - 1.334rem); } }
+
+  /* Org credibility strip: 2-col on mobile (5 items → 2+2+1 centered),
+     then natural wrap flex layout ≥md so hover-reveal descriptions can absolutely
+     position without constraining item width. */
+  .org-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem 1.5rem;
+  }
+  .org-strip > * { flex: 0 0 calc(50% - 0.75rem); }
+  @media (min-width: 768px) {
+    .org-strip { gap: 3rem 6rem; align-items: center; }
+    .org-strip > * { flex: 0 0 auto; }
+  }
+
+  /* iOS Safari drops the pan-y gesture when a touch starts on an element that
+     is either animating (tagline reveal, blinking cursor) or that
+     triggers a native long-press callout (images). Make those touch-transparent
+     so touches fall through to the body's pan-y scroller. */
+  .tagline-reveal, .cursor-blink { pointer-events: none; }
+  #hero img { -webkit-touch-callout: none; -webkit-user-drag: none; user-select: none; }
+  .hero-decor { pointer-events: none; }
+
+  /* Skip link — visible only on focus */
+  .skip-link {
+    position: absolute; top: -100px; left: 8px; z-index: 200;
+    background: #2563EB; color: #fff; padding: 10px 16px;
+    border-radius: 8px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus { top: 12px; outline: 2px solid #fff; outline-offset: 2px; }
+
+  /* Nav scroll-spy active-link state (JS-toggled). Overrides the default underline color for the currently-visible section. */
+  .nav-link.is-active {
+    color: #2563EB;
+    border-bottom: 2px solid #2563EB;
+  }
+  .dark .nav-link.is-active {
+    color: #60A5FA;
+    border-bottom-color: #60A5FA;
+  }
+  .nav-link { transition: color 0.2s ease; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .skill-tag {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 6px 10px; min-height: 28px;
+    border: 1px solid; border-radius: 8px;
+    font-size: 12px; line-height: 1; font-weight: 600;
+    white-space: nowrap; transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+  .skill-tag-list { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+  /* Coursework tags can hold long, multi-word course names and must wrap
+     inside their category card instead of being clipped. */
+  .skill-tag-course {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+    padding: 8px 12px;
+    min-height: 32px;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .skill-tag-data     { border-color: #B8CDFB; background-color: #EEF4FF; color: #1D4ED8; }
+  .skill-tag-digital  { border-color: #A7DDD4; background-color: #ECF9F6; color: #0F766E; }
+  .skill-tag-software { border-color: #C5C7F5; background-color: #F1F2FF; color: #4338CA; }
+
+  .dark .skill-tag-data     { border-color: rgba(96,165,250,0.55); background-color: rgba(96,165,250,0.14); color: #93C5FD; }
+  .dark .skill-tag-digital  { border-color: rgba(45,212,191,0.55); background-color: rgba(45,212,191,0.14); color: #5EEAD4; }
+  .dark .skill-tag-software { border-color: rgba(129,140,248,0.55); background-color: rgba(129,140,248,0.14); color: #A5B4FC; }
+
+  .skill-tag:hover { filter: brightness(0.95); }
+  .dark .skill-tag:hover { filter: brightness(1.12); }
+
+  .skill-category-panel {
+    background: #FFFFFF; border: 1px solid #D8E1EF; border-radius: 14px;
+    padding: 24px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  /* Panels in the same grid row stay equal-height because CSS grid stretches
+     items by default — no hardcoded min-height needed. */
+  .dark .skill-category-panel { background: #111722; border-color: #364155; }
+
+  .skill-category-title {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #0B1220; margin-bottom: 6px;
+    display: block; text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .dark .skill-category-title { color: #FFFFFF; }
+  .skill-category-underline { width: 32px; height: 2px; background: #2563eb; margin: 0 auto 20px; }
+  .skill-category-underline.secondary { background: #0F766E; }
+  .dark .skill-category-underline.secondary { background: #2DD4BF; }
+
+  .about-tab-btn {
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .about-tab-btn.active {
+    background-color: #FFFFFF;
+    color: #2563eb;
+    border-color: rgba(37,99,235,0.25);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .dark .about-tab-btn.active {
+    background-color: #111722;
+    color: #60A5FA;
+    border-color: rgba(96,165,250,0.35);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-blink, .tagline-reveal { animation: none; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  :focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .status-completed { background-color: #DCFCE7; color: #15803D; }
+  .dark .status-completed { background-color: rgba(74,222,128,0.15); color: #4ADE80; }
+  .status-inprogress { background-color: #DBEAFE; color: #1D4ED8; }
+  .dark .status-inprogress { background-color: rgba(96,165,250,0.15); color: #60A5FA; }
+  .status-planned { background-color: #FFEDD5; color: #C2410C; }
+  .dark .status-planned { background-color: rgba(251,146,60,0.15); color: #FB923C; }
+</style>
+</head>
+<body class="bg-page-bg-light dark:bg-page-bg-dark text-on-surface dark:text-text-primary-dark antialiased transition-colors duration-300">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-page-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
+  <div class="flex justify-between items-center h-nav px-gutter-mobile md:px-gutter-desktop max-w-container-max mx-auto">
+    <a class="flex items-center gap-2.5 group" href="#hero" aria-label="Zohaib Rahim — Home">
+      <span class="zr-mark inline-flex items-center gap-[3px] font-headline-card font-extrabold text-[19px] leading-none select-none">
+        <span class="text-primary dark:text-primary-dark text-[22px] font-black">[</span>
+        <span class="text-on-surface dark:text-white tracking-tight">ZR</span>
+        <span class="text-primary dark:text-primary-dark text-[22px] font-black">]</span>
+      </span>
+      <span class="md:hidden font-bold text-[15px] text-on-surface dark:text-text-primary-dark tracking-tight">Zohaib Rahim</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8" role="navigation">
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#hero" data-nav-for="hero">Home</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#projects" data-nav-for="projects">Work</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#experience" data-nav-for="experience">Experience</a>
+      <a class="nav-link text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark font-medium text-[15px]" href="#about" data-nav-for="about">About</a>
+    </div>
+    <div class="flex items-center gap-3 md:gap-4">
+      <button aria-label="Toggle theme" class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-colors text-2xl" id="theme-toggle" title="Theme">dark_mode</button>
+      <a class="hidden md:inline-flex items-center gap-1.5 border border-primary text-primary dark:text-primary-dark dark:border-primary-dark px-5 py-2 rounded-lg font-semibold hover:bg-soft-blue-fill dark:hover:bg-primary/10 transition-all active:scale-95 text-[14px]" href="Assets/Resume/Zohaib_Rahim_Resume_Portfolio.pdf" target="_blank" rel="noopener noreferrer" id="nav-resume">
+        Resume <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+      </a>
+      <a class="hidden md:inline-flex bg-primary text-on-primary px-5 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 text-[14px]" href="#contact">Contact</a>
+      <button aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-on-surface dark:text-text-primary-dark hover:bg-surface-container dark:hover:bg-white/5 transition-colors" id="mobile-menu-btn">
+        <span class="material-symbols-outlined text-[26px]">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div id="mobile-menu" class="fixed inset-0 z-[80] hidden md:hidden" aria-modal="true" role="dialog" aria-labelledby="mobile-menu-title">
+  <div class="absolute inset-0 bg-[#090D14]/55 dark:bg-black/72 backdrop-blur-sm opacity-0 transition-opacity duration-200" id="mobile-menu-backdrop"></div>
+  <div class="absolute top-0 right-0 h-full w-[86%] max-w-sm bg-white dark:bg-elevated-dark border-l border-border-light dark:border-white/10 shadow-2xl flex flex-col translate-x-full transition-transform duration-250 ease-out" id="mobile-menu-panel">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-border-light dark:border-border-dark shrink-0">
+      <div class="flex items-center gap-2.5">
+        <span class="zr-mark inline-flex items-center gap-[3px] font-headline-card font-extrabold text-[19px] leading-none select-none">
+          <span class="text-primary dark:text-primary-dark text-[22px] font-black">[</span>
+          <span class="text-on-surface dark:text-white tracking-tight">ZR</span>
+          <span class="text-primary dark:text-primary-dark text-[22px] font-black">]</span>
+        </span>
+        <span id="mobile-menu-title" class="font-bold text-[15px] text-on-surface dark:text-text-primary-dark">Menu</span>
+      </div>
+      <button aria-label="Close menu" class="w-10 h-10 rounded-lg inline-flex items-center justify-center hover:bg-surface-container dark:hover:bg-white/5 transition-colors" id="mobile-menu-close">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-5 space-y-1" aria-label="Mobile navigation">
+      <a class="mobile-nav-link flex items-center gap-3 px-3 py-3 rounded-xl text-on-surface dark:text-text-primary-dark hover:bg-surface-container dark:hover:bg-white/5 font-semibold text-[16px] transition-colors" href="#hero"><span class="material-symbols-outlined text-primary dark:text-primary-dark text-[20px]">home</span>Home</a>
+      <a class="mobile-nav-link flex items-center gap-3 px-3 py-3 rounded-xl text-on-surface dark:text-text-primary-dark hover:bg-surface-container dark:hover:bg-white/5 font-semibold text-[16px] transition-colors" href="#projects"><span class="material-symbols-outlined text-primary dark:text-primary-dark text-[20px]">work</span>Work</a>
+      <a class="mobile-nav-link flex items-center gap-3 px-3 py-3 rounded-xl text-on-surface dark:text-text-primary-dark hover:bg-surface-container dark:hover:bg-white/5 font-semibold text-[16px] transition-colors" href="#experience"><span class="material-symbols-outlined text-primary dark:text-primary-dark text-[20px]">timeline</span>Experience</a>
+      <a class="mobile-nav-link flex items-center gap-3 px-3 py-3 rounded-xl text-on-surface dark:text-text-primary-dark hover:bg-surface-container dark:hover:bg-white/5 font-semibold text-[16px] transition-colors" href="#about"><span class="material-symbols-outlined text-primary dark:text-primary-dark text-[20px]">person</span>About</a>
+    </nav>
+    <div class="border-t border-border-light dark:border-border-dark p-5 space-y-3 shrink-0">
+      <a class="w-full inline-flex items-center justify-center gap-2 border border-primary text-primary dark:text-primary-dark dark:border-primary-dark px-4 py-3 rounded-xl font-semibold text-[14px] hover:bg-soft-blue-fill dark:hover:bg-primary/10 transition-all active:scale-[0.98]" href="Assets/Resume/Zohaib_Rahim_Resume_Portfolio.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-[18px]">description</span> Resume <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+      </a>
+      <a class="w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-4 py-3 rounded-xl font-semibold text-[14px] hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-[0.98] mobile-nav-link" href="#contact">
+        <span class="material-symbols-outlined text-[18px]">mail</span> Contact
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="pt-nav" id="main">
+
+<!-- HERO -->
+<!--
+  Sizes itself to its content — no forced viewport-fill. Padding is tight so the
+  section starts right below the nav and the credibility strip below peeks
+  above the fold on standard desktop and mobile heights.
+-->
+<section class="relative grid-bg overflow-x-clip" id="hero">
+  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop py-3 md:py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+    <div class="space-y-4 md:space-y-5 lg:col-span-7">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark border border-primary/20 rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase">
+        <span class="relative flex h-2 w-2">
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary dark:bg-primary-dark"></span>
+        </span>
+        FINAL-YEAR COMPUTER SCIENCE CO-OP
+      </div>
+      <h1 class="font-hero-lg text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] font-[800] tracking-tight">Zohaib Rahim</h1>
+      <div class="h-10 md:h-12">
+        <p class="text-xl md:text-3xl font-bold text-[#2563eb] dark:text-[#60a5fa] font-headline-card">
+          <span class="tagline-reveal">Building Better Systems.</span><span class="cursor-blink" aria-hidden="true"></span>
+        </p>
+      </div>
+      <p class="font-body-lg text-[16px] md:text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-xl leading-relaxed">
+        Final-year Computer Science co-op student creating practical technology for real operational needs.
+      </p>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+        <a class="bg-primary text-on-primary px-6 sm:px-8 py-3.5 rounded-xl font-bold hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95 inline-flex items-center justify-center gap-2 text-[15px]" href="Assets/Resume/Zohaib_Rahim_Resume_Portfolio.pdf" target="_blank" rel="noopener noreferrer" id="hero-resume">
+          <span class="material-symbols-outlined text-[18px]">description</span> View Resume
+        </a>
+        <a class="border border-border-light dark:border-border-dark text-on-surface dark:text-text-primary-dark px-6 sm:px-8 py-3.5 rounded-xl font-bold hover:bg-surface-container dark:hover:bg-white/5 transition-all active:scale-95 inline-flex items-center justify-center gap-2 text-[15px]" href="#projects">
+          Explore My Work <span class="material-symbols-outlined text-[18px]">north_east</span>
+        </a>
+      </div>
+      <div class="space-y-2 text-text-muted-light dark:text-text-secondary-dark font-body-base text-[14px] border-l-2 border-primary/30 pl-4 py-1">
+        <div class="italic">BC, Canada <span style="font-style: normal;">•</span> Graduating April 2027 <span style="font-style: normal;">•</span> Winter 2027 co-op · Full-time from May 2027</div>
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+          <span class="font-label-technical uppercase tracking-widest text-[11px] font-bold text-primary dark:text-primary-dark">Looking for</span>
+          <span>analytics engineering, business systems, and product-focused SWE roles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative lg:col-span-5 flex justify-center lg:justify-end w-full">
+      <div class="relative w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[460px] pt-4 pb-4 md:pt-8 md:pb-8">
+        <div class="enterprise-card rounded-[18px] overflow-hidden shadow-2xl relative z-10 cursor-default">
+          <div class="h-10 bg-slate-50 dark:bg-slate-900/80 border-b border-border-light dark:border-border-dark flex items-center px-5 gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+          </div>
+          <div class="p-5 sm:p-8 space-y-4 sm:space-y-6">
+            <div class="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+              <div class="w-[180px] sm:w-[220px] md:w-[240px] rounded-xl bg-slate-100 dark:bg-slate-800 border border-border-light dark:border-border-dark shadow-inner overflow-hidden" style="aspect-ratio: 4/5;">
+                <img src="Assets/Images/Zohaib_Rahim_Headshot.jpg" alt="Zohaib Rahim professional headshot" class="w-full h-full" style="object-fit: cover; object-position: center 25%;" width="240" height="300" fetchpriority="high" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'flex flex-col items-center justify-center text-center p-4 h-full\'><span class=\'material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600\'>account_circle</span><span class=\'text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-wider\'>Professional Headshot — 4:5</span></div>';">
+              </div>
+              <div class="grid grid-cols-2 gap-4 w-full">
+                <div class="p-4 rounded-2xl bg-surface-container-lowest dark:bg-slate-900/40 border border-border-light dark:border-border-dark space-y-2">
+                  <div class="flex justify-between items-start"><span class="text-2xl font-bold text-primary dark:text-primary-dark tracking-tighter">30%</span><span class="sparkline"></span></div>
+                  <div class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-wider leading-tight text-left">Faster<br>reporting</div>
+                </div>
+                <div class="p-4 rounded-2xl bg-surface-container-lowest dark:bg-slate-900/40 border border-border-light dark:border-border-dark space-y-2">
+                  <div class="flex justify-between items-start"><span class="text-2xl font-bold text-secondary dark:text-secondary-dark tracking-tighter">25%</span><span class="sparkline opacity-60"></span></div>
+                  <div class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-wider leading-tight text-left">Faster<br>decision-making</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-decor absolute right-2 sm:-right-4 z-20 top-2 sm:top-4">
+          <div class="enterprise-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl shadow-xl flex items-center gap-2.5 sm:gap-3 border-l-4 border-l-primary cursor-default dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)]">
+            <div class="text-on-surface dark:text-text-primary-dark font-[800] text-lg sm:text-xl">20+</div>
+            <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-widest leading-none">Intl. schools<br>supported</div>
+          </div>
+        </div>
+        <div class="hero-decor absolute bottom-2 sm:bottom-4 z-20 -left-2 sm:-left-6 lg:-left-10">
+          <div class="enterprise-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl shadow-xl flex items-center gap-2.5 sm:gap-3 border-l-4 border-l-secondary-dark cursor-default dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)]">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary dark:text-primary-dark text-xl sm:text-2xl">emoji_events</span>
+            </div>
+            <div>
+              <div class="text-on-surface dark:text-text-primary-dark font-[800] text-[13px] sm:text-sm whitespace-nowrap">1st Place</div>
+              <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-widest leading-none mt-0.5 whitespace-nowrap">JDC West BTM 2026</div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -inset-10 bg-gradient-to-tr from-primary/10 to-secondary-dark/10 blur-3xl rounded-full -z-0 opacity-60 pointer-events-none"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORG CREDIBILITY STRIP -->
+<section class="py-16 bg-surface-container-lowest dark:bg-elevated-dark/30 border-y border-border-light dark:border-border-dark overflow-hidden">
+  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop">
+    <div class="text-center mb-10">
+      <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] uppercase tracking-[0.3em] font-bold">EXPERIENCE AND WORK ASSOCIATED WITH</span>
+    </div>
+    <div class="org-strip">
+      <div class="flex flex-col items-center group relative">
+        <span class="org-tag org-phsa font-headline-card font-extrabold tracking-tighter text-2xl">PHSA</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap text-phsa-primary" style="color: var(--phsa-primary);">Provincial Health Services Authority</span>
+      </div>
+      <div class="flex flex-col items-center group relative">
+        <span class="org-tag org-aku font-headline-card font-extrabold tracking-tighter uppercase text-2xl">AKU</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--aku-primary);">Aga Khan University</span>
+      </div>
+      <div class="flex flex-col items-center group relative">
+        <span class="org-tag org-unbc font-headline-card font-extrabold tracking-tighter text-2xl">UNBC</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--unbc-primary);">University of Northern British Columbia</span>
+      </div>
+      <div class="flex flex-col items-center group relative">
+        <span class="org-tag org-roshtay font-headline-card font-extrabold tracking-tighter text-2xl">Roshtay</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--roshtay-primary);">Web &amp; AI Solutions</span>
+      </div>
+      <div class="flex flex-col items-center group relative">
+        <span class="org-tag org-jdc font-headline-card font-extrabold tracking-tighter uppercase text-2xl">JDC WEST</span>
+        <span class="mt-2 text-[11px] font-bold uppercase tracking-widest text-center transition-all duration-300 md:absolute md:top-full md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0 md:whitespace-nowrap" style="color: var(--jdc-primary);">Business Technology Management Competition</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="py-section-v-mobile md:py-section-v-desktop relative grid-bg" id="projects">
+  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop relative z-10">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <h2 class="font-headline-section text-3xl sm:text-4xl font-extrabold text-on-surface dark:text-text-primary-dark tracking-tight">Project Portfolio</h2>
+      <p class="text-text-secondary-light dark:text-text-secondary-dark mt-4 text-[16px]">Explore practical work across analytics, business systems, automation, and software engineering.</p>
+    </div>
+    <div class="mb-16">
+      <div class="flex flex-row justify-center gap-2 p-1.5 bg-surface-container-low dark:bg-slate-900/40 rounded-2xl max-w-2xl mx-auto border border-border-light dark:border-border-dark" role="tablist" aria-label="Project categories">
+        <button aria-controls="tab-data" aria-selected="true" tabindex="0" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 tab-btn-active" id="btn-data" data-tab="data" role="tab">Data &amp; BI</button>
+        <button aria-controls="tab-digital" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-digital" data-tab="digital" role="tab"><span class="sm:hidden">Systems</span><span class="hidden sm:inline">Business Systems</span></button>
+        <button aria-controls="tab-software" aria-selected="false" tabindex="-1" class="project-tab-btn flex-1 px-3 sm:px-6 py-3 rounded-xl border border-transparent font-bold text-[13px] tracking-wide transition-all duration-200 text-text-secondary-light dark:text-text-secondary-dark hover:border-primary/30" id="btn-software" data-tab="software" role="tab">Software</button>
+      </div>
+      <div class="mt-8 flex flex-col items-center max-w-4xl mx-auto gap-6">
+        <div class="text-center w-full space-y-1">
+          <div class="font-label-technical text-[11px] font-bold uppercase tracking-[0.25em] text-primary dark:text-primary-dark">
+            <span id="tab-heading-data">Data, BI &amp; Analytics</span>
+            <span id="tab-heading-digital" class="hidden">Digital Transformation &amp; Business Systems</span>
+            <span id="tab-heading-software" class="hidden">Software &amp; Full-Stack Engineering</span>
+          </div>
+          <p class="text-[14px] text-text-muted-light dark:text-text-secondary-dark" id="tab-desc-data">Dashboards, data modelling, machine learning, forecasting, and decision-support systems.</p>
+          <p class="text-[14px] text-text-muted-light dark:text-text-secondary-dark hidden" id="tab-desc-digital">Workflow automation, SharePoint platforms, operational systems, documentation, and process redesign.</p>
+          <p class="text-[14px] text-text-muted-light dark:text-text-secondary-dark hidden" id="tab-desc-software">Full-stack applications, databases, scripting, concurrency, testing, integration, and CI/CD.</p>
+        </div>
+        <button class="shrink-0 flex items-center gap-2 px-6 py-2.5 rounded-xl border border-primary/20 bg-soft-blue-fill/30 dark:bg-primary/10 text-primary dark:text-primary-dark font-bold text-[13px] hover:bg-soft-blue-fill dark:hover:bg-primary/20 transition-all shadow-sm" id="btn-related-courses">
+          <span class="material-symbols-outlined text-[18px]">book</span>
+          View Related Courses
+        </button>
+      </div>
+    </div>
+
+    <div class="relative">
+
+      <!-- DATA TAB -->
+      <div aria-labelledby="btn-data" aria-hidden="false" class="space-y-8" id="tab-data" role="tabpanel">
+        <!-- Flagship: PHSA Stock Inventory Dashboard -->
+        <div aria-label="View case study for PHSA Stock Inventory Dashboard" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden group flex flex-col lg:flex-row" data-project-id="phsa-dashboard" role="button" tabindex="0">
+          <div class="lg:w-1/2 aspect-video bg-slate-100 dark:bg-slate-900/60 overflow-hidden border-b lg:border-b-0 lg:border-r border-border-light dark:border-border-dark">
+            <img alt="PHSA Stock Inventory Dashboard screenshot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="Assets/Images/PHSA_Stock_Dashboard.jpg" loading="lazy">
+          </div>
+          <div class="lg:w-1/2 p-10 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold tracking-widest uppercase">Professional • Production</span>
+              <h3 class="font-headline-card text-2xl font-bold">PHSA Stock Inventory Dashboard</h3>
+              <p class="text-text-secondary-light dark:text-text-secondary-dark text-[15px] leading-relaxed">Regional inventory analytics and forecasting.</p>
+              <div class="pt-4">
+                <div class="skill-tag-list">
+                  <span class="skill-tag skill-tag-data">Power BI</span>
+                  <span class="skill-tag skill-tag-data">DAX</span>
+                  <span class="skill-tag skill-tag-data">Forecasting</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-primary dark:text-primary-dark font-bold text-[13px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">View Case Study <span class="material-symbols-outlined text-[16px]">north_east</span></div>
+          </div>
+        </div>
+        <div class="project-grid">
+          <div aria-label="View case study for Credit Card Fraud Detection" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="credit-card-fraud" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic Team Project</span>
+              <h4 class="font-bold font-headline-card text-lg">Credit Card Fraud Detection</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Fraud models on imbalanced data.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-data">Python</span>
+                <span class="skill-tag skill-tag-data">Scikit-learn</span>
+                <span class="skill-tag skill-tag-data">Model Evaluation</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for LLM Jailbreak Detection" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="jailbreak-detection" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic Team Project</span>
+              <h4 class="font-bold font-headline-card text-lg">LLM Jailbreak Detection</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">DistilBERT layer-wise probes and representation analysis.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-data">Python</span>
+                <span class="skill-tag skill-tag-data">PyTorch</span>
+                <span class="skill-tag skill-tag-data">Representation Engineering</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+        </div>
+        <details class="more-work">
+          <summary class="more-work-summary flex items-center justify-center gap-2 mx-auto w-fit px-6 py-2.5 rounded-xl border border-primary/20 bg-soft-blue-fill/30 dark:bg-primary/10 text-primary dark:text-primary-dark font-bold text-[13px] hover:bg-soft-blue-fill dark:hover:bg-primary/20 transition-all cursor-pointer select-none">More work (3)<span class="material-symbols-outlined more-work-icon text-[18px] transition-transform" aria-hidden="true">expand_more</span></summary>
+          <div class="project-grid pt-8">
+          <div aria-label="View case study for Canadian Crime Statistics Dashboard" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="crime-dashboard" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic</span>
+              <h4 class="font-bold font-headline-card text-lg">Canadian Crime Statistics Dashboard</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Canadian crime trends and forecasting.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-data">Power BI</span>
+                <span class="skill-tag skill-tag-data">DAX</span>
+                <span class="skill-tag skill-tag-data">Data Modelling</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for Stock Market Portfolio Dashboard" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="stock-market-dashboard" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Concept Project</span>
+              <h4 class="font-bold font-headline-card text-lg">Stock Market Portfolio Dashboard</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Portfolio performance and risk analytics.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-data">Power BI</span>
+                <span class="skill-tag skill-tag-data">Dashboard Design</span>
+                <span class="skill-tag skill-tag-data">Performance Analytics</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for Power BI Resume Dashboard" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="power-bi-resume-dashboard" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Self-Directed</span>
+              <h4 class="font-bold font-headline-card text-lg">Power BI Resume Dashboard</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Multi-page dashboard using my own résumé as the dataset.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-data">Power BI</span>
+                <span class="skill-tag skill-tag-data">DAX</span>
+                <span class="skill-tag skill-tag-data">Data Storytelling</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- DIGITAL TAB -->
+      <div aria-labelledby="btn-digital" aria-hidden="true" class="space-y-8 hidden" id="tab-digital" role="tabpanel">
+        <!-- Flagship: AKDN ECD -->
+        <div aria-label="View case study for AKDN ECD Digitalization Platform" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden group flex flex-col lg:flex-row" data-project-id="akdn-ecd" role="button" tabindex="0">
+          <div class="lg:w-1/2 bg-slate-900 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-border-light dark:border-border-dark p-8 sm:p-10">
+            <dl class="grid grid-cols-1 sm:grid-cols-3 items-start gap-6 sm:gap-4 w-full text-center">
+              <div class="flex flex-col-reverse"><dt class="mt-1 font-label-technical text-[11px] font-bold text-white/75 uppercase tracking-widest">Schools</dt><dd class="font-headline-card text-4xl font-extrabold text-white tracking-tight">20+</dd></div>
+              <div class="flex flex-col-reverse"><dt class="mt-1 font-label-technical text-[11px] font-bold text-white/75 uppercase tracking-widest">Countries</dt><dd class="font-headline-card text-4xl font-extrabold text-white tracking-tight">10</dd></div>
+              <div class="flex flex-col-reverse"><dt class="mt-1 font-label-technical text-[11px] font-bold text-white/75 uppercase tracking-widest">Paper-based collection eliminated</dt><dd class="font-headline-card text-4xl font-extrabold text-white tracking-tight">100%</dd></div>
+            </dl>
+          </div>
+          <div class="lg:w-1/2 p-10 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold tracking-widest uppercase">Professional • Confidential</span>
+              <h3 class="font-headline-card text-2xl font-bold">AKDN ECD Digitalization Platform</h3>
+              <p class="text-text-secondary-light dark:text-text-secondary-dark text-[15px] leading-relaxed">Digital assessment and approval automation.</p>
+              <div class="pt-4 skill-tag-list">
+                <span class="skill-tag skill-tag-digital">SharePoint</span>
+                <span class="skill-tag skill-tag-digital">Power Automate</span>
+                <span class="skill-tag skill-tag-digital">Microsoft Forms</span>
+              </div>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-primary dark:text-primary-dark font-bold text-[13px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">View Case Study <span class="material-symbols-outlined text-[16px]">north_east</span></div>
+          </div>
+        </div>
+        <div class="project-grid">
+          <div aria-label="View case study for AKDN Leadership Hub Redesign" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="akdn-leadership-hub" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Professional • Confidential</span>
+              <h4 class="font-bold font-headline-card text-lg">AKDN Leadership Hub Redesign</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">SharePoint navigation and content redesign.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-digital">SharePoint</span>
+                <span class="skill-tag skill-tag-digital">Information Architecture</span>
+                <span class="skill-tag skill-tag-digital">UX/UI Design</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for PHSA Excel Automation and SOP Templates" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="phsa-excel-automation" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Professional • Automation</span>
+              <h4 class="font-bold font-headline-card text-lg">PHSA Excel Automation &amp; SOP Templates</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Scheduling automation and workflow standardization.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-digital">Excel</span>
+                <span class="skill-tag skill-tag-digital">Process Automation</span>
+                <span class="skill-tag skill-tag-digital">SOP Development</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+        </div>
+        <details class="more-work">
+          <summary class="more-work-summary flex items-center justify-center gap-2 mx-auto w-fit px-6 py-2.5 rounded-xl border border-primary/20 bg-soft-blue-fill/30 dark:bg-primary/10 text-primary dark:text-primary-dark font-bold text-[13px] hover:bg-soft-blue-fill dark:hover:bg-primary/20 transition-all cursor-pointer select-none">More work (1)<span class="material-symbols-outlined more-work-icon text-[18px] transition-transform" aria-hidden="true">expand_more</span></summary>
+          <div class="project-grid pt-8">
+          <div aria-label="View case study for Gradified" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="gradified" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Business/Product Pitch</span>
+              <h4 class="font-bold font-headline-card text-lg">Gradified</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Verified hiring platform business concept.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-digital">Product Strategy</span>
+                <span class="skill-tag skill-tag-digital">Financial Modelling</span>
+                <span class="skill-tag skill-tag-digital">Pitch Delivery</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- SOFTWARE TAB -->
+      <div aria-labelledby="btn-software" aria-hidden="true" class="space-y-8 hidden" id="tab-software" role="tabpanel">
+        <!-- Flagship: Portfolio RAG Assistant -->
+        <div aria-label="View case study for Portfolio RAG Assistant" class="enterprise-card card-hover-lift rounded-[18px] overflow-hidden group flex flex-col lg:flex-row" data-project-id="portfolio-rag" role="button" tabindex="0">
+          <div class="lg:w-1/2 aspect-video bg-slate-100 dark:bg-slate-900/60 overflow-hidden border-b lg:border-b-0 lg:border-r border-border-light dark:border-border-dark">
+            <img alt="Portfolio RAG Assistant — landing view: Ask about Zohaib's work, with suggested questions" class="w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700" src="Assets/Images/Rag/Main.png" loading="lazy">
+          </div>
+          <div class="lg:w-1/2 p-10 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold tracking-widest uppercase">Self-Directed • Deployed</span>
+              <h3 class="font-headline-card text-2xl font-bold">Portfolio RAG Assistant</h3>
+              <p class="text-text-secondary-light dark:text-text-secondary-dark text-[15px] leading-relaxed">Production retrieval-augmented-generation with grounded, cited answers.</p>
+              <div class="pt-4 skill-tag-list">
+                <span class="skill-tag skill-tag-software">TypeScript</span>
+                <span class="skill-tag skill-tag-software">Azure AI Search</span>
+                <span class="skill-tag skill-tag-software">Azure OpenAI</span>
+              </div>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-primary dark:text-primary-dark font-bold text-[13px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">View Case Study <span class="material-symbols-outlined text-[16px]">north_east</span></div>
+          </div>
+        </div>
+        <div class="project-grid">
+          <div aria-label="View case study for Roshtay" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="roshtay" role="button" tabindex="0">
+            <div class="space-y-4">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-primary dark:text-primary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Founded • Live Product</span>
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[10px] font-bold uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400"></span>Live</span>
+              </div>
+              <h4 class="font-bold font-headline-card text-lg">Roshtay — AI Operations Platform</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">AI systems for accounting, consulting, and service firms.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Product Development</span>
+                <span class="skill-tag skill-tag-software">Vercel</span>
+                <span class="skill-tag skill-tag-software">Client Delivery</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for JobTrackr" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="jobtrackr" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic Team Project</span>
+              <h4 class="font-bold font-headline-card text-lg">JobTrackr</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">AI-assisted application management platform.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Angular</span>
+                <span class="skill-tag skill-tag-software">Node.js</span>
+                <span class="skill-tag skill-tag-software">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+        </div>
+        <details class="more-work">
+          <summary class="more-work-summary flex items-center justify-center gap-2 mx-auto w-fit px-6 py-2.5 rounded-xl border border-primary/20 bg-soft-blue-fill/30 dark:bg-primary/10 text-primary dark:text-primary-dark font-bold text-[13px] hover:bg-soft-blue-fill dark:hover:bg-primary/20 transition-all cursor-pointer select-none">More work (5)<span class="material-symbols-outlined more-work-icon text-[18px] transition-transform" aria-hidden="true">expand_more</span></summary>
+          <div class="project-grid pt-8">
+          <div aria-label="View case study for Bash SSH Security Log Monitor" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="bash-ssh-monitor" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Independent Project</span>
+              <h4 class="font-bold font-headline-card text-lg">Bash SSH Security Log Monitor</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">SSH auth-log detection, rolling-window aggregation, tested alerts.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Bash</span>
+                <span class="skill-tag skill-tag-software">grep &amp; awk</span>
+                <span class="skill-tag skill-tag-software">Cron Scheduling</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for Security Log Analyzer plus Alert Script" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="security-log-analyzer" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Independent Project</span>
+              <h4 class="font-bold font-headline-card text-lg">Security Log Analyzer + Alert Script</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Security log detection and alerting.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Python</span>
+                <span class="skill-tag skill-tag-software">PowerShell</span>
+                <span class="skill-tag skill-tag-software">Log Analysis</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for Airline Database System" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="airline-database" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic Team Project</span>
+              <h4 class="font-bold font-headline-card text-lg">Airline Database System</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Relational airline database design.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">SQL</span>
+                <span class="skill-tag skill-tag-software">ER Modelling</span>
+                <span class="skill-tag skill-tag-software">Normalization</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for Network Security Analysis Report" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="network-security-report" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic Team Project</span>
+              <h4 class="font-bold font-headline-card text-lg">Network Security Analysis Report</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Enterprise threats, defence strategies, and regulatory frameworks.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Research</span>
+                <span class="skill-tag skill-tag-software">GDPR &amp; PIPEDA</span>
+                <span class="skill-tag skill-tag-software">Threat Analysis</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          <div aria-label="View case study for Parallelized Sorting Algorithm" class="enterprise-card card-hover-lift rounded-[18px] p-8 flex flex-col justify-between" data-project-id="parallel-sorting" role="button" tabindex="0">
+            <div class="space-y-4">
+              <span class="text-text-muted-light dark:text-text-secondary-dark font-label-technical text-[11px] font-bold uppercase tracking-widest">Academic</span>
+              <h4 class="font-bold font-headline-card text-lg">Parallelized Sorting Algorithm</h4>
+              <p class="text-[14px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">Parallel sorting and concurrency analysis.</p>
+              <div class="pt-2 skill-tag-list">
+                <span class="skill-tag skill-tag-software">Java</span>
+                <span class="skill-tag skill-tag-software">Fork/Join</span>
+                <span class="skill-tag skill-tag-software">Parallel Programming</span>
+              </div>
+            </div>
+            <div class="mt-auto pt-8"><span class="text-primary dark:text-primary-dark font-bold text-[12px] uppercase tracking-wider flex items-center gap-2">View Case Study <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div>
+          </div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="py-section-v-mobile md:py-section-v-desktop max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop" id="experience">
+  <div class="max-w-2xl mx-auto text-center mb-24">
+    <h2 class="font-headline-section text-3xl sm:text-4xl font-extrabold text-on-surface dark:text-text-primary-dark tracking-tight">Professional Experience</h2>
+    <p class="text-text-secondary-light dark:text-text-secondary-dark mt-4 text-[16px]">Practical experience across analytics, digital transformation, business systems, and technical delivery.</p>
+  </div>
+  <div class="space-y-16 max-w-4xl mx-auto">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 border-l border-primary/20 pl-8 relative dark:border-primary/60">
+      <div class="absolute -left-[5px] top-0 w-[10px] h-[10px] rounded-full bg-primary ring-4 ring-primary/10 dark:ring-white/10"></div>
+      <div class="md:w-1/4 text-text-muted-light dark:text-text-secondary-dark font-label-technical pt-1 text-[13px] font-bold tracking-widest uppercase">Apr 2026 – Present</div>
+      <div class="md:w-3/4 space-y-4">
+        <div class="flex items-center gap-3">
+          <h3 class="font-headline-card text-2xl font-bold text-on-surface dark:text-text-primary-dark">Founder</h3>
+          <span class="px-2 py-0.5 bg-primary/10 text-primary dark:text-primary-dark text-[11px] font-bold rounded uppercase">Active</span>
+        </div>
+        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="font-bold text-lg tracking-tight" style="color: var(--roshtay-primary);">ROSHTAY • Web &amp; AI Solutions</span>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-secondary-dark font-label-technical inline-flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">location_on</span>Remote</span>
+        </div>
+        <p class="text-text-secondary-light dark:text-text-secondary-dark text-[15px] leading-relaxed">Designed and deployed three client demo apps using research, interface design, development, testing, GitHub, and Vercel workflows.</p>
+        <div class="flex flex-wrap justify-center gap-2 pt-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">3 client demo apps</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">GitHub · Vercel CI/CD</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 border-l border-border-light pl-8 relative dark:border-white/10">
+      <div class="absolute -left-[5px] top-0 w-[10px] h-[10px] rounded-full bg-slate-300 dark:bg-slate-600"></div>
+      <div class="md:w-1/4 text-text-muted-light dark:text-text-secondary-dark font-label-technical pt-1 text-[13px] font-bold tracking-widest uppercase">Nov 2025 – Mar 2026</div>
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="font-headline-card text-2xl font-bold text-on-surface dark:text-text-primary-dark">ECD Programme Innovation &amp; Digital Solutions Intern</h3>
+        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="font-bold text-lg tracking-tight" style="color: var(--aku-primary);">AGA KHAN UNIVERSITY</span>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-secondary-dark font-label-technical inline-flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">location_on</span>Geneva, Switzerland &middot; Remote</span>
+        </div>
+        <p class="text-text-secondary-light dark:text-text-secondary-dark text-[15px] leading-relaxed">Delivered digital assessment and approval infrastructure supporting more than 20 schools across 10 countries and replacing paper-based data collection.</p>
+        <div class="flex flex-wrap justify-center gap-2 pt-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">20+ schools</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">10 countries</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">Paperless</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 border-l border-border-light pl-8 relative dark:border-white/10">
+      <div class="absolute -left-[5px] top-0 w-[10px] h-[10px] rounded-full bg-slate-200 dark:bg-slate-700"></div>
+      <div class="md:w-1/4 text-text-muted-light dark:text-text-secondary-dark font-label-technical pt-1 text-[13px] font-bold tracking-widest uppercase">Sep 2024 – Apr 2025</div>
+      <div class="md:w-3/4 space-y-4">
+        <h3 class="font-headline-card text-2xl font-bold text-on-surface dark:text-text-primary-dark">Project Manager 1 | Co-op</h3>
+        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="font-bold text-lg tracking-tight" style="color: var(--phsa-primary);">PROVINCIAL HEALTH SERVICES AUTHORITY</span>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-secondary-dark font-label-technical inline-flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">location_on</span>Prince George, BC &middot; Hybrid</span>
+        </div>
+        <p class="text-text-secondary-light dark:text-text-secondary-dark text-[15px] leading-relaxed">Built analytics and operational systems that supported 30% faster reporting, 25% faster decision-making, 40% fewer scheduling errors, and the revision of 26 SOPs.</p>
+        <div class="flex flex-wrap justify-center gap-2 pt-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">30% faster reporting</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">25% faster decisions</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">40% fewer errors</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/15 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">26 SOPs revised</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-section-v-mobile md:py-section-v-desktop bg-surface-container-low dark:bg-slate-900/10 border-y border-border-light dark:border-border-dark" id="about">
+  <div class="max-w-[1000px] mx-auto px-gutter-mobile md:px-gutter-desktop space-y-12">
+    <div class="text-center space-y-6">
+      <h2 class="font-headline-section text-3xl sm:text-4xl font-extrabold text-on-surface dark:text-text-primary-dark tracking-tight">About Me</h2>
+      <p class="text-lg md:text-[18px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+        I&rsquo;m Zohaib Rahim, a final-year Computer Science co-op student working across data analytics, digital transformation, business systems, and full-stack software engineering. I build practical solutions that improve processes, support decisions, and create measurable results.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="enterprise-card p-6 rounded-[20px] flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary dark:text-primary-dark text-3xl mb-3">school</span>
+        <p class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-widest mb-1">EDUCATION</p>
+        <p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">UNBC</p>
+        <p class="text-xl font-bold text-on-surface dark:text-white">BSc Computer Science</p>
+        <p class="text-[12px] font-medium text-text-muted-light dark:text-text-secondary-dark mt-1">Graduating April 2027</p>
+      </div>
+      <div class="enterprise-card p-6 rounded-[20px] flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-secondary dark:text-secondary-dark text-3xl mb-3">location_on</span>
+        <p class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-widest mb-1">LOCATION</p>
+        <p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">British Columbia</p>
+        <p class="text-xl font-bold text-on-surface dark:text-white">Canada</p>
+      </div>
+      <div class="enterprise-card p-6 rounded-[20px] flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-primary dark:text-primary-dark text-3xl mb-3">event_available</span>
+        <p class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-widest mb-1">AVAILABILITY</p>
+        <p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Winter 2027 co-op</p>
+        <p class="text-xl font-bold text-on-surface dark:text-white">Full-time from May 2027</p>
+      </div>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 sm:flex sm:justify-center border-b border-border-light dark:border-border-dark bg-slate-50/50 dark:bg-slate-900/30 rounded-t-3xl p-1.5 gap-2" role="tablist" aria-label="About Zohaib">
+        <button aria-controls="about-skills" aria-selected="true" tabindex="0" class="about-tab-btn active sm:flex-1 px-3 sm:px-6 py-3 rounded-2xl font-bold text-[13px] transition-all" id="btn-about-skills" data-tab="about-skills" role="tab">Skills</button>
+        <button aria-controls="about-edu" aria-selected="false" tabindex="-1" class="about-tab-btn sm:flex-1 px-3 sm:px-6 py-3 rounded-2xl font-bold text-[13px] transition-all text-text-secondary-light dark:text-text-secondary-dark" id="btn-about-edu" data-tab="about-edu" role="tab">Education</button>
+        <button aria-controls="about-certs" aria-selected="false" tabindex="-1" class="about-tab-btn sm:flex-1 px-3 sm:px-6 py-3 rounded-2xl font-bold text-[13px] transition-all text-text-secondary-light dark:text-text-secondary-dark" id="btn-about-certs" data-tab="about-certs" role="tab">Certificates</button>
+        <button aria-controls="about-lead" aria-selected="false" tabindex="-1" class="about-tab-btn sm:flex-1 px-3 sm:px-6 py-3 rounded-2xl font-bold text-[13px] transition-all text-text-secondary-light dark:text-text-secondary-dark" id="btn-about-lead" data-tab="about-lead" role="tab"><span class="hidden sm:inline">Leadership &amp; Volunteering</span><span class="sm:hidden">Leadership</span></button>
+      </div>
+      <div class="enterprise-card rounded-b-3xl p-10">
+
+        <!-- SKILLS -->
+        <div aria-labelledby="btn-about-skills" aria-hidden="false" class="about-tab-content space-y-12" id="about-skills" role="tabpanel">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="skill-category-panel">
+              <div><span class="skill-category-title">Data &amp; Analytics</span><div class="skill-category-underline"></div></div>
+              <div class="skill-tag-list justify-center">
+                <span class="skill-tag skill-tag-data">Power BI</span>
+                <span class="skill-tag skill-tag-data">DAX</span>
+                <span class="skill-tag skill-tag-data">Excel</span>
+                <span class="skill-tag skill-tag-data">SQL</span>
+                <span class="skill-tag skill-tag-data">MS Access</span>
+                <span class="skill-tag skill-tag-data">Python</span>
+                <span class="skill-tag skill-tag-data">Data Modelling</span>
+                <span class="skill-tag skill-tag-data">KPI Dashboards</span>
+                <span class="skill-tag skill-tag-data">Forecasting</span>
+              </div>
+            </div>
+            <div class="skill-category-panel">
+              <div><span class="skill-category-title">Business Systems &amp; Automation</span><div class="skill-category-underline secondary"></div></div>
+              <div class="skill-tag-list justify-center">
+                <span class="skill-tag skill-tag-digital">SharePoint</span>
+                <span class="skill-tag skill-tag-digital">Power Automate</span>
+                <span class="skill-tag skill-tag-digital">Microsoft Forms</span>
+                <span class="skill-tag skill-tag-digital">Microsoft 365</span>
+                <span class="skill-tag skill-tag-digital">Process Automation</span>
+                <span class="skill-tag skill-tag-digital">Workflow Design</span>
+                <span class="skill-tag skill-tag-digital">SOP Development</span>
+                <span class="skill-tag skill-tag-digital">Requirements Analysis</span>
+                <span class="skill-tag skill-tag-digital">Stakeholder Reporting</span>
+              </div>
+            </div>
+            <div class="skill-category-panel">
+              <div><span class="skill-category-title">Software Development</span><div class="skill-category-underline"></div></div>
+              <div class="skill-tag-list justify-center">
+                <span class="skill-tag skill-tag-software">Java</span>
+                <span class="skill-tag skill-tag-software">C++</span>
+                <span class="skill-tag skill-tag-software">Python</span>
+                <span class="skill-tag skill-tag-software">TypeScript</span>
+                <span class="skill-tag skill-tag-software">Bash</span>
+                <span class="skill-tag skill-tag-software">Angular</span>
+                <span class="skill-tag skill-tag-software">React</span>
+                <span class="skill-tag skill-tag-software">Node.js</span>
+                <span class="skill-tag skill-tag-software">Express.js</span>
+                <span class="skill-tag skill-tag-software">PostgreSQL</span>
+                <span class="skill-tag skill-tag-software">HTML</span>
+              </div>
+            </div>
+            <div class="skill-category-panel">
+              <div><span class="skill-category-title">Security, Cloud &amp; Delivery</span><div class="skill-category-underline secondary"></div></div>
+              <div class="skill-tag-list justify-center">
+                <span class="skill-tag skill-tag-software">PowerShell</span>
+                <span class="skill-tag skill-tag-software">Log Analysis</span>
+                <span class="skill-tag skill-tag-software">Active Directory</span>
+                <span class="skill-tag skill-tag-software">GDPR &amp; PIPEDA</span>
+                <span class="skill-tag skill-tag-software">Microsoft Azure</span>
+                <span class="skill-tag skill-tag-software">Azure AI Search</span>
+                <span class="skill-tag skill-tag-software">Azure OpenAI</span>
+                <span class="skill-tag skill-tag-software">Microsoft Fabric</span>
+                <span class="skill-tag skill-tag-software">Vercel</span>
+                <span class="skill-tag skill-tag-software">GitHub Actions</span>
+                <span class="skill-tag skill-tag-software">Postman</span>
+                <span class="skill-tag skill-tag-software">pgAdmin</span>
+                <span class="skill-tag skill-tag-software">Project Management</span>
+                <span class="skill-tag skill-tag-software">Business Analysis</span>
+                <span class="skill-tag skill-tag-software">UX/UI Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div aria-labelledby="btn-about-edu" aria-hidden="true" class="about-tab-content space-y-8 hidden" id="about-edu" role="tabpanel">
+          <div class="bg-surface-container-low dark:bg-slate-900/40 p-8 rounded-2xl border border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="space-y-3 text-center md:text-left">
+              <h4 class="text-2xl font-bold text-on-surface dark:text-white">Bachelor of Science in Computer Science</h4>
+              <p class="text-primary dark:text-primary-dark font-bold text-lg">University of Northern British Columbia</p>
+              <div class="flex flex-wrap justify-center md:justify-start items-center gap-x-3 gap-y-2 text-[13px] font-medium text-text-secondary-light dark:text-text-secondary-dark">
+                <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span> Minor: Management Information Systems</span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/25 dark:border-primary/40 text-primary dark:text-primary-dark text-[11px] font-bold uppercase tracking-widest font-label-technical">
+                  <span class="material-symbols-outlined text-[13px]" style="font-variation-settings:'FILL' 1;">work</span> Co-op
+                </span>
+              </div>
+              <p class="text-[11px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-secondary-dark mt-4">Expected April 2027</p>
+            </div>
+            <button class="flex items-center gap-2 px-8 py-3 rounded-xl bg-primary text-white font-bold text-sm hover:shadow-lg transition-all active:scale-95" id="btn-view-all-courses">
+              <span class="material-symbols-outlined text-[20px]">book</span> View Courses
+            </button>
+          </div>
+          <div class="space-y-12 pt-8 border-t border-border-light dark:border-border-dark">
+            <div>
+              <h4 class="text-[11px] font-bold uppercase tracking-widest text-primary dark:text-primary-dark mb-6">Awards &amp; Scholarships</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">workspace_premium</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">International Student Scholarship</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC</p></div>
+                </div>
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">military_tech</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">Computer Science Entrance Award</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC</p></div>
+                </div>
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">stars</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">Alumni of UNBC Computer Science Award</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC</p></div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-[11px] font-bold uppercase tracking-widest text-primary dark:text-primary-dark mb-6">UNBC Campus Involvement</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">edit_note</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">Note Taker</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC Academic Resource Centre</p></div>
+                </div>
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">groups</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">President &amp; Co-Founder</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Aga Khan School Students&rsquo; Club</p></div>
+                </div>
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">diversity_3</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">President &amp; Founder</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Northern Ismaili Student Association</p></div>
+                </div>
+                <div class="enterprise-card p-4 rounded-xl flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined text-lg">sports</span></div>
+                  <div><h5 class="text-[13px] font-bold leading-tight">Intramural Official</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">UNBC &middot; 2022&ndash;2025</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATES -->
+        <div aria-labelledby="btn-about-certs" aria-hidden="true" class="about-tab-content hidden" id="about-certs" role="tabpanel">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark"><span class="material-symbols-outlined">shield_person</span></div>
+                <div><h5 class="text-[13px] font-bold leading-tight">Active Directory Basics</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">TryHackMe</p></div>
+              </div>
+              <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider">Completed</span>
+            </div>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/82P5SUBW?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Core Data Concepts on Microsoft Learn">
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined">database</span></div>
+                <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Explore Core Data Concepts <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
+              </div>
+              <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
+            </a>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/XEDC9PBY?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Data Roles and Services on Microsoft Learn">
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined">cloud_done</span></div>
+                <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Explore Data Roles &amp; Services <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
+              </div>
+              <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
+            </a>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/7B5H8D5Z?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Introduction to Microsoft Azure Data Core Concepts on Microsoft Learn">
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <span class="certificate-icon-azure" role="img" aria-label="Azure Data Core Concepts badge"></span>
+                </div>
+                <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Introduction to Azure Data Core Concepts <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
+              </div>
+              <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
+            </a>
+            <a href="https://learn.microsoft.com/api/achievements/share/en-us/ZohaibRahim6/QL46A76E?sharingId=DA55C0C93A7AC0CF" target="_blank" rel="noopener noreferrer" class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 hover:border-primary/40 dark:hover:border-primary/50 hover:shadow-lg transition-all group" aria-label="View credential — Explore Fundamental Relational Data Concepts on Microsoft Learn">
+              <div class="flex items-center gap-4 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark shrink-0"><span class="material-symbols-outlined">storage</span></div>
+                <div class="min-w-0"><h5 class="text-[13px] font-bold leading-tight flex items-center gap-1.5">Explore Fundamental Relational Data Concepts <span class="material-symbols-outlined text-[14px] text-text-muted-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">open_in_new</span></h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
+              </div>
+              <span class="px-3 py-1 status-completed text-[11px] font-bold rounded-lg uppercase tracking-wider shrink-0 ml-2">Completed</span>
+            </a>
+            <div class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark"><span class="material-symbols-outlined">analytics</span></div>
+                <div><h5 class="text-[13px] font-bold leading-tight">PL-300: Power BI Data Analyst</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">Microsoft</p></div>
+              </div>
+              <span class="px-3 py-1 status-inprogress text-[11px] font-bold rounded-lg uppercase tracking-wider">In Progress</span>
+            </div>
+            <div class="p-5 enterprise-card rounded-2xl flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary dark:text-primary-dark"><span class="material-symbols-outlined">lock_person</span></div>
+                <div><h5 class="text-[13px] font-bold leading-tight">Certified in Cybersecurity (CC)</h5><p class="text-[11px] text-text-muted-light dark:text-text-secondary-dark font-bold uppercase tracking-wider mt-0.5">ISC2</p></div>
+              </div>
+              <span class="px-3 py-1 status-planned text-[11px] font-bold rounded-lg uppercase tracking-wider">Planned</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LEADERSHIP -->
+        <div aria-labelledby="btn-about-lead" aria-hidden="true" class="about-tab-content space-y-6 hidden" id="about-lead" role="tabpanel">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary dark:text-primary-dark">scuba_diving</span></div>
+              <div><h5 class="font-bold text-[14px]">Head of Training Team &amp; Assistant Scout Leader</h5><p class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark mt-1">Ismaili Nizari Scouts</p></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary dark:text-primary-dark">volunteer_activism</span></div>
+              <div><h5 class="font-bold text-[14px]">Event Coordinator &amp; Organizer</h5><p class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark mt-1">Initiative for Global Empathy</p></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary dark:text-primary-dark">school</span></div>
+              <div><h5 class="font-bold text-[14px]">Teacher &amp; HRE Assistant Coordinator</h5><p class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark mt-1">Nizari Community Education Center</p></div>
+            </div>
+            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary dark:text-primary-dark">sports_soccer</span></div>
+              <div><h5 class="font-bold text-[14px]">Under-10 Coach</h5><p class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark mt-1">Jahangir Memorial Football Academy</p></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELF DIRECTED -->
+<section class="py-section-v-mobile md:py-section-v-desktop max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop" id="self-directed">
+  <div class="max-w-3xl mb-16 mx-auto text-center">
+    <h2 class="font-headline-section text-3xl sm:text-4xl font-extrabold text-on-surface dark:text-text-primary-dark mb-6 tracking-tight">Self-Directed by Design</h2>
+    <p class="text-[16px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+      Self-directed learner who turns unfamiliar technologies into working, tested, and documented solutions.
+    </p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+    <div class="enterprise-card p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+      <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">1</div>
+      <div class="font-bold text-[14px] mb-1 text-on-surface dark:text-text-primary-dark">Identify</div>
+      <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark uppercase font-bold tracking-widest leading-tight">Problem or opportunity</div>
+    </div>
+    <div class="enterprise-card p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+      <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">2</div>
+      <div class="font-bold text-[14px] mb-1 text-on-surface dark:text-text-primary-dark">Learn</div>
+      <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark uppercase font-bold tracking-widest leading-tight">Required tools</div>
+    </div>
+    <div class="enterprise-card p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+      <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">3</div>
+      <div class="font-bold text-[14px] mb-1 text-on-surface dark:text-text-primary-dark">Build</div>
+      <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark uppercase font-bold tracking-widest leading-tight">Working solution</div>
+    </div>
+    <div class="enterprise-card p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+      <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">4</div>
+      <div class="font-bold text-[14px] mb-1 text-on-surface dark:text-text-primary-dark">Test</div>
+      <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark uppercase font-bold tracking-widest leading-tight">Validate results</div>
+    </div>
+    <div class="enterprise-card p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+      <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">5</div>
+      <div class="font-bold text-[14px] mb-1 text-on-surface dark:text-text-primary-dark">Document</div>
+      <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark uppercase font-bold tracking-widest leading-tight">Enable continuity</div>
+    </div>
+    <div class="enterprise-card p-6 rounded-2xl flex flex-col items-center text-center group hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+      <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-sm mb-4 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform">6</div>
+      <div class="font-bold text-[14px] mb-1 text-on-surface dark:text-text-primary-dark">Improve</div>
+      <div class="text-[11px] text-text-muted-light dark:text-text-secondary-dark uppercase font-bold tracking-widest leading-tight">Apply feedback</div>
+    </div>
+  </div>
+</section>
+
+<!-- JDC WEST CARD -->
+<section class="py-section-v-mobile md:py-section-v-desktop max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop">
+  <div class="bg-primary dark:bg-elevated-dark rounded-[1.5rem] md:rounded-[2rem] p-6 sm:p-8 md:p-10 text-on-primary dark:text-text-primary-dark flex flex-col md:flex-row items-stretch gap-6 md:gap-8 overflow-hidden relative shadow-2xl border border-primary/20 dark:border-border-dark group">
+    <div class="absolute -top-6 -right-6 md:-top-10 md:-right-10 opacity-10 pointer-events-none transform group-hover:scale-110 transition-transform duration-1000">
+      <span class="material-symbols-outlined text-[140px] sm:text-[200px] md:text-[260px]" style="font-variation-settings: 'wght' 700;">award_star</span>
+    </div>
+    <div class="md:w-3/5 relative z-10 space-y-4 md:space-y-5 flex flex-col justify-center">
+      <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+        <div class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+          <span class="font-label-technical text-[11px] font-extrabold uppercase tracking-[0.3em] text-white">LEADERSHIP &amp; STRATEGY</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-300/20 border border-yellow-300/30">
+          <span class="material-symbols-outlined text-[14px] text-yellow-200">emoji_events</span>
+          <span class="text-[11px] font-bold uppercase tracking-widest text-yellow-100">1st Place</span>
+        </div>
+      </div>
+      <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-white">Business Technology Management &ndash; JDC West 2026</h3>
+      <div class="flex items-center gap-2 text-white/95 text-[13px] font-bold uppercase tracking-widest font-label-technical">
+        <span class="material-symbols-outlined text-[16px]">history</span>
+        UNBC&rsquo;s first BTM podium in 19 years
+      </div>
+      <p class="text-[15px] md:text-base text-white/90 leading-relaxed max-w-xl">Developed and presented a post-acquisition IT modernization strategy combining system architecture, budget constraints, implementation planning, and employee change management &mdash; competing against case teams from top Canadian business schools.</p>
+      <p class="text-[13px] text-white/85 leading-relaxed max-w-xl">Fundraised $93,000+ (2024&ndash;25) and $56,000+ (2025&ndash;26) for the Spirit of the North Healthcare Foundation.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest font-label-technical">75% mock win rate (3 of 4)</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest font-label-technical">Director of&nbsp;<abbr title="Challenge, Athletics &amp; Debate" class="no-underline">CHAD</abbr>&nbsp;2025&ndash;26</span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[11px] font-bold uppercase tracking-widest font-label-technical">Operations Management Delegate 2026&ndash;27</span>
+      </div>
+      <div class="flex flex-wrap gap-3 pt-1">
+        <a href="https://www.linkedin.com/posts/unbc-jdcw_2026-competition-placements-as-a-activity-7421590264609177600-2Zyu?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[12px] font-bold transition-all">
+          <span class="material-symbols-outlined text-[16px]">verified</span> UNBC JDC West announcement
+          <span class="material-symbols-outlined text-[14px] opacity-70">open_in_new</span>
+        </a>
+        <a href="https://www.linkedin.com/posts/unbc_congratulations-to-unbcs-jdc-west-team-activity-7420605776316166144-R9xs?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-[12px] font-bold transition-all">
+          <span class="material-symbols-outlined text-[16px]">school</span> UNBC official post
+          <span class="material-symbols-outlined text-[14px] opacity-70">open_in_new</span>
+        </a>
+      </div>
+    </div>
+    <div class="md:w-2/5 relative z-10 flex items-center">
+      <div class="relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl" style="aspect-ratio: 4/5; max-height: 320px;">
+        <img src="Assets/Images/JDC_West_1st_Team_Photo.jpg" alt="JDC West 2026 first-place team photo" class="w-full h-full object-cover" style="object-position: center 30%;" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-white/10\'><span class=\'material-symbols-outlined text-[120px] text-white\'>emoji_events</span></div>';">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="py-section-v-mobile md:py-section-v-desktop max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop text-center" id="contact">
+  <div class="max-w-3xl mx-auto space-y-10">
+    <h2 class="font-headline-page text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface dark:text-text-primary-dark tracking-tight">Ready to solve the next challenge?</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[12px] font-bold uppercase tracking-widest font-label-technical">
+        <span class="w-2 h-2 rounded-full bg-green-500 dark:bg-green-400 animate-pulse"></span>
+        Winter 2027 · Co-op
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft-blue-fill dark:bg-primary/15 text-primary dark:text-primary-dark text-[12px] font-bold uppercase tracking-widest font-label-technical">
+        <span class="w-2 h-2 rounded-full bg-primary dark:bg-primary-dark"></span>
+        From May 2027 · Full-time
+      </span>
+    </div>
+    <p class="text-xl text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">I&rsquo;m actively interviewing for Winter 2027 co-op placements and full-time roles starting May 2027 across data analytics, business systems, digital transformation, and software engineering.</p>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+      <a class="w-full md:w-auto bg-primary text-on-primary px-12 py-5 rounded-xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95" href="mailto:zrahim@unbc.ca">Send an Email</a>
+      <a class="w-full md:w-auto border-2 border-primary text-primary dark:text-primary-dark dark:border-primary-dark px-12 py-5 rounded-xl font-bold text-lg hover:bg-soft-blue-fill dark:hover:bg-primary/10 transition-all active:scale-95" href="https://linkedin.com/in/zohaibrahim" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- PROJECT MODAL -->
+<div aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[100] items-center justify-center hidden" id="project-modal" role="dialog">
+  <div class="absolute inset-0 bg-[#090D14]/55 dark:bg-black/72 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="modal-backdrop"></div>
+  <div class="relative w-[95vw] max-w-[1240px] h-fit max-h-[88vh] bg-white dark:bg-elevated-dark border border-border-light dark:border-white/20 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 scale-95 opacity-0" id="modal-container">
+    <header class="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 sm:py-5 border-b border-border-light dark:border-border-dark bg-white/95 dark:bg-[#111722]/95 backdrop-blur-md shrink-0">
+      <div class="flex items-center gap-6 overflow-hidden">
+        <div class="hidden sm:inline-flex px-3 py-1 bg-soft-blue-fill dark:bg-primary/10 text-primary dark:text-primary-dark rounded-full font-label-technical text-[11px] font-bold tracking-widest uppercase whitespace-nowrap" id="modal-status-pill">Academic Team Project</div>
+        <div class="min-w-0">
+          <h2 class="font-headline-card text-xl md:text-2xl font-bold truncate leading-tight" id="modal-title">Project</h2>
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-text-muted-light dark:text-text-secondary-dark" id="modal-category">Category</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5 mr-4 border-r border-border-light dark:border-border-dark pr-4">
+          <button aria-label="Previous project" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors disabled:opacity-20 disabled:cursor-not-allowed" id="prev-project" title="Previous Project">
+            <span class="material-symbols-outlined text-xl">chevron_left</span>
+          </button>
+          <button aria-label="Next project" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors disabled:opacity-20 disabled:cursor-not-allowed" id="next-project" title="Next Project">
+            <span class="material-symbols-outlined text-xl">chevron_right</span>
+          </button>
+        </div>
+        <button aria-label="Close modal" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low dark:bg-slate-900/60 hover:bg-error/10 hover:text-error transition-all" id="close-modal">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+    </header>
+    <div class="flex-1 overflow-y-auto" id="modal-content-container">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_380px]" id="modal-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- COURSE MODAL -->
+<div aria-modal="true" aria-labelledby="course-modal-title" class="fixed inset-0 z-[110] items-center justify-center hidden" id="course-modal" role="dialog">
+  <div class="absolute inset-0 bg-[#090D14]/60 dark:bg-black/80 backdrop-blur-md transition-opacity duration-300 opacity-0" id="course-backdrop"></div>
+  <div class="relative w-[95vw] max-w-[1100px] h-fit max-h-[90vh] bg-white dark:bg-elevated-dark border border-border-light dark:border-white/20 rounded-3xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 translate-y-4 opacity-0" id="course-container">
+    <header class="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 sm:py-6 border-b border-border-light dark:border-border-dark shrink-0">
+      <div>
+        <h2 class="font-headline-card text-xl font-bold" id="course-modal-title">Relevant Coursework</h2>
+        <p class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark font-medium mt-1" id="course-modal-subtitle">University of Northern British Columbia</p>
+      </div>
+      <button aria-label="Close modal" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-low dark:bg-slate-900/60 hover:bg-error/10 hover:text-error transition-all" id="close-course-modal">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </header>
+    <div class="flex-1 overflow-y-auto p-5 sm:p-8" id="course-modal-content"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest dark:bg-page-bg-dark border-t border-border-light dark:border-border-dark py-16">
+  <div class="max-w-container-max mx-auto px-gutter-mobile md:px-gutter-desktop">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr] gap-10 md:gap-12 mb-12">
+      <div class="space-y-6 sm:col-span-2 md:col-span-1">
+        <div class="flex items-baseline gap-3">
+          <span class="zr-mark inline-flex items-baseline gap-1 font-headline-card font-extrabold text-2xl leading-none select-none">
+            <span class="text-primary dark:text-primary-dark text-[28px] font-black">[</span>
+            <span class="text-on-surface dark:text-white tracking-tight">ZR</span>
+            <span class="text-primary dark:text-primary-dark text-[28px] font-black">]</span>
+          </span>
+          <span class="text-2xl font-bold tracking-tight text-on-surface dark:text-text-primary-dark">Zohaib Rahim</span>
+        </div>
+        <p class="font-label-technical text-[11px] font-bold uppercase tracking-[0.3em] text-text-muted-light dark:text-text-secondary-dark">Building Better Systems</p>
+        <p class="text-text-secondary-light dark:text-text-secondary-dark max-w-sm text-[15px] leading-relaxed">Final-year Computer Science co-op student and April 2027 new grad, building practical systems at the intersection of technology and operations.</p>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold uppercase text-[11px] tracking-[0.3em] text-on-surface dark:text-white">Navigation</h4>
+          <ul class="space-y-4 text-[14px]">
+            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#hero">Home</a></li>
+            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#projects">Work</a></li>
+            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#experience">Experience</a></li>
+            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="#about">About</a></li>
+            <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="Assets/Resume/Zohaib_Rahim_Resume_Portfolio.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          </ul>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold uppercase text-[11px] tracking-[0.3em] text-on-surface dark:text-white">Connect</h4>
+        <ul class="space-y-4 text-[14px]">
+          <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="https://linkedin.com/in/zohaibrahim" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="https://github.com/zohaibrahim" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary-dark transition-all font-medium" href="mailto:zrahim@unbc.ca">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-10 border-t border-border-light dark:border-border-dark flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-text-muted-light dark:text-text-secondary-dark font-medium text-[13px]">
+        <div>&copy; 2026 Zohaib Rahim.</div>
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-500/15 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-500 dark:bg-green-400 animate-pulse"></span>
+          Winter 2027 co-op · Full-time from May 2027
+        </div>
+      </div>
+      <div class="text-text-muted-light dark:text-text-secondary-dark text-[12px] font-medium text-center md:text-right">
+        Built with static HTML, Tailwind, and IBM Plex Mono.
+        <br class="hidden md:block"><span class="text-[11px]">Deployed on Vercel. <a href="https://github.com/zohaibrahim/portfolio-website" target="_blank" rel="noopener noreferrer" class="underline decoration-dotted hover:text-primary dark:hover:text-primary-dark">Source</a>.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // ============ DATA ============
+  // Each tab shows every course that is relevant to that discipline — including
+  // cross-cutting courses (DB, programming, algorithms, ethics, math) — so a
+  // recruiter viewing any single tab sees the full applicable coursework.
+  const coursework = {
+    data: {
+      title: "Data, BI & Analytics",
+      icon: "analytics",
+      tagClass: "skill-tag-data",
+      courses: [
+        "Basic Statistics",
+        "Introduction to Business Intelligence",
+        "Introduction to Data Mining",
+        "Applied Machine Learning",
+        "Introduction to Management Science",
+        "Calculus I",
+        "Linear Algebra",
+        "Discrete Computational Math I",
+        "Math Topics for Computer Science",
+        "Introduction to Database Systems",
+        "Data Structures I",
+        "Algorithm Analysis & Development",
+        "Computer Programming I",
+        "Computer Programming II",
+        "Management Information Systems"
+      ]
+    },
+    digital: {
+      title: "Digital Transformation & Business Systems",
+      icon: "hub",
+      tagClass: "skill-tag-digital",
+      courses: [
+        "Management Information Systems",
+        "Applied Business Computing",
+        "e-business",
+        "Tech Entrepreneurship",
+        "Introduction to Canadian Business",
+        "Introduction to Marketing",
+        "Writing & Communication Skills",
+        "Business & Professional Ethics",
+        "Ethics in Computing Science",
+        "Introduction to Business Intelligence",
+        "Introduction to Database Systems",
+        "Software Engineering",
+        "Data Communications & Networking",
+        "Introduction to Management Science"
+      ]
+    },
+    software: {
+      title: "Software & Full-Stack Engineering",
+      icon: "code",
+      tagClass: "skill-tag-software",
+      courses: [
+        "Computer Programming I",
+        "Computer Programming II",
+        "Data Structures I",
+        "Algorithm Analysis & Development",
+        "Introduction to Logic Design",
+        "Introduction to Concurrent and Distributed Programming",
+        "Introduction to Database Systems",
+        "Data Communications & Networking",
+        "Software Engineering",
+        "Operating Systems",
+        "Organization & Architecture",
+        "Programming Languages",
+        "Discrete Computational Math I",
+        "Math Topics for Computer Science",
+        "Applied Machine Learning",
+        "Introduction to Data Mining",
+        "Basic Statistics",
+        "Calculus I",
+        "Linear Algebra",
+        "Ethics in Computing Science"
+      ]
+    }
+  };
+
+  const projectOrder = {
+    data: ['phsa-dashboard', 'credit-card-fraud', 'jailbreak-detection', 'crime-dashboard', 'stock-market-dashboard', 'power-bi-resume-dashboard'],
+    digital: ['akdn-ecd', 'akdn-leadership-hub', 'phsa-excel-automation', 'gradified'],
+    software: ['portfolio-rag', 'roshtay', 'jobtrackr', 'bash-ssh-monitor', 'security-log-analyzer', 'airline-database', 'network-security-report', 'parallel-sorting']
+  };
+
+  const projectDetails = {
+    'phsa-dashboard': {
+      title: 'PHSA Stock Inventory Dashboard',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Professional • Production',
+      organization: 'Provincial Health Services Authority',
+      overview: 'Production Power BI dashboard analysing stock inventory data from 2016–2025 across eight Northern British Columbia cities. The dashboard combines interactive reporting, city-level benchmarking, DAX-driven KPIs, year-over-year analysis, and a five-year quantity forecast.',
+      results: [
+        { label: 'Reporting', value: '30%', sub: 'Faster' },
+        { label: 'Decisions', value: '25%', sub: 'Faster' },
+        { label: 'Coverage', value: '8 Cities', sub: 'Northern BC' },
+        { label: 'Data Span', value: '2016–2025', sub: 'Historical' },
+        { label: 'Forecast', value: '5-Year', sub: 'Quantity outlook' }
+      ],
+      builtList: [
+        'Leadership-focused inventory reporting dashboard',
+        'City-level inventory trends and comparisons',
+        'Year-over-year reporting',
+        'Adjustable city and date filters',
+        'DAX-based KPI cards',
+        'Five-year quantity forecast',
+        'City-to-city benchmarking'
+      ],
+      process: 'Data Preparation → Data Modelling → DAX Measures → Dashboard Design → Validation',
+      technologies: ['Power BI', 'DAX', 'Excel', 'Data Modelling', 'Forecasting'],
+      role: 'Designed and built the production dashboard during my PHSA co-op.',
+      designDecision: 'Used interactive DAX measures and filter-driven reporting so supervisors could explore changing city and time contexts without maintaining separate static reports.',
+      images: [
+        { src: 'Assets/Images/PHSA_Stock_Dashboard.jpg', alt: 'PHSA Stock Inventory Dashboard — overview view' }
+      ],
+      dataNote: 'City names and stock figures shown are illustrative — the production dataset is confidential to PHSA.'
+    },
+    'crime-dashboard': {
+      title: 'Canadian Crime Statistics Dashboard',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Academic',
+      organization: 'University of Northern British Columbia',
+      overview: 'Interactive Power BI dashboard analysing Canadian crime data from 2022 and 2023 through geographic, demographic, trend-based, and public-safety views.',
+      builtList: [
+        'Four-level geographic drill-down',
+        'Crime-per-capita reporting',
+        'Violent-crime-per-capita reporting',
+        'Clearance-rate calculations',
+        'Charge-rate calculations',
+        'Interactive filters and slicers',
+        'Drill-through views',
+        'Demographic reporting',
+        'Ten-year nationwide trend forecast'
+      ],
+      process: 'Data Preparation → Data Modelling → DAX Development → Interaction Design → Visualization',
+      technologies: ['Power BI', 'DAX', 'Excel', 'Adobe Photoshop', 'Data Modelling', 'Data Visualization'],
+      role: 'Designed and built the interactive Power BI dashboard.',
+      designDecision: 'Structured the dashboard around geographic drill-down because national averages alone would hide meaningful differences between provinces, regions, and municipalities.',
+      images: [
+        { src: 'Assets/Images/Canadian_Crime_Dashboard.jpg', alt: 'Canadian Crime Statistics Dashboard — overview' }
+      ]
+    },
+    'credit-card-fraud': {
+      title: 'Credit Card Fraud Detection',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Academic Team Project',
+      organization: 'University of Northern British Columbia',
+      overview: 'Collaborative machine-learning project evaluating fraud-detection models on an imbalanced real-world dataset containing 284,807 transactions.',
+      process: 'Data Preparation → SMOTE Imbalance Handling → Logistic Regression → Multilayer Perceptron → Precision–Recall Evaluation → Model Comparison',
+      processLabel: 'APPROACH',
+      results: [
+        { label: 'Dataset', value: '284,807', sub: 'Transactions' },
+        { label: 'Best Model', value: 'MLP', sub: 'Fewest false positives' }
+      ],
+      contribution: 'Co-developed the logistic regression and MLP classifiers with a project partner, and led the precision–recall trade-off analysis that identified the MLP as the best-performing model, with the fewest false positives.',
+      technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'SMOTE', 'Machine Learning', 'Model Evaluation'],
+      designDecision: 'Prioritized precision–recall trade-offs over raw accuracy because class imbalance can make accuracy appear strong while concealing poor fraud detection.',
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/Credit-Card-Fraud-Detection', icon: 'code' }
+      ]
+    },
+    'stock-market-dashboard': {
+      title: 'Stock Market Portfolio Dashboard',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Concept Project',
+      overview: 'Executive Power BI dashboard concept for portfolio performance, attribution, benchmarking, market context, risk awareness, and decision-support storytelling.',
+      builtList: [
+        'Portfolio-to-sector-to-security drill-down',
+        'Active return',
+        'Alpha',
+        'Tracking error',
+        'Drawdown',
+        'Sector allocation',
+        'Sector contribution',
+        'Benchmark comparison'
+      ],
+      builtLabel: 'KEY FEATURES',
+      technologies: ['Power BI', 'DAX', 'Dashboard Design', 'Data Visualization', 'Performance Analytics'],
+      role: 'Designed the dashboard concept and executive reporting structure.',
+      designDecision: 'Focused the executive view on benchmark-relative performance and drawdown rather than displaying large volumes of raw market data.',
+      images: [
+        { src: 'Assets/Images/Stock_dashboard/5.jpg',  alt: 'Overview — KPI cards, sector allocation, news feed, day gainers/losers' },
+        { src: 'Assets/Images/Stock_dashboard/4.jpg',  alt: 'Navigation chart — drill-down paths from Overview to portfolio, sector and security levels' },
+        { src: 'Assets/Images/Stock_dashboard/6.jpg',  alt: 'Performance Attribution, portfolio level — sector treemap with active return, alpha and volume contribution' },
+        { src: 'Assets/Images/Stock_dashboard/7.jpg',  alt: 'Performance Attribution, sector level — contribution to return with top and bottom sectors' },
+        { src: 'Assets/Images/Stock_dashboard/8.jpg',  alt: 'Performance Attribution, security level — return vs benchmark and monthly contribution' },
+        { src: 'Assets/Images/Stock_dashboard/12.jpg', alt: 'Event Impact, news feed — headlines with ticker, P/L and sentiment' },
+        { src: 'Assets/Images/Stock_dashboard/13.jpg', alt: 'Event Impact — Affected Tickers with P/L change and movers table' },
+        { src: 'Assets/Images/Stock_dashboard/14.jpg', alt: 'Event Impact, event window — value from world events and event window table' },
+        { src: 'Assets/Images/Stock_dashboard/15.jpg', alt: 'Risk — drawdown, tracking error, VaR and Sharpe ratio' },
+        { src: 'Assets/Images/Stock_dashboard/16.jpg', alt: 'Junior — broker returns, portfolio value and P/L summary' },
+        { src: 'Assets/Images/Stock_dashboard/17.jpg', alt: 'Top / Bottom contributors — 1-year and 5-year comparisons' }
+      ]
+    },
+    'power-bi-resume-dashboard': {
+      title: 'Power BI Resume Dashboard',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Self-Directed',
+      overview: 'Multi-page interactive Power BI dashboard built using my own résumé as the dataset — created to practice advanced Power BI features and demonstrate data storytelling in a self-directed context.',
+      builtList: [
+        'Career Timeline — Gantt-style chart mapping every role, education entry, and leadership position from 2017 to present, with drill-down tooltips showing organization, dates, description, and key outcomes',
+        'Projects Table — filterable table of every project, organized by organization (PHSA, AKDN, UNBC, Roshtay) and tool, with a Tool Usage bar chart',
+        'Certifications Tracker — status-based view of all Microsoft certifications (completed and in progress) with provider and issue date',
+        'Course Breakdown — UNBC courses categorized by discipline (Data & Analytics, Systems & Networking, Business & MIS, Computer Science Core, Ethics & Professional)'
+      ],
+      builtLabel: 'PAGES & FEATURES',
+      process: 'Data Modelling → Report Design → Interaction Design → Tooltip &amp; Drill-Down → Publishing',
+      technologies: ['Power BI', 'DAX', 'Microsoft Excel', 'Dashboard Design', 'Data Visualization', 'Data Storytelling'],
+      role: 'Designed and built the multi-page dashboard end-to-end as a self-directed learning project.',
+      images: [
+        { src: 'Assets/Images/PowerBI Resume/PowerBI_Resume_1.jpg', alt: 'Power BI Resume Dashboard — Career Timeline page' },
+        { src: 'Assets/Images/PowerBI Resume/PowerBI_Resume_2.jpg', alt: 'Power BI Resume Dashboard — Projects table with Tool Usage chart' },
+        { src: 'Assets/Images/PowerBI Resume/PowerBI_Resume_3.jpg', alt: 'Power BI Resume Dashboard — Course Breakdown by discipline' }
+      ]
+    },
+    'akdn-ecd': {
+      title: 'AKDN ECD Digitalization Platform',
+      category: 'Digital Transformation & Business Systems',
+      tagStyle: 'skill-tag-digital',
+      status: 'Professional • Confidential',
+      organization: 'Aga Khan University / AKDN',
+      overview: 'Digital data-collection and approval infrastructure supporting more than 20 schools across 10 countries through Microsoft Forms, SharePoint, structured data, and Power Automate — eliminating 100% of paper-based collection.',
+      results: [
+        { label: 'Reach', value: '20+ Schools', sub: 'International scale' },
+        { label: 'Coverage', value: '10 Countries', sub: 'Global operations' },
+        { label: 'Paper-based', value: '100%', sub: 'Collection eliminated' }
+      ],
+      builtList: [
+        'Structured digital assessment database',
+        'Microsoft Forms collection workflow',
+        'Power Automate multi-level approvals',
+        'SharePoint platform structure',
+        'SOPs enabling zero-dependency handover'
+      ],
+      process: 'Requirements Analysis → Data Structure → Digital Collection → Approval Automation → Documentation',
+      technologies: ['SharePoint', 'Microsoft Forms', 'Power Automate', 'Database Design', 'Structured Data', 'Workflow Design', 'SOP Development'],
+      role: 'Led the design and implementation of the digital data-collection, approval, platform, and documentation workflow.',
+      designDecision: 'Separated data collection, structured storage, and approval logic so the workflow could remain maintainable across schools and countries.',
+      confidentiality: 'Some project details and visuals have been simplified or sanitized to protect organizational information.'
+    },
+    'akdn-leadership-hub': {
+      title: 'AKDN Leadership Hub Redesign',
+      category: 'Digital Transformation & Business Systems',
+      tagStyle: 'skill-tag-digital',
+      status: 'Professional • Confidential',
+      organization: 'Aga Khan University / AKDN',
+      overview: 'SharePoint information-architecture and user-experience redesign supporting leadership resources, reporting, communication, and easier content discovery.',
+      builtList: [
+        'Navigation architecture',
+        'Information hierarchy',
+        'Stakeholder workflows',
+        'Content discoverability',
+        'Platform accessibility',
+        'Handover documentation'
+      ],
+      builtLabel: 'WHAT I IMPROVED',
+      process: 'Platform Review → Information Architecture → Interface Redesign → Workflow Alignment → Handover',
+      technologies: ['SharePoint', 'Information Architecture', 'UX/UI Design', 'Stakeholder Workflows', 'Content Design', 'Documentation'],
+      role: 'Led the end-to-end SharePoint redesign, including navigation, information hierarchy, stakeholder workflows, and documentation.',
+      designDecision: 'Prioritized information architecture and content findability before visual styling because navigation problems were the main barrier to platform usability.',
+      confidentiality: 'Some project details and visuals have been simplified or sanitized to protect organizational information.'
+    },
+    'phsa-excel-automation': {
+      title: 'PHSA Excel Automation & SOP Templates',
+      category: 'Digital Transformation & Business Systems',
+      tagStyle: 'skill-tag-digital',
+      status: 'Professional • Automation',
+      organization: 'Provincial Health Services Authority',
+      overview: 'Automated weekly staff-scheduling and operational-template system built in Excel for supervisors managing more than 20 employees across eight position types.',
+      results: [
+        { label: 'Errors', value: '40%', sub: 'Fewer scheduling errors' },
+        { label: 'Time-on-task', value: '30%', sub: 'Less time-on-task' },
+        { label: 'SOPs', value: '26', sub: 'Revised & validated' },
+        { label: 'Compliance', value: '100%', sub: 'SOP compliance' },
+        { label: 'Employees', value: '20+', sub: 'Managed' },
+        { label: 'Positions', value: '8', sub: 'Position types' }
+      ],
+      builtList: [
+        'Dynamic date headers',
+        'Daily staffing-gap counter',
+        'CASUAL coverage alerts',
+        'Base schedule template',
+        'Formula-driven status codes',
+        'Visual coverage mapping',
+        'SOP-aligned templates',
+        'Six operational Excel file categories standardized',
+        'Review and validation of 26 SOPs against PHSA standards'
+      ],
+      process: 'Workflow Review → Formula Design → Alert Logic → Standardization → Documentation and Testing',
+      technologies: ['Excel', 'Advanced Formulas', 'Formula Design', 'Conditional Logic', 'Process Automation', 'SOP Development', 'Testing'],
+      role: 'Designed, implemented, tested, and documented the Excel scheduling and operational automation system.',
+      designDecision: 'Used formula-driven logic instead of macros so supervisors could maintain and audit the workbook without depending on VBA permissions or specialist support.',
+      images: [
+        { src: 'Assets/Images/PHSA_Staff_Scheduling_Automation_System.jpg', alt: 'PHSA Excel scheduling automation — template view' }
+      ],
+      dataNote: 'Names, positions, and schedule values shown are illustrative — the production workbook is confidential to PHSA.'
+    },
+    'gradified': {
+      title: 'Gradified',
+      category: 'Digital Transformation & Business Systems',
+      tagStyle: 'skill-tag-digital',
+      status: 'Business/Product Pitch',
+      organization: 'University of Northern British Columbia',
+      overview: 'Original hiring-platform concept designed to replace résumé-only evaluation with verified capability records and psychometric culture-fit matching.',
+      builtList: [
+        'Product vision',
+        'Business model',
+        'Financial modelling',
+        'Competitive analysis',
+        'Partnership strategy',
+        'Market research',
+        'Investor-style pitch delivery'
+      ],
+      builtLabel: 'CONTRIBUTIONS',
+      technologies: ['Product Strategy', 'Business Model', 'Financial Modelling', 'Competitive Analysis', 'Partnership Strategy', 'Pitch Delivery', 'Market Research'],
+      role: 'Founder & CEO',
+      designDecision: 'Positioned verified capability records and culture-fit indicators as supplements to résumés rather than treating a single automated score as the hiring decision.',
+      images: [
+        { src: 'Assets/Images/Gradified/Gradified_LinkedIn_1.jpg', alt: 'Gradified pitch deck — title slide' },
+        { src: 'Assets/Images/Gradified/Gradified_LinkedIn_2.jpg', alt: 'Gradified pitch deck — problem / market analysis' },
+        { src: 'Assets/Images/Gradified/Gradified_LinkedIn_3.jpg', alt: 'Gradified pitch deck — matching engine product diagram' },
+        { src: 'Assets/Images/Gradified/Gradified_LinkedIn_4.jpg', alt: 'Gradified pitch deck — ask / implementation slide' },
+        { src: 'Assets/Images/Gradified/Gradified_LinkedIn_5.jpg', alt: 'Gradified pitch deck — financial model' },
+        { src: 'Assets/Images/Gradified/Gradified_LinkedIn_6.jpg', alt: 'Gradified pitch deck — overview / closing slide' }
+      ]
+    },
+    'jobtrackr': {
+      title: 'JobTrackr',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Academic Team Project',
+      organization: 'University of Northern British Columbia',
+      overview: 'Full-stack job-application management platform combining an Angular frontend, Node and Express API, PostgreSQL database, resume-analysis workflow, automated testing, and GitHub Actions CI/CD.',
+      builtList: [
+        'System architecture planning',
+        'Frontend–backend integration',
+        'API and data-flow validation',
+        'Testing strategy',
+        'GitHub Actions CI/CD',
+        'Project coordination'
+      ],
+      builtLabel: 'RESPONSIBILITIES',
+      process: 'Angular Frontend → Node / Express API → PostgreSQL → Resume-Analysis Workflow → Testing and GitHub Actions',
+      processLabel: 'ARCHITECTURE',
+      technologies: ['Angular', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'Gemini AI', 'GitHub Actions', 'Postman', 'pgAdmin'],
+      role: 'Co-developed as part of a project team. My responsibilities focused on system architecture planning, frontend–backend integration, testing strategy, GitHub Actions CI/CD, and project coordination.',
+      roleLabel: 'MY ROLE',
+      designDecision: 'Kept the Angular frontend, API, database, and resume-analysis workflow separated so each part could be tested and modified without tightly coupling the whole application.',
+      images: [
+        { src: 'Assets/Images/Jobtrackr/Dashboard.jpg',    alt: 'JobTrackr — application dashboard with pipeline view' },
+        { src: 'Assets/Images/Jobtrackr/Application.jpg',  alt: 'JobTrackr — application form and details' },
+        { src: 'Assets/Images/Jobtrackr/AI_Analysis.jpg',  alt: 'JobTrackr — AI-driven résumé match analysis' },
+        { src: 'Assets/Images/Jobtrackr/Jobtrackr.jpg',    alt: 'JobTrackr — application overview page' },
+        { src: 'Assets/Images/Jobtrackr/Wireframe.jpg',    alt: 'JobTrackr — early hand-drawn wireframe of login, dashboard and AI résumé flows' }
+      ],
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/Jobtrackr-main', icon: 'code' }
+      ]
+    },
+    'airline-database': {
+      title: 'Airline Database System',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Academic Team Project',
+      organization: 'University of Northern British Columbia',
+      overview: 'Relational airline database developed from business requirements through ER modelling, schema design, normalization, SQL implementation, and team-based validation.',
+      context: 'Completed as part of a five-person academic team responsible for translating airline-management requirements into a structured relational database.',
+      builtList: [
+        'Entity-relationship diagram',
+        'Relational schema',
+        'Normalized tables',
+        'Primary and foreign keys',
+        'SQL queries',
+        'Data-integrity rules',
+        'Requirements-to-database mapping'
+      ],
+      builtLabel: 'WHAT WE BUILT',
+      process: 'Requirements Analysis → ER Modelling → Schema Design → Normalization → SQL Implementation → Validation',
+      technologies: ['SQL', 'MS Access', 'ER Modelling', 'Normalization', 'Relational Schema Design', 'Database Design', 'Team Coordination'],
+      role: 'Contributed to requirements interpretation, database modelling, schema design, implementation, and team coordination.',
+      designDecision: 'Normalized the schema to protect data consistency, while keeping the structure understandable enough for a five-person team to implement and validate collaboratively.'
+    },
+    'security-log-analyzer': {
+      title: 'Security Log Analyzer + Alert Script',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Independent Project',
+      overview: 'Combined Python and PowerShell security-automation work for parsing logs, identifying failure patterns, classifying suspicious activity, and escalating alerts.',
+      sections: [
+        {
+          label: 'PYTHON ANALYZER',
+          items: [
+            'Source-IP failure-pattern analysis',
+            'Two-tier WARNING and CONFIRMED severity model',
+            'False-positive trade-off evaluation'
+          ]
+        },
+        {
+          label: 'POWERSHELL ALERT SCRIPT',
+          items: [
+            'Automated log parsing',
+            'Failure-pattern detection',
+            'Tiered alert-escalation logic'
+          ]
+        }
+      ],
+      process: 'Pattern Review → Threshold Evaluation → Severity Design → Script Implementation → Testing',
+      technologies: ['Python', 'PowerShell', 'Log Analysis', 'Alert Logic', 'Pattern Detection', 'Security Automation'],
+      role: 'Designed and built both security-automation scripts independently.',
+      designDecision: 'Used tiered WARNING and CONFIRMED classifications instead of treating every failed event as malicious, reducing the risk of excessive false alerts.',
+      links: [
+        { label: 'Python Analyzer', url: 'https://github.com/zohaibrahim/Python-Security-Log-Analyzer', icon: 'code' },
+        { label: 'PowerShell Script', url: 'https://github.com/zohaibrahim/PowerShell-Script-Basic', icon: 'terminal' }
+      ]
+    },
+    'parallel-sorting': {
+      title: 'Parallelized Sorting Algorithm',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Academic',
+      organization: 'University of Northern British Columbia',
+      overview: 'Parallel merge-sort implementation using Java’s Fork/Join framework to explore concurrency, workload distribution, scalability, and performance differences between sequential and parallel execution.',
+      builtList: [
+        'Merge-sort parallelization',
+        'Fork/Join task distribution',
+        'Sequential-versus-parallel comparison',
+        'Large-dataset testing',
+        'Concurrency behaviour',
+        'Performance validation'
+      ],
+      builtLabel: 'TECHNICAL FOCUS',
+      process: 'Algorithm Selection → Task Decomposition → Parallel Execution → Merge Phase → Testing and Comparison',
+      technologies: ['Java', 'Fork/Join Framework', 'Parallel Programming', 'Merge Sort', 'Concurrency', 'Testing'],
+      role: 'Designed, implemented, tested, and evaluated the parallel sorting solution.',
+      designDecision: 'Used a workload threshold before creating parallel tasks because Fork/Join overhead can make parallel execution slower on small inputs.',
+      images: [
+        { src: 'Assets/Images/Parallel_Sorting_Algorithm/Comparision_Graph.jpg', alt: 'Parallel vs Sequential merge sort — execution time across 1M, 10M, 100M array sizes' },
+        { src: 'Assets/Images/Parallel_Sorting_Algorithm/Step_by_Step_Process.jpg', alt: 'Parallel sort — step-by-step process diagram' }
+      ],
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/Concurrent-and-Distributed-Programming', icon: 'code' }
+      ]
+    },
+    'jailbreak-detection': {
+      title: 'LLM Jailbreak Detection',
+      category: 'Data, BI & Analytics',
+      tagStyle: 'skill-tag-data',
+      status: 'Academic Team Project',
+      organization: 'University of Northern British Columbia',
+      overview: 'Machine-learning investigation into LLM safety using layer-wise probe classifiers and representation-engineering techniques. Extracted hidden-state activations from DistilBERT, trained lightweight linear probes, and analysed how benign and jailbreak-intent representations separate across layers.',
+      builtList: [
+        'Per-layer activation extraction',
+        'Layer-wise linear probe classification',
+        'Centroid-distance analysis',
+        'Representation geometry',
+        'Concept-direction computation',
+        'Model evaluation and checkpointing'
+      ],
+      builtLabel: 'TECHNICAL FOCUS',
+      results: [
+        { label: 'Best Accuracy', value: '89%', sub: 'Best probed layer' },
+        { label: 'Best F1', value: '0.87', sub: 'Precision + recall' },
+        { label: 'Model', value: 'DistilBERT', sub: '6 layers + embedding' },
+        { label: 'Samples', value: '1,000', sub: 'Analysed set' }
+      ],
+      process: 'Data Preparation → Activation Extraction → Probe Training → Geometry Analysis → Concept Direction → Evaluation',
+      contribution: 'In a 3-person team, I individually designed and implemented the model-agnostic layer-wise probing pipeline across DistilBERT’s six hidden layers (centroid distance, cosine similarity, PCA), reaching up to 89% accuracy and a 0.87 F1-score.',
+      technologies: ['Python', 'PyTorch', 'Transformers', 'Representation Engineering', 'Probe Classifiers', 'Machine Learning', 'Model Evaluation'],
+      role: 'Designed, implemented, and analysed the layer-wise probe pipeline and representation-interpretability evaluation.',
+      designDecision: 'Used lightweight probes on frozen hidden-state representations so layer-wise separability could be studied without retraining the underlying transformer.',
+      images: [
+        { src: 'Assets/Images/Jailbreak/Jailbreak_Layer_Accuracy.jpg', alt: 'Per-layer probe accuracy and centroid geometry output' },
+        { src: 'Assets/Images/Jailbreak/Jailbreak_Training_Results.jpg', alt: 'Training run output — final validation accuracy, precision, recall and F1' },
+        { src: 'Assets/Images/Jailbreak/Jailbreak_Layer_Summary.jpg', alt: 'Best-layer analysis summary — per-layer F1 and accuracy, plus direction and hybrid model scores' },
+        { src: 'Assets/Images/Jailbreak/Jailbreak_Prompt_Scores.jpg', alt: 'Jailbreak scores for sample prompts — benign prompts score negative, jailbreak prompts score positive' }
+      ],
+      links: [
+        { label: 'View Repository', url: 'https://github.com/zohaibrahim/CPSC461_Team_Project', icon: 'code' }
+      ]
+    },
+    'portfolio-rag': {
+      title: 'Portfolio RAG Assistant',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Self-Directed • Deployed',
+      overview: 'Production retrieval-augmented-generation system that answers questions about my work strictly from a curated knowledge base, with per-answer source citations and a canonical no-answer fallback for unsupported questions.',
+      builtList: [
+        'Hybrid BM25 + HNSW retrieval',
+        'LLM reranker with a selection-only JSON contract to gate unsupported queries without a hand-tuned threshold',
+        'Ingestion-time Projects Catalogue chunk that resolves broad "what projects" queries without runtime intent-detection code',
+        'Per-answer source citations',
+        'Canonical no-answer fallback for out-of-scope questions',
+        'Hardened Express API — rate limiting, CORS lockdown, request/body caps, centralized error handling that never leaks stack traces or provider names',
+        '35-question regression suite validating retrieval quality',
+        'Provider-agnostic architecture swapping between free local Ollama and Azure OpenAI via a single environment variable for zero-spend development'
+      ],
+      builtLabel: 'WHAT I BUILT',
+      process: 'Corpus Curation → Chunking & Ingestion → Hybrid Retrieval → LLM Reranking → Grounded Generation → Regression Testing → Hardening & Deploy',
+      technologies: ['TypeScript', 'Node.js', 'Express.js', 'React', 'Azure AI Search', 'Azure OpenAI', 'Ollama', 'BM25 + HNSW', 'RAG'],
+      role: 'Sole designer, developer, and operator — corpus curation, retrieval pipeline, API hardening, and deployment.',
+      designDecision: 'Gated unsupported queries with a selection-only JSON reranker contract rather than a hand-tuned similarity threshold, so the model returns a canonical no-answer instead of hallucinating when nothing in the knowledge base actually covers the question.',
+      images: [
+        { src: 'Assets/Images/Rag/Main.png', alt: 'Portfolio RAG Assistant — landing view with suggested questions and the Ask input' },
+        { src: 'Assets/Images/Rag/Screenshot 2026-09-12 005351.png', alt: 'Portfolio RAG Assistant — "Who is Zohaib?" answered from the knowledge base with numbered citations to Master Resume, Portfolio Website, and Roshtay sources' },
+        { src: 'Assets/Images/Rag/Screenshot 2026-09-12 005802.png', alt: 'Portfolio RAG Assistant — detailed contribution answer to a jailbreak-detection question, grounded in three citations covering my contribution, master resume, and layer-wise analysis' },
+        { src: 'Assets/Images/Rag/Screenshot 2026-09-12 005839.png', alt: 'Portfolio RAG Assistant — canonical no-answer fallback: "The portfolio does not contain enough information to answer that." for an out-of-scope question' }
+      ],
+      links: [
+        { label: 'Open Live App', url: 'https://zohaib-portfolio-rag-project.vercel.app/', icon: 'open_in_new' },
+        { label: 'View Repository', url: 'https://github.com/ZohaibRahim/portfolio-RAG-project', icon: 'code' }
+      ]
+    },
+    'bash-ssh-monitor': {
+      title: 'Bash SSH Security Log Monitor',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Independent Project',
+      overview: 'Bash implementation of a two-tier failed-login detector for SSH authentication logs — the Linux counterpart to my Python and PowerShell security-monitoring projects, applying the same WARNING/CONFIRMED severity model across three environments.',
+      results: [
+        { label: 'Window', value: '10 min', sub: 'Rolling default' },
+        { label: 'WARNING', value: '2+', sub: 'Failures' },
+        { label: 'CONFIRMED', value: '4+', sub: 'Failures' },
+        { label: 'Test Suite', value: 'Pass', sub: 'Seeded cases' }
+      ],
+      builtList: [
+        'grep + awk parsing of /var/log/auth.log-style SSH events',
+        'Bash associative arrays aggregating per-source-IP failure counts',
+        'Rolling time-window counting via GNU date',
+        'Two-tier WARNING / CONFIRMED severity model (NORMAL sources suppressed)',
+        'Configurable window and thresholds (WINDOW_MINUTES, WARN_THRESHOLD, CONFIRM_THRESHOLD)',
+        'End-to-end test suite asserting alert behaviour on seeded WARNING / CONFIRMED / NORMAL cases',
+        'ANCHOR_TO_LATEST demo mode for repeatable sample runs',
+        'Optional cron-based scheduling for continuous monitoring'
+      ],
+      builtLabel: 'WHAT I BUILT',
+      process: 'Log Sourcing → grep/awk Parsing → Per-IP Aggregation → Rolling Window → Severity Classification → Seeded Test Suite → Cron Deploy',
+      technologies: ['Bash', 'grep', 'awk', 'GNU date', 'Associative Arrays', 'Cron', 'Log Analysis', 'Security Automation'],
+      role: 'Designed, implemented, tested, and packaged the Bash port independently.',
+      designDecision: 'Kept the WARNING/CONFIRMED severity model consistent across all three languages so alert semantics are portable — a Python/PowerShell/Bash triage plays the same regardless of which environment runs it.',
+      images: [
+        { src: 'Assets/Images/Bash/demo.png', alt: 'Bash SSH Security Log Monitor — terminal run showing NORMAL / WARNING / CONFIRMED classification and seeded-test assertions passing' }
+      ],
+      dataNote: 'All sample IP addresses use documentation-only ranges (RFC 5737) and are synthetic.',
+      links: [
+        { label: 'View Repository', url: 'https://github.com/ZohaibRahim/bash-security-log-monitor', icon: 'code' }
+      ]
+    },
+    'network-security-report': {
+      title: 'Network Security: Threats, Challenges &amp; Modern Defenses',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Academic Team Project',
+      organization: 'University of Northern British Columbia',
+      overview: 'Co-authored research paper (CPSC 344, 3-person team) covering the cyber threat landscape, real-world case studies, modern defence strategies, and global regulatory frameworks in enterprise network protection.',
+      builtList: [
+        'Threat landscape: malware, ransomware, phishing, DoS/DDoS, insider threats',
+        'Case studies: WannaCry 2017, SolarWinds 2020, Equifax 2017, Kaseya 2021',
+        'Modern defence: AI/ML in cybersecurity, zero-trust architecture, encryption, MFA',
+        'Regulatory frameworks: GDPR, CCPA, NIST, ISO 27001, HIPAA, PCI DSS',
+        'Executive summary and research methodology',
+        'Final formatted document and presentation'
+      ],
+      builtLabel: 'REPORT SCOPE',
+      process: 'Research → Case Study Selection → Framework Analysis → Synthesis → Written Report → Presentation',
+      technologies: ['Research', 'Literature Review', 'GDPR', 'CCPA', 'NIST', 'ISO 27001', 'HIPAA', 'PCI DSS', 'Threat Analysis', 'Technical Writing'],
+      role: 'Wrote the executive summary and research methodology, and designed and delivered the final presentation and formatted document.',
+      designDecision: 'Framed the report around defence-in-depth so threats, real-world case studies, controls, and regulation were discussed together rather than as isolated topics.'
+    },
+    'roshtay': {
+      title: 'Roshtay — AI Operations Platform',
+      category: 'Software & Full-Stack Engineering',
+      tagStyle: 'skill-tag-software',
+      status: 'Founded • Live Product',
+      organization: 'Roshtay',
+      overview: 'AI operations partner for professional-services firms. Roshtay designs, builds, and deploys custom AI systems for accounting, consulting, and service businesses through a structured 6–8 week engagement model — research, interface design, development, testing, GitHub, and Vercel deployment.',
+      builtList: [
+        'Marketing site with services, demo, and audit flows',
+        'Sample client-dashboard reference implementation',
+        'Client intake and audit workflow',
+        'Delivery model of 6–8 week custom builds',
+        'Three client demo apps designed and deployed'
+      ],
+      builtLabel: 'WHAT I BUILT',
+      sections: [
+        {
+          label: 'CLIENT DEMO APPS (ILLUSTRATIVE DATA)',
+          items: [
+            'RevenueOps Console — agency growth-automation console covering retainers, lead qualification, project delivery, copy production, and client reporting',
+            'Agency Intelligence Portal — interactive leadership-portal prototype for a digital agency',
+            'Pulse — agency reporting dashboard with HubSpot, Klaviyo, Google Ads, and Meta Ads views, auto-generated client reports, and an approval queue'
+          ]
+        }
+      ],
+      results: [
+        { label: 'Deployment', value: '6–8 wk', sub: 'Custom builds' },
+        { label: 'Demo Apps', value: '3', sub: 'Client demos' },
+        { label: 'Role', value: 'Founder', sub: 'End-to-end delivery' }
+      ],
+      process: 'Research → Interface Design → Development → Testing → GitHub → Vercel Deployment',
+      technologies: ['Product Development', 'Interface Design', 'Vercel', 'GitHub', 'Client Delivery', 'AI Systems'],
+      role: 'Founder. Owns product strategy, design, development, delivery, and client management.',
+      images: [
+        { src: 'Assets/Images/Roshtay_Website.jpg', alt: 'Roshtay AI Operations Platform website hero' }
+      ],
+      designDecision: 'Structured Roshtay around a repeatable 6–8 week custom-build model — research, interface design, development, testing, GitHub, and Vercel — so each client engagement follows the same production workflow instead of ad-hoc delivery.',
+      links: [
+        { label: 'Visit Roshtay', url: 'https://www.roshtay.com', icon: 'open_in_new' },
+        { label: 'RevenueOps Console (demo)', url: 'https://revenueops-console.vercel.app/', icon: 'dashboard' },
+        { label: 'Agency Intelligence Portal (demo)', url: 'https://smartsites-demo.vercel.app/', icon: 'dashboard' },
+        { label: 'Pulse (demo)', url: 'https://chatter-buzz.vercel.app/', icon: 'dashboard' }
+      ]
+    }
+  };
+
+
+  // ============ THEME ============
+  // Head script already applied .dark class before paint. Here we only sync
+  // the toggle icon to match the current state.
+  const themeToggle = document.getElementById('theme-toggle');
+  if (document.documentElement.classList.contains('dark')) {
+    themeToggle.textContent = 'light_mode';
+  }
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    themeToggle.textContent = isDark ? 'light_mode' : 'dark_mode';
+    try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e){}
+  });
+
+  // ============ PROJECT TABS ============
+  const projectTabButtons = Array.from(document.querySelectorAll('.project-tab-btn'));
+  let currentTab = 'data';
+
+  function switchTab(tabId) {
+    currentTab = tabId;
+    ['data', 'digital', 'software'].forEach(t => {
+      const panel = document.getElementById(`tab-${t}`);
+      const desc = document.getElementById(`tab-desc-${t}`);
+      const heading = document.getElementById(`tab-heading-${t}`);
+      const btn = document.getElementById(`btn-${t}`);
+      const isActive = t === tabId;
+      if (panel) {
+        panel.classList.toggle('hidden', !isActive);
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      }
+      if (desc) desc.classList.toggle('hidden', !isActive);
+      if (heading) heading.classList.toggle('hidden', !isActive);
+      if (btn) {
+        btn.classList.toggle('tab-btn-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.setAttribute('tabindex', isActive ? '0' : '-1');
+        if (isActive) {
+          btn.classList.remove('text-text-secondary-light', 'dark:text-text-secondary-dark');
+        } else {
+          btn.classList.add('text-text-secondary-light', 'dark:text-text-secondary-dark');
+        }
+      }
+    });
+  }
+
+  projectTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+    btn.addEventListener('keydown', (e) => handleTabKeydown(e, projectTabButtons, switchTab));
+  });
+
+  // ============ ABOUT TABS ============
+  const aboutTabButtons = Array.from(document.querySelectorAll('.about-tab-btn'));
+
+  function switchAboutTab(tabId) {
+    document.querySelectorAll('.about-tab-content').forEach(c => {
+      const isActive = c.id === tabId;
+      c.classList.toggle('hidden', !isActive);
+      c.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+    });
+    aboutTabButtons.forEach(b => {
+      const isActive = b.dataset.tab === tabId;
+      b.classList.toggle('active', isActive);
+      b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      b.setAttribute('tabindex', isActive ? '0' : '-1');
+      if (isActive) {
+        b.classList.remove('text-text-secondary-light', 'dark:text-text-secondary-dark');
+      } else {
+        b.classList.add('text-text-secondary-light', 'dark:text-text-secondary-dark');
+      }
+    });
+  }
+
+  aboutTabButtons.forEach(btn => {
+    btn.addEventListener('click', () => switchAboutTab(btn.dataset.tab));
+    btn.addEventListener('keydown', (e) => handleTabKeydown(e, aboutTabButtons, (tab) => switchAboutTab(tab)));
+  });
+
+  function handleTabKeydown(e, buttons, activate) {
+    const key = e.key;
+    const idx = buttons.indexOf(e.currentTarget);
+    if (idx === -1) return;
+    let nextIdx = null;
+    if (key === 'ArrowRight') nextIdx = (idx + 1) % buttons.length;
+    else if (key === 'ArrowLeft') nextIdx = (idx - 1 + buttons.length) % buttons.length;
+    else if (key === 'Home') nextIdx = 0;
+    else if (key === 'End') nextIdx = buttons.length - 1;
+    else if (key === 'Enter' || key === ' ') {
+      e.preventDefault();
+      activate(e.currentTarget.dataset.tab);
+      return;
+    }
+    if (nextIdx !== null) {
+      e.preventDefault();
+      const nextBtn = buttons[nextIdx];
+      activate(nextBtn.dataset.tab);
+      nextBtn.focus();
+    }
+  }
+
+  // ============ PROJECT MODAL ============
+  const modal = document.getElementById('project-modal');
+  const modalContainer = document.getElementById('modal-container');
+  const modalBackdrop = document.getElementById('modal-backdrop');
+  const modalContent = document.getElementById('modal-content');
+  const prevBtn = document.getElementById('prev-project');
+  const nextBtn = document.getElementById('next-project');
+  let currentProjectId = null;
+  let modalTrigger = null;
+  let modalTrapListener = null;
+
+  function escapeHTML(s) {
+    return String(s || '').replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+  }
+
+  function buildResultsHTML(results) {
+    if (!results || !results.length) return '';
+    return `<div class="grid grid-cols-2 md:grid-cols-3 gap-4">${results.map(r => `
+      <div class="p-4 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/40 dark:bg-slate-900/20 text-center">
+        <div class="text-2xl font-bold text-on-surface dark:text-white tracking-tight">${escapeHTML(r.value)}</div>
+        <div class="text-[11px] font-bold text-text-muted-light dark:text-text-secondary-dark uppercase tracking-wider mt-1">${escapeHTML(r.label)}</div>
+        <div class="text-[12px] text-text-secondary-light dark:text-text-secondary-dark italic mt-0.5">${escapeHTML(r.sub)}</div>
+      </div>
+    `).join('')}</div>`;
+  }
+
+  function buildListHTML(items, label) {
+    if (!items || !items.length) return '';
+    return `<div>
+      <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-4 font-label-technical">${escapeHTML(label)}</h5>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-[15px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+        ${items.map(i => `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary dark:text-primary-dark text-[16px] mt-1 shrink-0">check_circle</span><span>${escapeHTML(i)}</span></li>`).join('')}
+      </ul>
+    </div>`;
+  }
+
+  function buildProcessHTML(process, label) {
+    if (!process) return '';
+    const steps = process.split('→').map(s => s.trim()).filter(Boolean);
+    return `<div>
+      <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-4 font-label-technical">${escapeHTML(label || 'PROCESS')}</h5>
+      <div class="flex flex-wrap gap-3 items-center">
+        ${steps.map((step, idx) => `
+          <div class="flex items-center gap-3">
+            <span class="text-[14px] font-bold text-on-surface dark:text-slate-200 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">${escapeHTML(step)}</span>
+            ${idx < steps.length - 1 ? '<span class="material-symbols-outlined text-slate-400 text-[18px]">arrow_forward</span>' : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+  }
+
+  function buildSectionsHTML(sections) {
+    if (!sections || !sections.length) return '';
+    return sections.map(sec => `<div>
+      <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-4 font-label-technical">${escapeHTML(sec.label)}</h5>
+      <ul class="space-y-2 text-[15px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+        ${sec.items.map(i => `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary dark:text-primary-dark text-[16px] mt-1 shrink-0">check_circle</span><span>${escapeHTML(i)}</span></li>`).join('')}
+      </ul>
+    </div>`).join('');
+  }
+
+  function openModal(projectId, triggerEl) {
+    const data = projectDetails[projectId];
+    if (!data) return;
+    currentProjectId = projectId;
+    if (triggerEl) modalTrigger = triggerEl;
+
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-category').textContent = data.category;
+    document.getElementById('modal-status-pill').textContent = data.status;
+
+    // Normalize legacy `image` field into `images[]` array for gallery.
+    const galleryImages = (data.images && data.images.length)
+      ? data.images
+      : (data.image ? [{ src: data.image, alt: data.imageAlt || data.title }] : []);
+
+    // No real screenshot → no media slot at all (never a grey placeholder).
+    let visualContent = '';
+    if (galleryImages.length) {
+      const first = galleryImages[0];
+      const mainImg = `<img id="gallery-main-img" src="${escapeHTML(first.src)}" class="w-full h-full object-cover transition-opacity duration-150" alt="${escapeHTML(first.alt || data.title)}" onerror="this.parentElement.innerHTML='<div class=\\'w-full h-full flex items-center justify-center bg-slate-100 dark:bg-slate-800\\'><span class=\\'font-label-technical text-[11px] font-bold text-slate-400 uppercase tracking-widest\\'>Screenshot Unavailable</span></div>';">`;
+      const thumbs = galleryImages.length > 1
+        ? `<div class="flex gap-2 overflow-x-auto p-2 bg-slate-50 dark:bg-slate-900/40 border-t border-border-light dark:border-border-dark no-scrollbar" role="tablist" aria-label="Project screenshots">
+             ${galleryImages.map((img, i) => `<button type="button" class="gallery-thumb shrink-0 w-16 h-11 rounded-md overflow-hidden border-2 ${i === 0 ? 'border-primary dark:border-primary-dark' : 'border-transparent'} hover:border-primary/60 dark:hover:border-primary-dark/60 focus:outline-none focus-visible:border-primary dark:focus-visible:border-primary-dark transition-colors" data-src="${escapeHTML(img.src)}" data-alt="${escapeHTML(img.alt || '')}" data-idx="${i}" aria-label="View screenshot ${i + 1} of ${galleryImages.length}" aria-selected="${i === 0}"><img src="${escapeHTML(img.src)}" class="w-full h-full object-cover pointer-events-none" alt="" loading="lazy"></button>`).join('')}
+           </div>`
+        : '';
+      const dataNote = data.dataNote
+        ? `<div class="p-3 bg-amber-50/60 dark:bg-amber-500/5 border-t border-amber-200/50 dark:border-amber-500/20 text-[11px] text-amber-800 dark:text-amber-200 flex items-start gap-2"><span class="material-symbols-outlined text-[14px] mt-0.5">info</span><span>${escapeHTML(data.dataNote)}</span></div>`
+        : '';
+      visualContent = `<div class="aspect-video bg-slate-100 dark:bg-slate-800">${mainImg}</div>${thumbs}${dataNote}`;
+    }
+
+    const mainCol = [
+      `<div>
+        <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-4 font-label-technical">OVERVIEW</h5>
+        <p class="text-text-secondary-light dark:text-text-secondary-dark leading-relaxed text-[16px] max-w-3xl">${escapeHTML(data.overview)}</p>
+      </div>`,
+      data.context ? `<div>
+        <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-4 font-label-technical">PROJECT CONTEXT</h5>
+        <p class="text-[15px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">${escapeHTML(data.context)}</p>
+      </div>` : '',
+      buildResultsHTML(data.results),
+      buildListHTML(data.builtList, data.builtLabel || 'WHAT I BUILT'),
+      buildSectionsHTML(data.sections),
+      buildProcessHTML(data.process, data.processLabel),
+      data.contribution ? `<div>
+        <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-4 font-label-technical">MY CONTRIBUTION</h5>
+        <p class="text-[15px] text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">${escapeHTML(data.contribution)}</p>
+      </div>` : '',
+      data.designDecision ? `<div class="p-5 rounded-2xl border border-primary/15 dark:border-primary/25 bg-soft-blue-fill/40 dark:bg-primary/5">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary dark:text-primary-dark text-[20px] mt-0.5">lightbulb</span>
+          <div class="space-y-2">
+            <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] font-label-technical">Design Decision</h5>
+            <p class="text-[15px] text-on-surface dark:text-text-primary-dark leading-relaxed">${escapeHTML(data.designDecision)}</p>
+          </div>
+        </div>
+      </div>` : ''
+    ].filter(Boolean).join('');
+
+    const sideCol = `
+      ${visualContent ? `<div class="rounded-2xl overflow-hidden border border-border-light dark:border-border-dark shadow-lg bg-white dark:bg-[#090D14]">
+        <div class="h-6 bg-slate-100 dark:bg-slate-800 border-b border-border-light dark:border-border-dark flex items-center px-3 gap-1">
+          <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+          <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+          <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+        </div>
+        ${visualContent}
+      </div>` : ''}
+      <div class="space-y-6">
+        <div>
+          <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-3 font-label-technical">SKILLS &amp; TECHNOLOGIES</h5>
+          <div class="skill-tag-list">
+            ${data.technologies.map(s => `<span class="skill-tag ${escapeHTML(data.tagStyle)}">${escapeHTML(s)}</span>`).join('')}
+          </div>
+        </div>
+        <div>
+          <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-3 font-label-technical">PROJECT DETAILS</h5>
+          <dl class="space-y-3 text-[13px]">
+            <div><dt class="text-text-muted-light dark:text-text-secondary-dark font-semibold uppercase text-[11px] tracking-wider">Status</dt><dd class="text-on-surface dark:text-text-primary-dark font-medium mt-0.5">${escapeHTML(data.status)}</dd></div>
+            <div><dt class="text-text-muted-light dark:text-text-secondary-dark font-semibold uppercase text-[11px] tracking-wider">Category</dt><dd class="text-on-surface dark:text-text-primary-dark font-medium mt-0.5">${escapeHTML(data.category)}</dd></div>
+            ${data.organization ? `<div><dt class="text-text-muted-light dark:text-text-secondary-dark font-semibold uppercase text-[11px] tracking-wider">Organization</dt><dd class="text-on-surface dark:text-text-primary-dark font-medium mt-0.5">${escapeHTML(data.organization)}</dd></div>` : ''}
+            ${data.role ? `<div><dt class="text-text-muted-light dark:text-text-secondary-dark font-semibold uppercase text-[11px] tracking-wider">${escapeHTML(data.roleLabel || 'Role')}</dt><dd class="text-on-surface dark:text-text-primary-dark font-medium mt-0.5 leading-relaxed">${escapeHTML(data.role)}</dd></div>` : ''}
+          </dl>
+        </div>
+        ${data.confidentiality ? `<div class="p-4 rounded-xl border border-amber-200 dark:border-amber-500/30 bg-amber-50/60 dark:bg-amber-500/5">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-amber-600 dark:text-amber-400 text-[18px] mt-0.5">shield</span>
+            <div>
+              <div class="text-[11px] font-bold text-amber-800 dark:text-amber-300 uppercase tracking-widest mb-1">Confidentiality</div>
+              <p class="text-[12px] text-amber-800 dark:text-amber-200 leading-relaxed">${escapeHTML(data.confidentiality)}</p>
+            </div>
+          </div>
+        </div>` : ''}
+        ${data.links && data.links.length ? `<div>
+          <h5 class="text-[11px] font-bold text-primary dark:text-primary-dark uppercase tracking-[0.2em] mb-3 font-label-technical">Evidence</h5>
+          <div class="flex flex-col gap-2">
+            ${data.links.map(l => `<a href="${escapeHTML(l.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-lg border border-primary/20 dark:border-primary/40 bg-soft-blue-fill/40 dark:bg-primary/10 text-primary dark:text-primary-dark font-bold text-[13px] hover:bg-soft-blue-fill dark:hover:bg-primary/20 transition-all group">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">${escapeHTML(l.icon || 'link')}</span>${escapeHTML(l.label)}</span>
+              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+            </a>`).join('')}
+          </div>
+        </div>` : ''}
+      </div>`;
+
+    modalContent.innerHTML = `
+      <div class="p-5 sm:p-8 md:p-12 space-y-8 md:space-y-10">${mainCol}</div>
+      <aside class="bg-slate-50 dark:bg-slate-900/40 border-t lg:border-t-0 lg:border-l border-border-light dark:border-border-dark p-5 sm:p-8 md:p-10 space-y-6 md:space-y-8">${sideCol}</aside>`;
+
+    // Wire thumbnail clicks — swap main image + update aria-selected state.
+    const thumbs = modalContent.querySelectorAll('.gallery-thumb');
+    const mainImg = document.getElementById('gallery-main-img');
+    if (thumbs.length && mainImg) {
+      thumbs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (!src || mainImg.src.endsWith(src)) return;
+          mainImg.style.opacity = '0';
+          setTimeout(() => {
+            mainImg.src = src;
+            mainImg.alt = btn.dataset.alt || '';
+            mainImg.style.opacity = '1';
+          }, 120);
+          thumbs.forEach(t => {
+            const active = t === btn;
+            t.classList.toggle('border-primary', active);
+            t.classList.toggle('dark:border-primary-dark', active);
+            t.classList.toggle('border-transparent', !active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+        });
+      });
+    }
+
+    const order = projectOrder[currentTab] || [];
+    const index = order.indexOf(projectId);
+    prevBtn.disabled = index <= 0;
+    nextBtn.disabled = index === -1 || index === order.length - 1;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.classList.add('modal-open');
+    setTimeout(() => {
+      modalBackdrop.classList.replace('opacity-0', 'opacity-100');
+      modalContainer.classList.replace('scale-95', 'scale-100');
+      modalContainer.classList.replace('opacity-0', 'opacity-100');
+    }, 10);
+
+    setupModalFocusTrap(modalContainer);
+    setTimeout(() => {
+      const closeBtn = document.getElementById('close-modal');
+      if (closeBtn) closeBtn.focus();
+    }, 60);
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.replace('opacity-100', 'opacity-0');
+    modalContainer.classList.replace('scale-100', 'scale-95');
+    modalContainer.classList.replace('opacity-100', 'opacity-0');
+    setTimeout(() => {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+      removeModalFocusTrap();
+      if (modalTrigger && typeof modalTrigger.focus === 'function') modalTrigger.focus();
+      modalTrigger = null;
+    }, 300);
+  }
+
+  function setupModalFocusTrap(container) {
+    removeModalFocusTrap();
+    modalTrapListener = function(e) {
+      if (e.key !== 'Tab') return;
+      const focusable = container.querySelectorAll('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    container.addEventListener('keydown', modalTrapListener);
+  }
+  function removeModalFocusTrap() {
+    if (modalTrapListener && modalContainer) {
+      modalContainer.removeEventListener('keydown', modalTrapListener);
+      modalTrapListener = null;
+    }
+  }
+
+  document.getElementById('close-modal').addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  modalContainer.addEventListener('click', (e) => e.stopPropagation());
+
+  document.querySelectorAll('[data-project-id]').forEach(card => {
+    card.addEventListener('click', () => openModal(card.getAttribute('data-project-id'), card));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(card.getAttribute('data-project-id'), card);
+      }
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    const order = projectOrder[currentTab];
+    const index = order.indexOf(currentProjectId);
+    if (index > 0) openModal(order[index - 1]);
+  });
+  nextBtn.addEventListener('click', () => {
+    const order = projectOrder[currentTab];
+    const index = order.indexOf(currentProjectId);
+    if (index >= 0 && index < order.length - 1) openModal(order[index + 1]);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (!modal.classList.contains('hidden')) closeModal();
+      if (!courseModal.classList.contains('hidden')) closeCourseModal();
+      if (!mobileMenu.classList.contains('hidden')) closeMobileMenu();
+    }
+  });
+
+  // ============ COURSE MODAL ============
+  const courseModal = document.getElementById('course-modal');
+  const courseContainer = document.getElementById('course-container');
+  const courseBackdrop = document.getElementById('course-backdrop');
+  const courseContent = document.getElementById('course-modal-content');
+  const courseTitleEl = document.getElementById('course-modal-title');
+  const courseSubtitleEl = document.getElementById('course-modal-subtitle');
+  let courseModalTrigger = null;
+  let courseTrapListener = null;
+
+  function openCourseModal(filter, triggerEl) {
+    if (triggerEl) courseModalTrigger = triggerEl;
+    let html = '';
+
+    if (filter === 'all') {
+      courseTitleEl.textContent = "Relevant Coursework";
+      courseSubtitleEl.textContent = "University of Northern British Columbia — Data, Digital Transformation, and Software";
+      html = `<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">`;
+      Object.keys(coursework).forEach(key => {
+        const cat = coursework[key];
+        html += `<div class="enterprise-card rounded-2xl p-6 h-full">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-primary/10 text-primary dark:text-primary-dark">
+              <span class="material-symbols-outlined">${escapeHTML(cat.icon)}</span>
+            </div>
+            <h4 class="font-bold text-[14px] tracking-tight">${escapeHTML(cat.title)}</h4>
+          </div>
+          <div class="skill-tag-list">
+            ${cat.courses.map(c => `<div class="skill-tag skill-tag-course ${escapeHTML(cat.tagClass)}">${escapeHTML(c)}</div>`).join('')}
+          </div>
+        </div>`;
+      });
+      html += `</div>`;
+    } else {
+      const cat = coursework[filter];
+      if (!cat) return;
+      courseTitleEl.textContent = `Focus Area: ${cat.title}`;
+      courseSubtitleEl.textContent = "University of Northern British Columbia";
+      html = `<div class="enterprise-card rounded-3xl p-8">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center bg-primary text-white shadow-xl shadow-primary/20">
+            <span class="material-symbols-outlined text-3xl">${escapeHTML(cat.icon)}</span>
+          </div>
+          <h4 class="text-2xl font-bold tracking-tight">${escapeHTML(cat.title)}</h4>
+        </div>
+        <div class="skill-tag-list justify-center">
+          ${cat.courses.map(c => `<div class="skill-tag skill-tag-course ${escapeHTML(cat.tagClass)}">${escapeHTML(c)}</div>`).join('')}
+        </div>
+      </div>`;
+    }
+    courseContent.innerHTML = html;
+    courseModal.classList.remove('hidden');
+    courseModal.classList.add('flex');
+    document.body.classList.add('modal-open');
+    setTimeout(() => {
+      courseBackdrop.classList.replace('opacity-0', 'opacity-100');
+      courseContainer.classList.replace('opacity-0', 'opacity-100');
+      courseContainer.classList.replace('translate-y-4', 'translate-y-0');
+    }, 10);
+    setupCourseFocusTrap();
+    setTimeout(() => {
+      const closeBtn = document.getElementById('close-course-modal');
+      if (closeBtn) closeBtn.focus();
+    }, 60);
+  }
+
+  function closeCourseModal() {
+    courseBackdrop.classList.replace('opacity-100', 'opacity-0');
+    courseContainer.classList.replace('opacity-100', 'opacity-0');
+    courseContainer.classList.replace('translate-y-0', 'translate-y-4');
+    setTimeout(() => {
+      courseModal.classList.remove('flex');
+      courseModal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+      removeCourseFocusTrap();
+      if (courseModalTrigger && typeof courseModalTrigger.focus === 'function') courseModalTrigger.focus();
+      courseModalTrigger = null;
+    }, 300);
+  }
+
+  function setupCourseFocusTrap() {
+    removeCourseFocusTrap();
+    courseTrapListener = function(e) {
+      if (e.key !== 'Tab') return;
+      const focusable = courseContainer.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    courseContainer.addEventListener('keydown', courseTrapListener);
+  }
+  function removeCourseFocusTrap() {
+    if (courseTrapListener && courseContainer) {
+      courseContainer.removeEventListener('keydown', courseTrapListener);
+      courseTrapListener = null;
+    }
+  }
+
+  document.getElementById('close-course-modal').addEventListener('click', closeCourseModal);
+  courseBackdrop.addEventListener('click', closeCourseModal);
+  courseContainer.addEventListener('click', (e) => e.stopPropagation());
+
+  document.getElementById('btn-related-courses').addEventListener('click', (e) => openCourseModal(currentTab, e.currentTarget));
+  document.getElementById('btn-view-all-courses').addEventListener('click', (e) => openCourseModal('all', e.currentTarget));
+
+  // ============ MOBILE MENU ============
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileNavLinks = Array.from(document.querySelectorAll('.mobile-nav-link'));
+  let mobileMenuTrigger = null;
+
+  function openMobileMenu() {
+    mobileMenuTrigger = document.activeElement;
+    mobileMenu.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    // Trigger the transitions on next frame
+    requestAnimationFrame(() => {
+      mobileMenuBackdrop.classList.remove('opacity-0');
+      mobileMenuBackdrop.classList.add('opacity-100');
+      mobileMenuPanel.classList.remove('translate-x-full');
+    });
+    setTimeout(() => mobileMenuClose.focus(), 80);
+  }
+  function closeMobileMenu() {
+    mobileMenuBackdrop.classList.remove('opacity-100');
+    mobileMenuBackdrop.classList.add('opacity-0');
+    mobileMenuPanel.classList.add('translate-x-full');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    setTimeout(() => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+      if (mobileMenuTrigger && mobileMenuTrigger.focus) mobileMenuTrigger.focus();
+      mobileMenuTrigger = null;
+    }, 240);
+  }
+  mobileMenuBtn.addEventListener('click', openMobileMenu);
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
+  // Close after any nav link tap inside the drawer (so scroll to section happens on a clean layer)
+  mobileNavLinks.forEach(l => l.addEventListener('click', () => setTimeout(closeMobileMenu, 60)));
+  // Auto-close if user resizes past the md breakpoint
+  const mqDesktop = window.matchMedia('(min-width: 768px)');
+  mqDesktop.addEventListener('change', (e) => { if (e.matches && !mobileMenu.classList.contains('hidden')) closeMobileMenu(); });
+
+  // ============ SCROLL SPY — active nav link ============
+  const navLinks = Array.from(document.querySelectorAll('.nav-link[data-nav-for]'));
+  const sectionIds = navLinks.map(l => l.dataset.navFor);
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  if (sections.length && 'IntersectionObserver' in window) {
+    let visibleMap = new Map();
+    const setActive = (id) => {
+      navLinks.forEach(l => l.classList.toggle('is-active', l.dataset.navFor === id));
+    };
+    // Prime with Home
+    setActive('hero');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => visibleMap.set(e.target.id, e.intersectionRatio));
+      // Pick the section with the largest visible ratio
+      let bestId = null, bestRatio = 0;
+      visibleMap.forEach((ratio, id) => {
+        if (ratio > bestRatio) { bestRatio = ratio; bestId = id; }
+      });
+      if (bestId) setActive(bestId);
+    }, {
+      // Trigger switches when a section crosses the middle of the viewport
+      rootMargin: '-40% 0px -50% 0px',
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    });
+    sections.forEach(s => io.observe(s));
+  }
+
+})();
+</script>
+</body>
+</html>
